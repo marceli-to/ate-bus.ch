@@ -1,0 +1,2 @@
+font family: Inter
+weights: regular, medium, semibold, bold

@@ -1,3 +1,8 @@
-<section class="relative {{ class }}">
+{{#
+  @name Section
+  @param {string} class - Additional classes
+  @param {string} size - Size variant: "sm" for smaller padding
+#}}
+<section class="relative {{ size == 'sm' ? 'py-40 lg:py-64' : 'py-64 lg:py-96' }} {{ class }}">
   {{ slot }}
 </section>

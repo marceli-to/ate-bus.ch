@@ -1,0 +1,293 @@
+
+  <main class="py-40 lg:py-80">
+
+    {{# ============================================
+       COLORS
+       ============================================ #}}
+    <section id="colors" class="section border-b">
+      <div class="container">
+        <h2 class="mb-8">Colors</h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+          {{# Neutrals #}}
+          <div>
+            <div class="h-20 rounded-lg bg-white border border-grey/30"></div>
+            <p class="text-sm mt-2 font-medium">White</p>
+            <p class="text-xs text-grey">#FFFFFF</p>
+          </div>
+          <div>
+            <div class="h-20 rounded-lg bg-light-grey"></div>
+            <p class="text-sm mt-2 font-medium">Light Grey</p>
+            <p class="text-xs text-grey">#F4F5F9</p>
+          </div>
+          <div>
+            <div class="h-20 rounded-lg bg-light-grey-bg"></div>
+            <p class="text-sm mt-2 font-medium">Light Grey BG</p>
+            <p class="text-xs text-grey">#F0F1F5</p>
+          </div>
+          <div>
+            <div class="h-20 rounded-lg bg-grey"></div>
+            <p class="text-sm mt-2 font-medium">Grey</p>
+            <p class="text-xs text-grey">#C7C6C6</p>
+          </div>
+          <div>
+            <div class="h-20 rounded-lg bg-black"></div>
+            <p class="text-sm mt-2 font-medium">Black</p>
+            <p class="text-xs text-grey">#1A1A1A</p>
+          </div>
+          
+          {{# Blues #}}
+          <div>
+            <div class="h-20 rounded-lg bg-light-blue"></div>
+            <p class="text-sm mt-2 font-medium">Light Blue</p>
+            <p class="text-xs text-grey">#CAE0F4</p>
+          </div>
+          <div>
+            <div class="h-20 rounded-lg bg-blue-primary"></div>
+            <p class="text-sm mt-2 font-medium">Blue Primary</p>
+            <p class="text-xs text-grey">#02529F</p>
+          </div>
+          <div>
+            <div class="h-20 rounded-lg bg-blue-gray"></div>
+            <p class="text-sm mt-2 font-medium">Blue Gray</p>
+            <p class="text-xs text-grey">#4A5269</p>
+          </div>
+          <div>
+            <div class="h-20 rounded-lg bg-blue-black"></div>
+            <p class="text-sm mt-2 font-medium">Blue Black</p>
+            <p class="text-xs text-grey">#14244E</p>
+          </div>
+          
+          {{# Feedback #}}
+          <div>
+            <div class="h-20 rounded-lg bg-error"></div>
+            <p class="text-sm mt-2 font-medium">Error</p>
+            <p class="text-xs text-grey">#EB0000</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {{# ============================================
+       TYPOGRAPHY
+       ============================================ #}}
+    <section id="typography" class="section border-b">
+      <div class="container">
+        <h2 class="mb-8">Typography</h2>
+        
+        <h3 class="mb-4">Font Size Scale</h3>
+        <div class="space-y-4 mb-12">
+          <div class="flex items-baseline gap-4">
+            <span class="text-xs text-grey w-20">text-xxs</span>
+            <span class="text-xxs">12px · The quick brown fox</span>
+          </div>
+          <div class="flex items-baseline gap-4">
+            <span class="text-xs text-grey w-20">text-xs</span>
+            <span class="text-xs">14px · The quick brown fox</span>
+          </div>
+          <div class="flex items-baseline gap-4">
+            <span class="text-xs text-grey w-20">text-sm</span>
+            <span class="text-sm">16px · The quick brown fox</span>
+          </div>
+          <div class="flex items-baseline gap-4">
+            <span class="text-xs text-grey w-20">text-md</span>
+            <span class="text-md">17px · The quick brown fox (footer)</span>
+          </div>
+          <div class="flex items-baseline gap-4">
+            <span class="text-xs text-grey w-20">text-lg</span>
+            <span class="text-lg">20px · The quick brown fox (body)</span>
+          </div>
+          <div class="flex items-baseline gap-4">
+            <span class="text-xs text-grey w-20">text-xl</span>
+            <span class="text-xl">26px · The quick brown fox (H4)</span>
+          </div>
+          <div class="flex items-baseline gap-4">
+            <span class="text-xs text-grey w-20">text-2xl</span>
+            <span class="text-2xl">32px · The quick brown fox (H3)</span>
+          </div>
+          <div class="flex items-baseline gap-4">
+            <span class="text-xs text-grey w-20">text-3xl</span>
+            <span class="text-3xl">40px · The quick brown fox</span>
+          </div>
+          <div class="flex items-baseline gap-4">
+            <span class="text-xs text-grey w-20">text-4xl</span>
+            <span class="text-4xl">52px · Quick brown fox (H2)</span>
+          </div>
+          <div class="flex items-baseline gap-4">
+            <span class="text-xs text-grey w-20">text-5xl</span>
+            <span class="text-5xl">72px · Quick fox (H1)</span>
+          </div>
+        </div>
+        
+        <h3 class="mb-4">Headings</h3>
+        <div class="space-y-8">
+          <div>
+            <p class="text-sm text-grey mb-2">H1 · text-5xl · 72px Desktop / 40px Mobile</p>
+            <h1>Wir sind ATE Bus</h1>
+          </div>
+          
+          <div>
+            <p class="text-sm text-grey mb-2">H2 · text-4xl · 52px Desktop / 32px Mobile</p>
+            <h2>Über uns</h2>
+          </div>
+          
+          <div>
+            <p class="text-sm text-grey mb-2">H3 · text-2xl · 32px Desktop / 24px Mobile</p>
+            <h3>Unsere Dienstleistungen</h3>
+          </div>
+          
+          <div>
+            <p class="text-sm text-grey mb-2">H4 · text-xl · 26px Desktop / 20px Mobile</p>
+            <h4>Kontaktieren Sie uns</h4>
+          </div>
+          
+          <div>
+            <p class="text-sm text-grey mb-2">Body · text-lg · 20px Desktop / 16px Mobile</p>
+            <p>Die ATE Bus AG ist ein modernes Transportunternehmen im öffentlichen Verkehr und verbindet die Region zuverlässig, sicher und nachhaltig. Täglich sorgen unsere Mitarbeitenden dafür, dass Fahrgäste pünktlich und komfortabel unterwegs sind.</p>
+          </div>
+          
+          <div>
+            <p class="text-sm text-grey mb-2">Body Semibold</p>
+            <p class="font-semibold">Als regionale Partnerin legen wir grossen Wert auf Qualität, Kundennähe und eine zukunftsorientierte Mobilität.</p>
+          </div>
+          
+          <div>
+            <p class="text-sm text-grey mb-2">Footer Text · text-md · 17px</p>
+            <p class="footer-text">ATE Bus AG · Bietenholzstrasse 30 · 8307 Effretikon</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {{# ============================================
+       BUTTONS
+       ============================================ #}}
+    <section id="buttons" class="section border-b">
+      <div class="container">
+        <h2 class="mb-8">Buttons</h2>
+        
+        <div class="flex flex-wrap gap-4">
+          <a href="#" class="btn-primary">Primary Button</a>
+          <a href="#" class="btn-outline">Outline Button</a>
+        </div>
+      </div>
+    </section>
+
+    {{# ============================================
+       ICONS
+       ============================================ #}}
+    <section id="icons" class="section border-b">
+      <div class="container">
+        <h2 class="mb-8">Icons</h2>
+        
+        <div class="grid grid-cols-4 md:grid-cols-8 gap-6">
+          {{ icons = ['car', 'glasses', 'handshake', 'headphones', 'key', 'leaf', 'open-book', 'park', 'people-couple', 'people-group', 'purse', 'smartphone', 'thumbs-up', 'train', 'umbrella', 'wallet'] }}
+          {{ icons }}
+            <div class="text-center">
+              <div class="w-12 h-12 mx-auto text-blue-primary">
+                {{ svg src="icons/{value}" class="w-full h-full" }}
+              </div>
+              <p class="text-xs mt-2 text-grey">{{ value }}</p>
+            </div>
+          {{ /icons }}
+        </div>
+        
+        <h3 class="mt-12 mb-4">Logo</h3>
+        <div class="flex gap-8 items-center">
+          <div class="w-32">
+            {{ svg src="icons/logo" class="w-full h-auto" }}
+          </div>
+          <div class="w-32">
+            {{ svg src="icons/logo-duotone" class="w-full h-auto" }}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {{# ============================================
+       HEADER
+       ============================================ #}}
+    <section id="header" class="section border-b">
+      <div class="container">
+        <h2 class="mb-8">Header Component</h2>
+      </div>
+      
+      {{# Live header preview #}}
+      {{ partial:components/header-preview }}
+    </section>
+
+    {{# ============================================
+       HERO DIAGONAL
+       ============================================ #}}
+    <section id="hero" class="section border-b">
+      <div class="container">
+        <h2 class="mb-8">Hero Diagonal</h2>
+      </div>
+      
+      {{# Hero with blue box #}}
+      {{ partial:components/hero-diagonal 
+         image="/img/team.jpg"
+         title="Wir sind ATE Bus"
+         text="Das Team der ATE Bus AG besteht aus über 90 Mitarbeitern und erbringt tagtäglich Höchstleistungen um einen reibungslosen und sicheren Betrieb zu gewährleisten."
+      }}
+      
+      <div class="container mt-12">
+        <h3 class="mb-4">Reversed Version</h3>
+      </div>
+      
+      {{# Reversed #}}
+      {{ partial:components/hero-diagonal 
+         image="/img/bus-mood.jpg"
+         title="Bitte einsteigen!"
+         text="Täglich befördern wir auf unseren Linien Pendler, Schüler und andere Reiselustige. Es ist unser wichtigstes Anliegen alle unsere Fahrgäste sicher und pünktlich an ihr Ziel zu bringen."
+         reversed="true"
+      }}
+    </section>
+
+    {{# ============================================
+       ICON BLOCKS
+       ============================================ #}}
+    <section id="icon-blocks" class="section border-b">
+      <div class="container">
+        <h2 class="mb-8">Icon Blocks</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {{ partial:components/icon-block 
+             icon="people-group"
+             title="Engagiertes Team"
+          }}
+          {{ partial:components/icon-block 
+             icon="thumbs-up"
+             title="Moderner Arbeitgeber"
+          }}
+          {{ partial:components/icon-block 
+             icon="leaf"
+             title="Nachhaltige Mobilität"
+          }}
+        </div>
+      </div>
+    </section>
+
+    {{# ============================================
+       PARTNER LOGOS
+       ============================================ #}}
+    <section id="partner-logos" class="section-sm bg-blue-black text-white">
+      <div class="container">
+        <h2 class="mb-8">Partner & Associations Section</h2>
+      </div>
+      
+      {{ partial:components/partner-section }}
+    </section>
+
+    {{# ============================================
+       FOOTER
+       ============================================ #}}
+    <section id="footer" class="border-t">
+      <div class="container py-8">
+        <h2 class="mb-8">Footer Component</h2>
+      </div>
+      
+      {{ partial:components/footer-preview }}
+    </section>
+
+  </main>

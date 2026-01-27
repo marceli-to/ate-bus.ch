@@ -1,11 +1,11 @@
 @import "tailwindcss";
-@import "./fonts.css";
 
 @source "../views";
 @source "../../content";
 
 @layer base {
   :root {
+    --diagonal-offset: 60px;
   }
 }
 
@@ -14,27 +14,35 @@
 }
 
 @theme {
+  /* Colors */
+  --color-white: #FFFFFF;
+  --color-light-grey: #F4F5F9;
+  --color-light-grey-bg: #F0F1F5;
+  --color-grey: #C7C6C6;
+  --color-black: #1A1A1A;
+  --color-light-blue: #CAE0F4;
+  --color-blue-primary: #02529F;
+  --color-blue-gray: #4A5269;
+  --color-blue-black: #14244E;
+  --color-error: #EB0000;
+  --color-success: #16A34A;
 
-  --color-lunair: #C7C5C1;
-  --color-noctar: #142532;
-  --color-mistel: #8A9EAA;
+  /* Fonts */
+  --font-sans: 'Inter', system-ui, sans-serif;
 
-  --font-uni-neue: 'Uni-Neue-Regular', sans-serif;
-  --font-uni-neue-bold: 'Uni-Neue-Bold', sans-serif;
-  --font-uni-neue-book: 'Uni-Neue-Book', sans-serif;
+  /* Font Sizes */
+  --text-xxs: 0.75rem;
+  --text-xs: 0.875rem;
+  --text-sm: 1rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.625rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.5rem;
+  --text-4xl: 3.25rem;
+  --text-5xl: 4.5rem;
 
-  --text-xxxs: 0.625rem; /* 10px */
-  --text-xxs: 0.75rem; /* 12px */
-  --text-xs: 0.875rem; /* 14px */
-  --text-sm: 1rem; /* 16px */
-  --text-md: 1.125rem; /* 18px */
-  --text-lg: 1.25rem; /* 20px */
-  --text-xl: 1.5rem; /* 24px */
-  --text-2xl: 1.75rem; /* 28px */
-  --text-3xl: 2.5rem; /* 40px */
-  --text-4xl: 4rem; /* 64px */
-
-  --spacing-0: 0rem;
+  /* Spacing: 1 = 1px (in rem) */
   --spacing-1: 0.0625rem;
   --spacing-2: 0.125rem;
   --spacing-3: 0.1875rem;
@@ -285,12 +293,254 @@
   --spacing-248: 15.5rem;
   --spacing-249: 15.5625rem;
   --spacing-250: 15.625rem;
-}
-
-strong {
-
-}
-
-p:not(:last-of-type) {
-
+  --spacing-251: 15.6875rem;
+  --spacing-252: 15.75rem;
+  --spacing-253: 15.8125rem;
+  --spacing-254: 15.875rem;
+  --spacing-255: 15.9375rem;
+  --spacing-256: 16rem;
+  --spacing-257: 16.0625rem;
+  --spacing-258: 16.125rem;
+  --spacing-259: 16.1875rem;
+  --spacing-260: 16.25rem;
+  --spacing-261: 16.3125rem;
+  --spacing-262: 16.375rem;
+  --spacing-263: 16.4375rem;
+  --spacing-264: 16.5rem;
+  --spacing-265: 16.5625rem;
+  --spacing-266: 16.625rem;
+  --spacing-267: 16.6875rem;
+  --spacing-268: 16.75rem;
+  --spacing-269: 16.8125rem;
+  --spacing-270: 16.875rem;
+  --spacing-271: 16.9375rem;
+  --spacing-272: 17rem;
+  --spacing-273: 17.0625rem;
+  --spacing-274: 17.125rem;
+  --spacing-275: 17.1875rem;
+  --spacing-276: 17.25rem;
+  --spacing-277: 17.3125rem;
+  --spacing-278: 17.375rem;
+  --spacing-279: 17.4375rem;
+  --spacing-280: 17.5rem;
+  --spacing-281: 17.5625rem;
+  --spacing-282: 17.625rem;
+  --spacing-283: 17.6875rem;
+  --spacing-284: 17.75rem;
+  --spacing-285: 17.8125rem;
+  --spacing-286: 17.875rem;
+  --spacing-287: 17.9375rem;
+  --spacing-288: 18rem;
+  --spacing-289: 18.0625rem;
+  --spacing-290: 18.125rem;
+  --spacing-291: 18.1875rem;
+  --spacing-292: 18.25rem;
+  --spacing-293: 18.3125rem;
+  --spacing-294: 18.375rem;
+  --spacing-295: 18.4375rem;
+  --spacing-296: 18.5rem;
+  --spacing-297: 18.5625rem;
+  --spacing-298: 18.625rem;
+  --spacing-299: 18.6875rem;
+  --spacing-300: 18.75rem;
+  --spacing-301: 18.8125rem;
+  --spacing-302: 18.875rem;
+  --spacing-303: 18.9375rem;
+  --spacing-304: 19rem;
+  --spacing-305: 19.0625rem;
+  --spacing-306: 19.125rem;
+  --spacing-307: 19.1875rem;
+  --spacing-308: 19.25rem;
+  --spacing-309: 19.3125rem;
+  --spacing-310: 19.375rem;
+  --spacing-311: 19.4375rem;
+  --spacing-312: 19.5rem;
+  --spacing-313: 19.5625rem;
+  --spacing-314: 19.625rem;
+  --spacing-315: 19.6875rem;
+  --spacing-316: 19.75rem;
+  --spacing-317: 19.8125rem;
+  --spacing-318: 19.875rem;
+  --spacing-319: 19.9375rem;
+  --spacing-320: 20rem;
+  --spacing-321: 20.0625rem;
+  --spacing-322: 20.125rem;
+  --spacing-323: 20.1875rem;
+  --spacing-324: 20.25rem;
+  --spacing-325: 20.3125rem;
+  --spacing-326: 20.375rem;
+  --spacing-327: 20.4375rem;
+  --spacing-328: 20.5rem;
+  --spacing-329: 20.5625rem;
+  --spacing-330: 20.625rem;
+  --spacing-331: 20.6875rem;
+  --spacing-332: 20.75rem;
+  --spacing-333: 20.8125rem;
+  --spacing-334: 20.875rem;
+  --spacing-335: 20.9375rem;
+  --spacing-336: 21rem;
+  --spacing-337: 21.0625rem;
+  --spacing-338: 21.125rem;
+  --spacing-339: 21.1875rem;
+  --spacing-340: 21.25rem;
+  --spacing-341: 21.3125rem;
+  --spacing-342: 21.375rem;
+  --spacing-343: 21.4375rem;
+  --spacing-344: 21.5rem;
+  --spacing-345: 21.5625rem;
+  --spacing-346: 21.625rem;
+  --spacing-347: 21.6875rem;
+  --spacing-348: 21.75rem;
+  --spacing-349: 21.8125rem;
+  --spacing-350: 21.875rem;
+  --spacing-351: 21.9375rem;
+  --spacing-352: 22rem;
+  --spacing-353: 22.0625rem;
+  --spacing-354: 22.125rem;
+  --spacing-355: 22.1875rem;
+  --spacing-356: 22.25rem;
+  --spacing-357: 22.3125rem;
+  --spacing-358: 22.375rem;
+  --spacing-359: 22.4375rem;
+  --spacing-360: 22.5rem;
+  --spacing-361: 22.5625rem;
+  --spacing-362: 22.625rem;
+  --spacing-363: 22.6875rem;
+  --spacing-364: 22.75rem;
+  --spacing-365: 22.8125rem;
+  --spacing-366: 22.875rem;
+  --spacing-367: 22.9375rem;
+  --spacing-368: 23rem;
+  --spacing-369: 23.0625rem;
+  --spacing-370: 23.125rem;
+  --spacing-371: 23.1875rem;
+  --spacing-372: 23.25rem;
+  --spacing-373: 23.3125rem;
+  --spacing-374: 23.375rem;
+  --spacing-375: 23.4375rem;
+  --spacing-376: 23.5rem;
+  --spacing-377: 23.5625rem;
+  --spacing-378: 23.625rem;
+  --spacing-379: 23.6875rem;
+  --spacing-380: 23.75rem;
+  --spacing-381: 23.8125rem;
+  --spacing-382: 23.875rem;
+  --spacing-383: 23.9375rem;
+  --spacing-384: 24rem;
+  --spacing-385: 24.0625rem;
+  --spacing-386: 24.125rem;
+  --spacing-387: 24.1875rem;
+  --spacing-388: 24.25rem;
+  --spacing-389: 24.3125rem;
+  --spacing-390: 24.375rem;
+  --spacing-391: 24.4375rem;
+  --spacing-392: 24.5rem;
+  --spacing-393: 24.5625rem;
+  --spacing-394: 24.625rem;
+  --spacing-395: 24.6875rem;
+  --spacing-396: 24.75rem;
+  --spacing-397: 24.8125rem;
+  --spacing-398: 24.875rem;
+  --spacing-399: 24.9375rem;
+  --spacing-400: 25rem;
+  --spacing-401: 25.0625rem;
+  --spacing-402: 25.125rem;
+  --spacing-403: 25.1875rem;
+  --spacing-404: 25.25rem;
+  --spacing-405: 25.3125rem;
+  --spacing-406: 25.375rem;
+  --spacing-407: 25.4375rem;
+  --spacing-408: 25.5rem;
+  --spacing-409: 25.5625rem;
+  --spacing-410: 25.625rem;
+  --spacing-411: 25.6875rem;
+  --spacing-412: 25.75rem;
+  --spacing-413: 25.8125rem;
+  --spacing-414: 25.875rem;
+  --spacing-415: 25.9375rem;
+  --spacing-416: 26rem;
+  --spacing-417: 26.0625rem;
+  --spacing-418: 26.125rem;
+  --spacing-419: 26.1875rem;
+  --spacing-420: 26.25rem;
+  --spacing-421: 26.3125rem;
+  --spacing-422: 26.375rem;
+  --spacing-423: 26.4375rem;
+  --spacing-424: 26.5rem;
+  --spacing-425: 26.5625rem;
+  --spacing-426: 26.625rem;
+  --spacing-427: 26.6875rem;
+  --spacing-428: 26.75rem;
+  --spacing-429: 26.8125rem;
+  --spacing-430: 26.875rem;
+  --spacing-431: 26.9375rem;
+  --spacing-432: 27rem;
+  --spacing-433: 27.0625rem;
+  --spacing-434: 27.125rem;
+  --spacing-435: 27.1875rem;
+  --spacing-436: 27.25rem;
+  --spacing-437: 27.3125rem;
+  --spacing-438: 27.375rem;
+  --spacing-439: 27.4375rem;
+  --spacing-440: 27.5rem;
+  --spacing-441: 27.5625rem;
+  --spacing-442: 27.625rem;
+  --spacing-443: 27.6875rem;
+  --spacing-444: 27.75rem;
+  --spacing-445: 27.8125rem;
+  --spacing-446: 27.875rem;
+  --spacing-447: 27.9375rem;
+  --spacing-448: 28rem;
+  --spacing-449: 28.0625rem;
+  --spacing-450: 28.125rem;
+  --spacing-451: 28.1875rem;
+  --spacing-452: 28.25rem;
+  --spacing-453: 28.3125rem;
+  --spacing-454: 28.375rem;
+  --spacing-455: 28.4375rem;
+  --spacing-456: 28.5rem;
+  --spacing-457: 28.5625rem;
+  --spacing-458: 28.625rem;
+  --spacing-459: 28.6875rem;
+  --spacing-460: 28.75rem;
+  --spacing-461: 28.8125rem;
+  --spacing-462: 28.875rem;
+  --spacing-463: 28.9375rem;
+  --spacing-464: 29rem;
+  --spacing-465: 29.0625rem;
+  --spacing-466: 29.125rem;
+  --spacing-467: 29.1875rem;
+  --spacing-468: 29.25rem;
+  --spacing-469: 29.3125rem;
+  --spacing-470: 29.375rem;
+  --spacing-471: 29.4375rem;
+  --spacing-472: 29.5rem;
+  --spacing-473: 29.5625rem;
+  --spacing-474: 29.625rem;
+  --spacing-475: 29.6875rem;
+  --spacing-476: 29.75rem;
+  --spacing-477: 29.8125rem;
+  --spacing-478: 29.875rem;
+  --spacing-479: 29.9375rem;
+  --spacing-480: 30rem;
+  --spacing-481: 30.0625rem;
+  --spacing-482: 30.125rem;
+  --spacing-483: 30.1875rem;
+  --spacing-484: 30.25rem;
+  --spacing-485: 30.3125rem;
+  --spacing-486: 30.375rem;
+  --spacing-487: 30.4375rem;
+  --spacing-488: 30.5rem;
+  --spacing-489: 30.5625rem;
+  --spacing-490: 30.625rem;
+  --spacing-491: 30.6875rem;
+  --spacing-492: 30.75rem;
+  --spacing-493: 30.8125rem;
+  --spacing-494: 30.875rem;
+  --spacing-495: 30.9375rem;
+  --spacing-496: 31rem;
+  --spacing-497: 31.0625rem;
+  --spacing-498: 31.125rem;
+  --spacing-499: 31.1875rem;
+  --spacing-500: 31.25rem;
 }

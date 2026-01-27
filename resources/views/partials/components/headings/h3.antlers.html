@@ -1,3 +1,5 @@
-<h3 class="{{ class }}">
-  {{ title }}
-</h3>
+{{#
+  @name Heading H3
+  @param {string} class - Additional classes
+#}}
+<h3 class="text-[1.5rem] md:text-[1.75rem] lg:text-2xl font-semibold leading-snug text-black {{ class }}">{{ slot }}</h3>

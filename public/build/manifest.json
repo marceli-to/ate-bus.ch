@@ -1,40 +1,12 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-CL4W9fop.css",
+    "file": "assets/app-Dlfg4HwS.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
     "names": [
       "app.css"
     ]
-  },
-  "resources/fonts/UniNeueBold.woff": {
-    "file": "assets/UniNeueBold-BYzJL1sF.woff",
-    "src": "resources/fonts/UniNeueBold.woff"
-  },
-  "resources/fonts/UniNeueBold.woff2": {
-    "file": "assets/UniNeueBold-BuBxLc0I.woff2",
-    "src": "resources/fonts/UniNeueBold.woff2"
-  },
-  "resources/fonts/UniNeueBook.woff": {
-    "file": "assets/UniNeueBook-CEFGOqp5.woff",
-    "src": "resources/fonts/UniNeueBook.woff"
-  },
-  "resources/fonts/UniNeueBook.woff2": {
-    "file": "assets/UniNeueBook-BJw4puJR.woff2",
-    "src": "resources/fonts/UniNeueBook.woff2"
-  },
-  "resources/fonts/UniNeueRegular.woff": {
-    "file": "assets/UniNeueRegular-CCia9Dp9.woff",
-    "src": "resources/fonts/UniNeueRegular.woff"
-  },
-  "resources/fonts/UniNeueRegular.woff2": {
-    "file": "assets/UniNeueRegular-BAHx4Qkc.woff2",
-    "src": "resources/fonts/UniNeueRegular.woff2"
-  },
-  "resources/icons/chevron-down.svg": {
-    "file": "assets/chevron-down-B9zoT2Fq.svg",
-    "src": "resources/icons/chevron-down.svg"
   },
   "resources/js/app.js": {
     "file": "assets/app-Cc9D19O7.js",

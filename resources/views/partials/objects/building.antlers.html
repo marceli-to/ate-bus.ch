@@ -1,0 +1,79 @@
+<div data-building="{{ building }}">
+
+  {{ partial:components/table/table class="mb-10" }}
+
+    {{ partial:components/table/thead }}
+    
+    {{ apartments }}
+    
+      {{ partial:components/table/trow
+          filterable="true"
+          number="{{ ref_object }}"
+          state="{{ state:get :state="status" :reserved="reserved" key="true" }}"
+          rooms="{{ number_of_rooms }}"
+          floor="{{ floor }}"
+          building="{{ ref_house }}" }}
+
+        {{ partial:components/table/tcell class="!pr-0" }}
+          {{ ref_object }}
+        {{ /partial:components/table/tcell }}
+
+        {{ partial:components/table/tcell class="!pr-4 md:!pr-10" }}
+          {{ floors:get :floor="floor" }}
+        {{ /partial:components/table/tcell }}
+
+        {{ partial:components/table/tcell }}
+          {{ number_of_rooms }}
+        {{ /partial:components/table/tcell }}
+
+        {{ partial:components/table/tcell class="text-right" }}
+          {{ surface_living }}
+        {{ /partial:components/table/tcell }}
+
+        {{ partial:components/table/tcell class="text-right" }}
+          {{ if {state:available :state="status" :reserved="reserved"} }}
+            {{ rent_net | format_number(0, '.', '\'') }}
+          {{ /if }}
+        {{ /partial:components/table/tcell }}
+
+        {{ partial:components/table/tcell class="text-right" }}
+          {{ if {state:available :state="status" :reserved="reserved"} }}
+            {{ rent_charges | format_number(0, '.', '\'') }}
+          {{ /if }}
+        {{ /partial:components/table/tcell }}
+
+        {{ partial:components/table/tcell class="text-right" }}
+          {{ if {state:available :state="status" :reserved="reserved"} }}
+            {{ price_display | format_number(0, '.', '\'') }}
+          {{ /if }}
+        {{ /partial:components/table/tcell }}
+
+        {{ partial:components/table/tcell class="text-center" }}
+          {{ if {state:available :state="status" :reserved="reserved"} }}
+            <a href="/assets/downloads/radial-rupperswil-grundriss-{{ ref_object }}.pdf" target="_blank" title="Download Grundriss Wohnung {{ ref_object }}">
+              {{ partial:icons/download class="w-18 h-18 inline-block hover:text-mistel transition-colors" }}
+            </a>
+          {{ /if }}
+        {{ /partial:components/table/tcell }}
+
+        {{ partial:components/table/tcell class="text-xxs sm:text-xs text-right align-middle !pr-0" }}
+          {{ if {state:available :state="status" :reserved="reserved"} }} 
+            <a
+              href="https://flatfox.ch/de/listing{{ short_url }}submit/"
+              target="_blank"
+              title="Jetzt auf Flatfox anmelden"
+              class="rounded-full bg-mistel hover:bg-mistel/80 transition-all duration-150 text-white px-10 py-3 text-xxs sm:text-xs leading-none">
+              Anmelden
+            </a>
+          {{ else }}
+            {{ state:get :state="status" :reserved="reserved" }}
+          {{ /if }}
+        {{ /partial:components/table/tcell }}
+
+      {{ /partial:components/table/trow }}
+
+    {{ /apartments }}
+
+  {{ /partial:components/table/table }}
+
+</div>

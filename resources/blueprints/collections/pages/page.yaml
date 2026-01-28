@@ -12,6 +12,24 @@ tabs:
               required: true
               validate:
                 - required
+          -
+            handle: elements
+            field:
+              type: replicator
+              display: Inhaltselemente
+              sets:
+                elemente:
+                  display: Elemente
+                  instructions: null
+                  icon: null
+                  sets:
+                    hero:
+                      display: Hero
+                      icon: media-image-picture-orientation
+                      instructions: 'Hero-Bereich mit Bild und Text-Overlay'
+                      fields:
+                        -
+                          import: hero
   settings:
     display: Settings
     sections:

@@ -1,0 +1,39 @@
+{{#
+  @name Hero
+  @param {object} image - Hero background image asset
+  @param {string} title - Hero headline text
+  @param {string} text - Hero body text
+  @param {string} class - Additional classes
+#}}
+
+<div class="relative w-full bg-white">
+  
+  <div class="relative w-full">
+    {{ partial:components/media/image
+      :image="image"
+      sizes="md|lg|xl|2xl"
+      preset="hero"
+      class="w-full h-full aspect-[16/9] md:aspect-[16/8] xl:aspect-[16/6] 2xl:aspect-[16/5] object-cover"
+      eager="true"
+    }}
+  </div>
+
+  <div class="bg-light-blue absolute -bottom-40 left-0 w-[80%] md:w-[calc(50%_-_3.75rem)] px-12 py-16 md:px-24 md:py-32">
+    
+    <div class="absolute top-0 h-full bottom-0 left-full w-32 md:w-60 bg-light-blue origin-left scale-x-[1.01] [clip-path:polygon(0%_0%,_100%_0%,_0%_100%)]"></div>
+
+    <div class="relative z-10 text-blue-black">
+
+      {{ if title }}
+        {{ partial:components/headings/h1 class="font-medium text-2xl md:text-4xl leading-[1.2] mb-10" }}
+          {{ title }}
+        {{ /partial:components/headings/h1 }}
+      {{ /if }}
+
+      {{ if text }}
+        {{ text | nl2br }}
+      {{ /if }}
+    </div>
+
+  </div>
+</div>

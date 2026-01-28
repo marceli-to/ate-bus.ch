@@ -6,9 +6,17 @@ template: templates/default
 show_maps: false
 layout: templates/layout
 updated_by: ad7fe3d0-f296-4490-a384-26cbf688e223
-updated_at: 1763582777
+updated_at: 1769607085
 open_graph_type: website
 robots: index_follow
+elements:
+  -
+    id: mky2cslg
+    image: dummy/bus-mood.jpg
+    title: 'Bereit für einen neuen Job?'
+    text: 'Die ATE Bus AG ist nicht nur ein sehr fortschrittliches Transportunternehmen im öffentlichen Verkehr, sondern auch ein attraktiver Arbeitgeber.'
+    type: hero
+    enabled: true
 ---
 ## Welcome to your brand new Statamic site!
 

@@ -1,15 +1,25 @@
-<header>
-  {{ partial:layout/container class="" }}
+<header class="sticky top-0 left-0 z-40 bg-white">
+  
+  <div class="bg-black h-12 md:h-24 xl:h-40"></div>
 
-    <a 
-      href="/"
-      aria-label="Startseite Ate Bus">
-      Startseite
-    </a>
+  {{ partial:layout/container }}
 
-    {{ partial:menu/buttons/show }}
+    <div class="py-12 md:py-24 flex justify-between md:justify-start md:items-center md:gap-x-36 xl:gap-x-60">
+      
+      {{ partial:components/buttons/home }}
+        {{ partial:components/logos/logo-duotone class="w-124 md:w-144 xl:w-180 h-auto" }}
+      {{ /partial:components/buttons/home }}
 
-    {{ partial:menu/wrapper }}
+      {{ partial:menu/buttons/show }}
+      {{ partial:menu/wrapper }}
 
+    </div>
+  
   {{ /partial:layout/container }}
+
 </header>
+
+<!--
+
+
+-->

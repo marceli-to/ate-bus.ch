@@ -1,3 +1,72 @@
-<footer>
-
+<footer class="bg-blue-primary text-white text-xs xl:text-sm leading-[1.5] py-24 lg:py-32">
+  {{ partial:layout/container }}
+    <div class="grid grid-cols-12 gap-16 lg:gap-32">
+      <div class="col-span-12 md:col-span-9 xl:col-span-10 flex flex-col md:flex-row gap-y-16 md:items-end md:gap-x-48 xl:gap-x-60">
+        <div class="flex flex-col">
+          {{ partial:components/headings/h3 class="font-bold" }}
+            ATE Bus AG
+          {{ /partial:components/headings/h3 }}
+          <div>
+            Bietenholzstrasse 30<br>
+            8307 Effretikon
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <a
+            href="tel:052 355 12 00"
+            class="hover:underline decoration-1 underline-offset-4"
+            aria-label="Telefon 052 355 12 00">
+            052 355 12 00
+          </a>
+          <a
+            href="mailto:info@ate-bus.ch"
+            class="hover:underline decoration-1 underline-offset-4"
+            aria-label="E-Mail info@ate-bus.ch">
+            info@ate-bus.ch
+          </a>
+        </div>
+        <div class="flex flex-col">
+          {{ partial:components/headings/h3 class="font-bold" }}
+            Fundbüro
+          {{ /partial:components/headings/h3 }}
+          <div>
+            Breitistrasse 14<br>
+            8307 Effretikon
+          </div>
+        </div>
+      </div>
+      <nav class="col-span-12 md:col-span-3 xl:col-span-2">
+        <ul>
+          <li>
+            <a 
+              href="https://infosoft.ate-bus.ch:4443/login"
+              target="_blank"
+              class="hover:underline decoration-1 underline-offset-4"
+              aria-label="Login">
+              Login
+            </a>
+          </li>
+          {{ nav:footer }}
+            <li>
+              <a 
+                href="{{ url }}"
+                class="hover:underline decoration-1 underline-offset-4"
+                aria-label="{{ title }}">
+                {{ title }}
+              </a>
+            </li>
+          {{ /nav:footer }}
+          <li>
+            <a 
+              href="https://stoz.ch"
+              target="_blank"
+              class="hover:underline decoration-1 underline-offset-4"
+              aria-label="Design by stoz">
+              Design by stoz
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  {{ /partial:layout/container }}
 </footer>

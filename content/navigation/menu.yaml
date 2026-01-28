@@ -1,3 +1,14 @@
 title: Menü
 collections:
   - pages
+tree:
+  -
+    entry: busbetrieb
+  -
+    entry: fundbuero
+  -
+    entry: jobs
+  -
+    entry: ueber-uns
+  -
+    entry: kontakt

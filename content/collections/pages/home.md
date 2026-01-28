@@ -2,7 +2,7 @@
 id: home
 blueprint: pages
 title: Home
-template: home
+template: templates/default
 show_maps: false
 layout: templates/layout
 updated_by: ad7fe3d0-f296-4490-a384-26cbf688e223

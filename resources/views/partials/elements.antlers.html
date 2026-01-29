@@ -6,3 +6,19 @@
   {{ partial:components/media/visual :image="image" }}
 {{ /if }}
 
+{{ if type == 'teaser_lost_and_found' }}
+  {{ partial:components/teaser/lost-and-found }}
+{{ /if }}
+
+{{ if type == 'teaser_bus_routes' }}
+  {{ partial:components/teaser/bus-routes }}
+{{ /if }}
+
+{{ if type == 'title_text' }}
+  {{ partial:components/misc/title_text }}
+{{ /if }}
+
+{{ if type == 'jobs' }}
+  {{ partial:components/misc/jobs }}
+{{ /if }}
+

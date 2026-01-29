@@ -1,0 +1,44 @@
+title: Buslinien
+fields:
+  -
+    handle: teaser_bus_routes_title
+    field:
+      type: text
+      display: Titel
+  -
+    handle: teaser_bus_routes_lines
+    field:
+      type: replicator
+      display: Linien
+      collapse: false
+      sets:
+        line:
+          display: Linie
+          fields:
+            -
+              handle: partner
+              field:
+                type: select
+                display: Partner
+                options:
+                  vbg: VBG
+                  vbz: VBZ
+                width: 33
+            -
+              handle: text
+              field:
+                type: text
+                display: Text
+                width: 33
+            -
+              handle: url
+              field:
+                type: text
+                display: URL
+                width: 33
+  -
+    import: editor
+    prefix: teaser_bus_routes_
+  -
+    import: link
+    prefix: teaser_bus_routes_

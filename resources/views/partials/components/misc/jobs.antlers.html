@@ -1,0 +1,64 @@
+<section class="my-40 md:my-80 xl:my-160">
+
+  {{ partial:layout/container class="max-w-inner-container" }}
+
+    <div class="md:max-w-[80%] xl:max-w-[70%] mb-24 md:mb-32 xl:mb-40">
+
+      {{ if jobs_title_text_title }}
+        {{ if jobs_title_text_heading_type == 'h2' }}
+          {{ partial:components/headings/h2 class="text-xl md:text-3xl xl:text-4xl 2xl:text-5xl font-medium mb-12 lg:mb-16" }}
+            {{ jobs_title_text_title }}
+          {{ /partial:components/headings/h2 }}
+        {{ else }}
+          {{ partial:components/headings/h1 class="font-medium text-2xl md:text-4xl xl:text-5xl 2xl:text-6xl leading-[1.1] mb-12 lg:mb-16" }}
+            {{ jobs_title_text_title }}
+          {{ /partial:components/headings/h1 }}
+        {{ /if }}
+      {{ /if }}
+
+      {{ if jobs_title_text_editor_content }}
+        <div class="text-pretty">
+          {{ jobs_title_text_editor_content }}
+        </div>
+      {{ /if }}
+
+    </div>
+
+    <div class="space-y-20">
+      {{ collection:jobs }}
+
+        {{ partial:components/accordion/wrapper }}
+
+          {{ partial:components/accordion/item }}
+
+            {{ partial:components/accordion/button }}
+              {{ partial:components/headings/h3 class="text-lg md:text-xl xl:text-3xl font-bold" }}
+                {{ title }}<br>
+                {{ workload }}
+              {{ /partial:components/headings/h3 }}
+            {{ /partial:components/accordion/button }}
+
+            {{ partial:components/accordion/content }}
+              <article>
+                {{ job_editor_content }}
+              </article>
+              {{ if file }}
+                <div class="mt-20 md:mt-30">
+                  {{ partial:components/buttons/primary :href="file:url" target="_blank" variant="dark" }}
+                    PDF herunterladen
+                  {{ /partial:components/buttons/primary }}
+                </div>
+              {{ /if }}
+            {{ /partial:components/accordion/content }}
+
+          {{ /partial:components/accordion/item }}
+
+        {{ /partial:components/accordion/wrapper }}
+
+      {{ /collection:jobs }}
+
+    </div>
+
+  {{ /partial:layout/container }}
+
+</section>

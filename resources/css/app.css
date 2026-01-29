@@ -14,8 +14,8 @@
 }
 
 @theme {
-  --max-width-outer-container: 120rem; /* 1920px */
-  --max-width-inner-container: 100rem; /* 1600px */
+  --max-width-outer-container: 115rem; /* 1920px */
+  --max-width-inner-container: 90rem; /* 1600px */
 }
 
 [x-cloak] {
@@ -30,3 +30,19 @@
 .debug-grid > * {
   @apply outline outline-1 outline-yellow-500/50;
 }
+
+article ul {
+  @apply list-disc list-inside m-0;
+}
+
+article li {
+  @apply my-2;
+}
+
+article li p {
+  @apply inline;
+}
+
+
+
+

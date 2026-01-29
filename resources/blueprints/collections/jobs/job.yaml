@@ -1,0 +1,46 @@
+title: Job
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Titel
+              required: true
+              validate:
+                - required
+          -
+            handle: workload
+            field:
+              type: text
+              display: Pensum
+          -
+            handle: short_description
+            field:
+              type: textarea
+              display: Kurzbeschreibung
+          -
+            import: editor
+            prefix: job_
+          -
+            handle: file
+            field:
+              type: assets
+              display: Datei
+              container: assets
+              folder: downloads
+              max_files: 1
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true

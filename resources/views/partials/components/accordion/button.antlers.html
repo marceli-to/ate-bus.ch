@@ -1,19 +1,16 @@
 <button
   @click="active = active === id ? null : id"
-  class="flex items-start justify-between w-full py-5 lg:py-10 text-left cursor-pointer {{ class }}"
+  class="flex items-center justify-between w-full text-left cursor-pointer bg-light-blue p-10 md:p-15 md:px-20 xl:py-20 xl:px-30 {{ class }}"
   :aria-expanded="active === id">
 
-  <span class="font-uni-neue-bold text-sm lg:text-md tracking-wider">
-    {{ title }}
+  <span class="">
+    {{ slot }}
   </span>
 
-  <svg
-    class="w-16 h-16 lg:w-24 lg:h-24 shrink-0 transition-transform duration-300 text-mistel"
-    :class="{ 'rotate-180 text-white': active === id }"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
-  </svg>
+  <div
+    class="shrink-0 transition-transform duration-300"
+    :class="{ 'rotate-180': active === id }">
+    {{ partial:components/icons/chevron class="w-16 h-16" }}
+  </div>
   
 </button>

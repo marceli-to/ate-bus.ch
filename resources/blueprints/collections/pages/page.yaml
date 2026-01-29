@@ -17,26 +17,56 @@ tabs:
             field:
               type: replicator
               display: Inhaltselemente
+              collapse: true
               sets:
                 elemente:
                   display: Elemente
-                  instructions: null
-                  icon: null
                   sets:
                     hero:
                       display: Hero
-                      icon: media-image-picture-orientation
                       instructions: 'Hero-Bereich mit Bild und Text-Overlay'
+                      icon: media-image-picture-orientation
                       fields:
                         -
                           import: hero
                     visual:
                       display: Visual
-                      icon: media-image-picture-orientation
                       instructions: 'Bild mit diagonalem Element'
+                      icon: media-image-picture-orientation
                       fields:
                         -
                           import: visual
+                    title_text:
+                      display: 'Titel & Text'
+                      instructions: 'Titel mit Text'
+                      icon: text-formatting-left-align
+                      fields:
+                        -
+                          import: title_text
+                    jobs:
+                      display: Jobs
+                      instructions: 'Aktuelle Stellenangebote'
+                      icon: content-book-open
+                      fields:
+                        -
+                          import: jobs
+                teaser:
+                  display: Teaser
+                  sets:
+                    teaser_lost_and_found:
+                      display: Fundbüro
+                      instructions: 'Teaser für Fundbüro'
+                      icon: pin-search
+                      fields:
+                        -
+                          import: teaser_lost_and_found
+                    teaser_bus_routes:
+                      display: Buslinien
+                      instructions: 'Teaser für Buslinien'
+                      icon: pin-location-road
+                      fields:
+                        -
+                          import: teaser_bus_routes
   settings:
     display: Settings
     sections:

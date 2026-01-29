@@ -1,0 +1,20 @@
+title: 'Titel & Text'
+fields:
+  -
+    handle: title_text_heading_type
+    field:
+      type: select
+      display: Überschrift
+      options:
+        h1: H1
+        h2: H2
+      default: h1
+      width: 33
+  -
+    handle: title_text_title
+    field:
+      type: text
+      display: Titel
+  -
+    import: editor
+    prefix: title_text_

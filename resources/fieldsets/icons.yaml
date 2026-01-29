@@ -1,0 +1,27 @@
+title: Icons
+fields:
+  -
+    handle: icons
+    field:
+      type: select
+      display: Icons
+      multiple: true
+      options:
+        car: Auto
+        glasses: Brille
+        handshake: Handschlag
+        headphones: Kopfhörer
+        key: Schlüssel
+        leaf: Blatt
+        marker: Marker
+        open-book: Buch
+        park: Park
+        people-couple: Paar
+        people-group: Gruppe
+        purse: Tasche
+        smartphone: Smartphone
+        thumbs-up: Daumen hoch
+        train: Zug
+        umbrella: Regenschirm
+        wallet: Portemonnaie
+      localizable: true

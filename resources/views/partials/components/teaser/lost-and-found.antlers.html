@@ -1,0 +1,43 @@
+<section class="my-40 md:my-80 xl:my-160">
+  {{ partial:layout/container class="max-w-inner-container" }}
+
+    <div class="grid grid-cols-12 gap-16 md:gap-32 xl:gap-80">
+
+      <div class="col-span-12 md:col-span-6 flex flex-col gap-y-16 md:gap-y-24 xl:gap-y-32">
+
+        {{ partial:components/headings/h2 class="text-xl md:text-3xl xl:text-4xl 2xl:text-5xl font-medium" }}
+          {{ teaser_lost_and_found_title }}
+        {{ /partial:components/headings/h2 }}
+
+        <div class="flex flex-wrap gap-12 md:gap-16 xl:gap-24">
+          {{ teaser_lost_and_found_icons }}
+            <div class="w-24 h-24 md:w-32 md:h-32 xl:w-40 xl:h-40 text-blue-primary">
+              {{ partial src="components/icons/{value}" class="w-full h-full" }}
+            </div>
+          {{ /teaser_lost_and_found_icons }}
+        </div>
+
+        <div>
+          {{ teaser_lost_and_found_editor_content }}
+        </div>
+
+        <div>
+          {{ partial:components/buttons/primary :href="teaser_lost_and_found_link_url" :target="teaser_lost_and_found_link_target" variant="dark" }}
+            {{ teaser_lost_and_found_link_title ?? 'Mehr erfahren' }}
+          {{ /partial:components/buttons/primary }}
+        </div>
+      </div>
+
+      <div class="col-span-12 md:col-span-6">
+        {{ partial:components/media/image
+          :image="teaser_lost_and_found_image"
+          :sizes="['md', 'lg', 'xl', '2xl']"
+          class="w-full h-full object-cover"
+          eager="false"
+        }}
+      </div>
+  
+    </div>
+
+  {{ /partial:layout/container }}
+</section>

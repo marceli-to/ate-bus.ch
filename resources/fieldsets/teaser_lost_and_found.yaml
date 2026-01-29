@@ -1,0 +1,23 @@
+title: Fundbüro
+fields:
+  -
+    handle: teaser_lost_and_found_title
+    field:
+      type: text
+      display: Titel
+  -
+    import: icons
+    prefix: teaser_lost_and_found_
+  -
+    import: editor
+    prefix: teaser_lost_and_found_
+  -
+    import: link
+    prefix: teaser_lost_and_found_
+  -
+    handle: teaser_lost_and_found_image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: Bild

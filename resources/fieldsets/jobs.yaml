@@ -1,0 +1,5 @@
+title: Jobs
+fields:
+  -
+    import: title_text
+    prefix: jobs_

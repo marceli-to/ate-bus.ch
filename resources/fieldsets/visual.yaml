@@ -1,4 +1,4 @@
-title: Hero
+title: Visual
 fields:
   -
     handle: image
@@ -10,12 +10,3 @@ fields:
       validate:
         - required
       localizable: true
-  -
-    handle: title
-    field:
-      type: text
-      display: Titel
-      localizable: true
-  -
-    import: editor
-    prefix: hero_

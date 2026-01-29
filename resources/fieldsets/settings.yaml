@@ -1,10 +1,10 @@
 title: Settings
 fields:
   -
-    handle: show_maps
+    handle: show_job_teaser
     field:
       type: toggle
-      display: 'Show maps'
+      display: 'Jobteaser anzeigen'
   -
     handle: template
     field:

@@ -3,10 +3,9 @@ id: home
 blueprint: pages
 title: Home
 template: templates/default
-show_maps: false
 layout: templates/layout
 updated_by: ad7fe3d0-f296-4490-a384-26cbf688e223
-updated_at: 1769607085
+updated_at: 1769702958
 open_graph_type: website
 robots: index_follow
 elements:
@@ -17,6 +16,22 @@ elements:
     text: 'Die ATE Bus AG ist nicht nur ein sehr fortschrittliches Transportunternehmen im öffentlichen Verkehr, sondern auch ein attraktiver Arbeitgeber.'
     type: hero
     enabled: true
+    editor_content:
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Die ATE Bus AG ist nicht nur ein sehr fortschrittliches Transportunternehmen im öffentlichen Verkehr, sondern auch ein attraktiver Arbeitgeber.'
+    show_content: true
+    hero_editor_content:
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Die ATE Bus AG ist nicht nur ein sehr fortschrittliches Transportunternehmen im öffentlichen Verkehr, sondern auch ein attraktiver Arbeitgeber.'
+show_job_teaser: true
 ---
 ## Welcome to your brand new Statamic site!
 

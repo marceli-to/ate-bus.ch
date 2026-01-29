@@ -1,8 +1,8 @@
 @import "tailwindcss";
-
 @import "./theme/colors.css";
 @import "./theme/fonts.css";
 @import "./theme/spacing.css";
+@import "./animations.css";
 
 @source "../views";
 @source "../../content";
@@ -14,12 +14,14 @@
 }
 
 @theme {
-  --max-width-container: 100rem; /* 1600px */
+  --max-width-outer-container: 120rem; /* 1920px */
+  --max-width-inner-container: 100rem; /* 1600px */
 }
 
 [x-cloak] {
   @apply !hidden;
 }
+
 
 .debug-grid {
   @apply bg-yellow-50/50;

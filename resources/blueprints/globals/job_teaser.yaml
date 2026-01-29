@@ -1,0 +1,27 @@
+title: 'Job Teaser'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: image
+            field:
+              type: assets
+              display: Bild
+              container: assets
+              max_files: 1
+              localizable: true
+          -
+            handle: title
+            field:
+              type: text
+              display: Titel
+              localizable: true
+          -
+            import: editor
+            prefix: job_teaser_
+          -
+            import: link
+            prefix: job_teaser_

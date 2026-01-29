@@ -8,9 +8,9 @@ tree:
   -
     entry: jobs
   -
-    entry: kontakt
-  -
     entry: ueber-uns
+  -
+    entry: kontakt
   -
     entry: impressum
   -

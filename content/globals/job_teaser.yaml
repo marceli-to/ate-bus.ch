@@ -1,0 +1,14 @@
+title: 'Job Teaser'
+data:
+  image: dummy/bus-mood.jpg
+  title: 'Aktuelle Jobangebote'
+  job_teaser_editor_content:
+    -
+      type: paragraph
+      content:
+        -
+          type: text
+          text: "Die ATE Bus AG ist nicht nur ein sehr fortschrittliches Transportunternehmen\Lim öffentlichen Verkehr, sondern auch ein attraktiver Arbeitgeber."
+  job_teaser_link_url: 'entry::jobs'
+  job_teaser_link_title: 'Mehr erfahren'
+  job_teaser_link_target: _self

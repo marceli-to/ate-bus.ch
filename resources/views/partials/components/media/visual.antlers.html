@@ -1,0 +1,30 @@
+{{#
+  @name Visual
+  @param {object} image - Visual background image asset
+  @param {string} class - Additional classes
+#}}
+
+<div class="relative w-full {{ class }}">
+  
+  {{ partial:components/media/image
+    :image="image"
+    :sizes="['md', 'lg', 'xl', '2xl']"
+    preset="hero"
+    class="w-full h-full aspect-[16/9] md:aspect-[16/8] xl:aspect-[16/6] 2xl:aspect-[16/5] object-cover"
+    eager="true"
+  }}
+
+  <div
+    class="
+      block
+      absolute
+      -bottom-1
+      right-0
+      w-60
+      h-[50%]
+      md:w-110
+      md:h-[60%]
+      bg-white
+      [clip-path:polygon(100%_0%,100%_100%,0%_100%)]">
+  </div>
+</div>

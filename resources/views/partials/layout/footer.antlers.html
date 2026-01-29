@@ -1,5 +1,8 @@
+{{ if show_job_teaser }}
+  {{ partial:components/misc/job-teaser }}
+{{ /if }}
 <footer class="bg-blue-primary text-white text-xs xl:text-sm leading-[1.5] py-24 lg:py-32">
-  {{ partial:layout/container }}
+  {{ partial:layout/container class="max-w-inner-container" }}
     <div class="grid grid-cols-12 gap-16 lg:gap-32">
       <div class="col-span-12 md:col-span-9 xl:col-span-10 flex flex-col md:flex-row gap-y-16 md:items-end md:gap-x-48 xl:gap-x-60">
         <div class="flex flex-col">

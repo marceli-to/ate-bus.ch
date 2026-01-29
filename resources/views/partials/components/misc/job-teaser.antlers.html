@@ -1,0 +1,50 @@
+
+{{ job_teaser }}
+
+  <div class="relative flex flex-col justify-center py-20 md:py-40 xl:py-60">
+
+    {{ partial:components/media/image
+      :image="image"
+      :sizes="['md', 'lg', 'xl', '2xl']"
+      preset="teaser"
+      class="w-full h-full object-cover absolute left-0 top-0 z-10"
+      eager="true"
+    }}
+
+    <div class="absolute z-20 inset-0 bg-blue-black/80"></div>
+
+    <div class="relative z-30 w-full">
+
+      {{ partial:layout/container class="max-w-inner-container w-full" }}
+
+        <div class="max-w-3xl text-white text-balance flex flex-col gap-y-16 md:gap-y-24 xl:gap-y-32">
+
+          {{ if title }}
+            {{ partial:components/headings/h2 class="text-xl md:text-3xl xl:text-4xl 2xl:text-5xl font-medium" }}
+              {{ title }}
+            {{ /partial:components/headings/h2 }}
+          {{ /if }}
+
+          {{ if job_teaser_editor_content }}
+            <div>
+              {{ job_teaser_editor_content }}
+            </div>
+          {{ /if }}
+
+          {{ if job_teaser_link_url }}
+            <div>
+              {{ partial:components/buttons/primary :href="job_teaser_link_url" :target="job_teaser_link_target" variant="light" }}
+                {{ job_teaser_link_title ?? 'Mehr erfahren' }}
+              {{ /partial:components/buttons/primary }}
+            </div>
+          {{ /if }}
+
+        </div>
+
+      {{ /partial:layout/container }}
+
+    </div>
+
+  </div>
+  
+{{ /job_teaser }}

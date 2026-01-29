@@ -1,0 +1,29 @@
+title: Link
+fields:
+  -
+    handle: link_url
+    field:
+      type: link
+      display: Link
+      collections:
+        - pages
+      localizable: true
+      container: assets
+  -
+    handle: link_title
+    field:
+      type: text
+      display: Link-Text
+      localizable: true
+      width: 50
+  -
+    handle: link_target
+    field:
+      type: select
+      display: Ziel
+      options:
+        _self: 'Gleiches Fenster'
+        _blank: 'Neues Fenster'
+      default: _self
+      localizable: true
+      width: 50

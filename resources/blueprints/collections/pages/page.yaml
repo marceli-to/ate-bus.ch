@@ -30,6 +30,13 @@ tabs:
                       fields:
                         -
                           import: hero
+                    visual:
+                      display: Visual
+                      icon: media-image-picture-orientation
+                      instructions: 'Bild mit diagonalem Element'
+                      fields:
+                        -
+                          import: visual
   settings:
     display: Settings
     sections:

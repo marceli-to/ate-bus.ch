@@ -1,0 +1,12 @@
+@keyframes slide-in {
+  from {
+    transform: translateX(calc(-100% - var(--spacing-60)));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@utility animate-slide-in {
+  animation: slide-in 0.6s ease-out 0.3s both;
+}

@@ -1,4 +1,8 @@
 {{ if type == 'hero' }}
-  {{ partial:components/media/hero :image="image" :title="title" :text="text" }}
+  {{ partial:components/media/hero :image="image" :title="title" :hero_editor_content="hero_editor_content" }}
+{{ /if }}
+
+{{ if type == 'visual' }}
+  {{ partial:components/media/visual :image="image" }}
 {{ /if }}
 

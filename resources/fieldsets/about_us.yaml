@@ -1,0 +1,44 @@
+title: 'Über uns'
+fields:
+  -
+    import: title_text
+  -
+    handle: about_us_items
+    field:
+      type: replicator
+      display: Items
+      collapse: false
+      sets:
+        item:
+          display: Item
+          fields:
+            -
+              handle: icon
+              field:
+                type: select
+                display: Icon
+                options:
+                  car: Auto
+                  glasses: Brille
+                  handshake: Handschlag
+                  headphones: Kopfhörer
+                  key: Schlüssel
+                  leaf: Blatt
+                  marker: Marker
+                  open-book: Zertifikat
+                  park: Park
+                  people-couple: Paar
+                  people-group: Gruppe
+                  purse: Tasche
+                  smartphone: Smartphone
+                  thumbs-up: Daumen hoch
+                  train: Zug
+                  umbrella: Regenschirm
+                  wallet: Portemonnaie
+                width: 33
+            -
+              handle: title
+              field:
+                type: text
+                display: Titel
+                width: 66

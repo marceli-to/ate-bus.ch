@@ -1,0 +1,14 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-24 lg:gap-x-32 gap-y-24 md:gap-y-32 lg:gap-y-40">
+  {{ items }}
+    <div class="flex items-center gap-x-16 md:gap-x-20">
+      {{ if icon }}
+        <div class="w-32 h-32 md:w-40 md:h-40 xl:w-48 xl:h-48 text-blue-primary shrink-0">
+          {{ partial src="components/icons/{icon}" class="w-full h-full" }}
+        </div>
+      {{ /if }}
+      {{ if title }}
+        <span class="text-xs md:text-sm xl:text-md">{{ title }}</span>
+      {{ /if }}
+    </div>
+  {{ /items }}
+</div>

@@ -50,6 +50,13 @@ tabs:
                       fields:
                         -
                           import: jobs
+                    about_us:
+                      display: 'Über uns'
+                      instructions: 'Über uns mit Text und Icons'
+                      icon: information-circle
+                      fields:
+                        -
+                          import: about_us
                     benefits:
                       display: Benefits
                       instructions: 'Benefits mit Icons'

@@ -6,7 +6,7 @@ workload: '(70–100 %)'
 short_description: 'In der Nähe von Effretikon ZH'
 file: downloads/job.pdf
 updated_by: ad7fe3d0-f296-4490-a384-26cbf688e223
-updated_at: 1769711909
+updated_at: 1769759715
 job_editor_content:
   -
     type: bulletList
@@ -19,7 +19,16 @@ job_editor_content:
             content:
               -
                 type: text
-                text: 'In der Nähe von Effretikon ZHErfahrung im Linienbusverkehr'
+                text: 'In der Nähe von Effretikon ZH'
+      -
+        type: listItem
+        content:
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                text: 'Erfahrung im Linienbusverkehr'
       -
         type: listItem
         content:

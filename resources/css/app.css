@@ -32,7 +32,7 @@
 }
 
 article ul {
-  @apply list-disc list-inside m-0;
+  @apply list-disc m-0 ml-16;
 }
 
 article li {

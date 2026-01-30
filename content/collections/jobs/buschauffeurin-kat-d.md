@@ -16,7 +16,16 @@ job_editor_content:
             content:
               -
                 type: text
-                text: 'In der Nähe von Effretikon ZHErfahrung im Linienbusverkehr'
+                text: 'In der Nähe von Effretikon ZH'
+      -
+        type: listItem
+        content:
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                text: 'Erfahrung im Linienbusverkehr'
       -
         type: listItem
         content:
@@ -64,5 +73,5 @@ job_editor_content:
                 text: 'Mindestens Aufenthaltsbewilligung B'
 file: downloads/job.pdf
 updated_by: ad7fe3d0-f296-4490-a384-26cbf688e223
-updated_at: 1769711832
+updated_at: 1769759711
 ---

@@ -11,3 +11,9 @@ preferences:
         - floor
         - price
         - state
+    bewerbungen:
+      columns:
+        - title
+        - city
+        - email
+        - job_id

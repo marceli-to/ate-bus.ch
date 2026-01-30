@@ -1,0 +1,107 @@
+title: Bewerbung
+tabs:
+  applicant:
+    display: Bewerber
+    sections:
+      -
+        fields:
+          -
+            handle: job_id
+            field:
+              type: entries
+              display: Stelle
+              collections:
+                - jobs
+              max_items: 1
+          -
+            handle: submitted_at
+            field:
+              type: text
+              display: Eingereicht am
+              read_only: true
+          -
+            handle: dossier_url
+            field:
+              type: text
+              display: Download Dossier
+              read_only: true
+          -
+            handle: gender
+            field:
+              type: select
+              display: Anrede
+              options:
+                frau: Frau
+                herr: Herr
+          -
+            handle: firstname
+            field:
+              type: text
+              display: Vorname
+          -
+            handle: lastname
+            field:
+              type: text
+              display: Nachname
+          -
+            handle: street
+            field:
+              type: text
+              display: Strasse
+          -
+            handle: zip
+            field:
+              type: text
+              display: PLZ
+          -
+            handle: city
+            field:
+              type: text
+              display: Ort
+          -
+            handle: phone
+            field:
+              type: text
+              display: Telefon
+          -
+            handle: email
+            field:
+              type: text
+              display: E-Mail
+              input_type: email
+          -
+            handle: german_skills
+            field:
+              type: select
+              display: Deutschkenntnisse
+              options:
+                muttersprache: Muttersprache
+                gut: Gut
+                grundkenntnisse: Grundkenntnisse
+          -
+            handle: permit
+            field:
+              type: select
+              display: Bewilligung
+              options:
+                schweizer: 'Schweizer:in'
+                b: Ausweis B
+                c: Ausweis C
+                g: Ausweis G
+                eu_efta: EU/EFTA
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Title
+              read_only: true
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true

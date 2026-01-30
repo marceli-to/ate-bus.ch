@@ -123,4 +123,15 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'file'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Application HR Email
+    |--------------------------------------------------------------------------
+    |
+    | Email address where job application notifications will be sent.
+    |
+    */
+
+    'application_hr_email' => env('APPLICATION_HR_EMAIL'),
+
 ];

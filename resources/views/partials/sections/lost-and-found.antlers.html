@@ -1,4 +1,4 @@
-<section class="my-40 md:my-80 xl:my-120">
+<section class="mt-20 md:mt-40 xl:mt-60 mb-60 md:mb-80 xl:mb-120">
 
   {{ partial:layout/container class="max-w-inner-container" }}
 
@@ -10,13 +10,13 @@
 
           {{ if lost_and_found_title_text_heading_type == 'h2' }}
 
-            {{ partial:components/headings/h2 class="font-medium text-xl md:text-3xl xl:text-4xl 2xl:text-5xl mb-12 lg:mb-16" }}
+            {{ partial:components/headings/h2 class="mb-12 lg:mb-16" }}
               {{ lost_and_found_title_text_title }}
             {{ /partial:components/headings/h2 }}
 
           {{ else }}
 
-            {{ partial:components/headings/h1 class="font-medium text-2xl md:text-4xl xl:text-5xl 2xl:text-6xl leading-[1.1] mb-12 lg:mb-16" }}
+            {{ partial:components/headings/h1 }}
               {{ lost_and_found_title_text_title }}
             {{ /partial:components/headings/h1 }}
 
@@ -52,7 +52,7 @@
       <div class="col-span-12 md:col-span-5 flex flex-col justify-center gap-y-12 md:gap-y-16 xl:gap-y-24 py-20 md:py-40 xl:py-80">
 
         {{ if lost_and_found_location_title }}
-          {{ partial:components/headings/h2 class="text-xl md:text-3xl xl:text-4xl 2xl:text-5xl font-medium" }}
+          {{ partial:components/headings/h2 }}
             {{ lost_and_found_location_title }}
           {{ /partial:components/headings/h2 }}
         {{ /if }}

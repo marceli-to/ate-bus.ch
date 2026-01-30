@@ -56,9 +56,37 @@ elements:
         enabled: true
     type: about_us
     enabled: true
+  -
+    id: ml12npyn
+    title_text_heading_type: h2
+    title_text_title: Medien
+    title_text_editor_content:
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Hier finden Sie die Links zu den Presseberichten unserer Partner.'
+    media_links:
+      -
+        id: ml12o1lw
+        link_url: 'https://google.ch'
+        link_title: 'VBG Medien'
+        link_target: _blank
+        type: link
+        enabled: true
+      -
+        id: ml12odz9
+        link_url: 'https://google.ch'
+        link_title: 'VBZ Medien'
+        link_target: _blank
+        type: link
+        enabled: true
+    type: media
+    enabled: true
 open_graph_type: website
 robots: index_follow
 updated_by: ad7fe3d0-f296-4490-a384-26cbf688e223
-updated_at: 1769788313
+updated_at: 1769789014
 show_job_teaser: true
 ---

@@ -25,9 +25,9 @@
         {{ /if }}
 
         {{ if lost_and_found_title_text_editor_content }}
-          <article class="text-pretty">
+          {{ partial:layout/article }}
             {{ lost_and_found_title_text_editor_content }}
-          </article>
+          {{ /partial:layout/article }}
         {{ /if }}
 
       </div>
@@ -57,19 +57,19 @@
           {{ /partial:components/headings/h2 }}
         {{ /if }}
 
-        {{ if lost_and_found_address }}
+        {{ if lost_and_found:address }}
           <div>
-            {{ lost_and_found_address | nl2br }}
+            {{ lost_and_found:address | nl2br }}
           </div>
         {{ /if }}
 
-        {{ if lost_and_found_opening_hours }}
+        {{ if lost_and_found:opening_hours }}
           <div>
             <span class="block font-semibold text-lg md:text-xl mb-8">
               Öffnungszeiten
             </span>
             <div>
-              {{ lost_and_found_opening_hours | nl2br }}
+              {{ lost_and_found:opening_hours | nl2br }}
             </div>
           </div>
         {{ /if }}

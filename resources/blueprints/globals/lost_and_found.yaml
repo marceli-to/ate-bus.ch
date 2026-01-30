@@ -1,0 +1,25 @@
+title: Fundbüro
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Titel
+              localizable: true
+          -
+            handle: address
+            field:
+              type: textarea
+              display: Adresse
+              localizable: true
+          -
+            handle: opening_hours
+            field:
+              type: textarea
+              display: Öffnungszeiten
+              localizable: true

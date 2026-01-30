@@ -1,0 +1,16 @@
+title: Medien
+fields:
+  -
+    import: title_text
+  -
+    handle: media_links
+    field:
+      type: replicator
+      display: Links
+      collapse: false
+      sets:
+        link:
+          display: Link
+          fields:
+            -
+              import: link

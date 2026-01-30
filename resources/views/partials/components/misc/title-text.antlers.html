@@ -17,9 +17,9 @@
       {{ /if }}
 
       {{ if title_text_editor_content }}
-        <article class="text-pretty">
+        {{ partial:layout/article }}
           {{ title_text_editor_content }}
-        </article>
+        {{ /partial:layout/article }}
       {{ /if }}
 
     </div>

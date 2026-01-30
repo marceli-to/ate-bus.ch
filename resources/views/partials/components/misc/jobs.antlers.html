@@ -17,9 +17,9 @@
       {{ /if }}
 
       {{ if jobs_title_text_editor_content }}
-        <article class="text-pretty">
+        {{ partial:layout/article }}
           {{ jobs_title_text_editor_content }}
-        </article>
+        {{ /partial:layout/article }}
       {{ /if }}
 
     </div>
@@ -61,7 +61,7 @@
 
                 <div class="col-span-12 lg:col-span-7">
                   <div>
-                    <div data-application-form data-job-id="{{ id }}"></div>
+                    <div data-application-form data-job-id="{{ id }}" data-variant="white"></div>
                   </div>
                 </div>
 

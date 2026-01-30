@@ -57,6 +57,13 @@ tabs:
                       fields:
                         -
                           import: about_us
+                    media:
+                      display: Medien
+                      instructions: 'Medien mit Links'
+                      icon: content-book-open
+                      fields:
+                        -
+                          import: media
                     benefits:
                       display: Benefits
                       instructions: 'Benefits mit Icons'

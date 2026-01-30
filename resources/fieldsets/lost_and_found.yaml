@@ -9,16 +9,6 @@ fields:
       type: text
       display: 'Standort Titel'
   -
-    handle: lost_and_found_address
-    field:
-      type: textarea
-      display: Adresse
-  -
-    handle: lost_and_found_opening_hours
-    field:
-      type: textarea
-      display: Öffnungszeiten
-  -
     handle: lost_and_found_image
     field:
       max_files: 1

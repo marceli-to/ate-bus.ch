@@ -1,0 +1,27 @@
+title: Fundbüro
+fields:
+  -
+    import: title_text
+    prefix: lost_and_found_
+  -
+    handle: lost_and_found_location_title
+    field:
+      type: text
+      display: 'Standort Titel'
+  -
+    handle: lost_and_found_address
+    field:
+      type: textarea
+      display: Adresse
+  -
+    handle: lost_and_found_opening_hours
+    field:
+      type: textarea
+      display: Öffnungszeiten
+  -
+    handle: lost_and_found_image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: Bild

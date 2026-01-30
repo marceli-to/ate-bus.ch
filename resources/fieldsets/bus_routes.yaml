@@ -1,0 +1,60 @@
+title: Buslinien
+fields:
+  -
+    import: title_text
+    prefix: bus_routes_
+  -
+    handle: bus_routes_partners
+    field:
+      type: replicator
+      display: Partner
+      collapse: true
+      sets:
+        main:
+          display: Main
+          sets:
+            partner:
+              display: Partner
+              fields:
+                -
+                  handle: logo
+                  field:
+                    type: select
+                    display: Logo
+                    options:
+                      vbg: VBG
+                      vbz: VBZ
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Titel
+                    width: 50
+                -
+                  handle: subtitle
+                  field:
+                    type: text
+                    display: Untertitel
+                    width: 50
+                -
+                  handle: lines
+                  field:
+                    type: replicator
+                    display: Linien
+                    collapse: true
+                    sets:
+                      line:
+                        display: Linie
+                        fields:
+                          -
+                            handle: number
+                            field:
+                              type: text
+                              display: Liniennummer
+                              width: 33
+                          -
+                            handle: route
+                            field:
+                              type: text
+                              display: Strecke
+                              width: 66

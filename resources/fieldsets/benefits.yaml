@@ -1,0 +1,47 @@
+title: Benefits
+fields:
+  -
+    handle: benefits_title
+    field:
+      type: text
+      display: Titel
+  -
+    handle: benefits_items
+    field:
+      type: replicator
+      display: Benefits
+      collapse: false
+      sets:
+        benefit:
+          display: Benefit
+          fields:
+            -
+              handle: icon
+              field:
+                type: select
+                display: Icon
+                options:
+                  car: Auto
+                  glasses: Brille
+                  handshake: Handschlag
+                  headphones: Kopfhörer
+                  key: Schlüssel
+                  leaf: Blatt
+                  marker: Marker
+                  open-book: Zertifikat
+                  park: Park
+                  people-couple: Paar
+                  people-group: Gruppe
+                  purse: Tasche
+                  smartphone: Smartphone
+                  thumbs-up: Daumen hoch
+                  train: Zug
+                  umbrella: Regenschirm
+                  wallet: Portemonnaie
+                width: 33
+            -
+              handle: title
+              field:
+                type: text
+                display: Titel
+                width: 66

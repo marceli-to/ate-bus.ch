@@ -31,6 +31,14 @@
   @apply outline outline-1 outline-yellow-500/50;
 }
 
+article a {
+  @apply font-semibold underline underline-offset-4 hover:no-underline
+}
+
+article p:not(:last-of-type) {
+  @apply mb-12 xl:mb-20
+}
+
 article ul {
   @apply list-disc m-0 ml-16;
 }

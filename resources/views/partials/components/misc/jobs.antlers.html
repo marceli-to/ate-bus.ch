@@ -17,14 +17,14 @@
       {{ /if }}
 
       {{ if jobs_title_text_editor_content }}
-        <div class="text-pretty">
+        <article class="text-pretty">
           {{ jobs_title_text_editor_content }}
-        </div>
+        </article>
       {{ /if }}
 
     </div>
 
-    <div class="space-y-20">
+    <div class="space-y-20 mt-20 md:mt-32 xl:mt-40">
       {{ collection:jobs }}
 
         {{ partial:components/accordion/wrapper }}

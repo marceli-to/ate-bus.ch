@@ -1,4 +1,4 @@
-title: Buslinien
+title: 'Buslinien Teaser'
 fields:
   -
     handle: teaser_bus_routes_title
@@ -10,7 +10,6 @@ fields:
     field:
       type: replicator
       display: Linien
-      collapse: false
       sets:
         line:
           display: Linie

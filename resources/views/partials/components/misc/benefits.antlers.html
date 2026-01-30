@@ -1,0 +1,30 @@
+<section class="py-20 md:py-40 xl:py-80 bg-light-grey-bg">
+
+  {{ partial:layout/container class="max-w-inner-container" }}
+
+    {{ if benefits_title }}
+      {{ partial:components/headings/h2 class="text-xl md:text-3xl xl:text-4xl 2xl:text-5xl font-medium mb-16 md:mb-24 lg:mb-36" }}
+        {{ benefits_title }}
+      {{ /partial:components/headings/h2 }}
+    {{ /if }}
+
+    {{ if benefits_items }}
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-24 lg:gap-x-32 gap-y-24 md:gap-y-32 lg:gap-y-40">
+        {{ benefits_items }}
+          <div class="flex items-center gap-x-16 md:gap-x-20">
+            {{ if icon }}
+              <div class="w-32 h-32 md:w-40 md:h-40 xl:w-48 xl:h-48 text-blue-primary shrink-0">
+                {{ partial src="components/icons/{icon}" class="w-full h-full" }}
+              </div>
+            {{ /if }}
+            {{ if title }}
+              <span class="text-xs md:text-sm xl:text-md">{{ title }}</span>
+            {{ /if }}
+          </div>
+        {{ /benefits_items }}
+      </div>
+    {{ /if }}
+
+  {{ /partial:layout/container }}
+
+</section>

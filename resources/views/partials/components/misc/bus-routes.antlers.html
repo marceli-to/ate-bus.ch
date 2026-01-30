@@ -1,0 +1,90 @@
+<section class="my-40 md:my-80 xl:my-120">
+
+  {{ partial:layout/container class="max-w-inner-container" }}
+
+    <div class="md:max-w-[80%] xl:max-w-[70%]">
+
+      {{ if bus_routes_title_text_title }}
+        {{ if bus_routes_title_text_heading_type == 'h2' }}
+          {{ partial:components/headings/h2 class="text-xl md:text-3xl xl:text-4xl 2xl:text-5xl font-medium mb-12 lg:mb-16" }}
+            {{ bus_routes_title_text_title }}
+          {{ /partial:components/headings/h2 }}
+        {{ else }}
+          {{ partial:components/headings/h1 class="font-medium text-2xl md:text-4xl xl:text-5xl 2xl:text-6xl leading-[1.1] mb-12 lg:mb-16" }}
+            {{ bus_routes_title_text_title }}
+          {{ /partial:components/headings/h1 }}
+        {{ /if }}
+      {{ /if }}
+
+      {{ if bus_routes_title_text_editor_content }}
+        <article class="text-pretty">
+          {{ bus_routes_title_text_editor_content }}
+        </article>
+      {{ /if }}
+
+    </div>
+
+    {{ if bus_routes_partners }}
+    
+      <div class="space-y-20 mt-40 md:mt-60 xl:mt-80">
+
+        {{ bus_routes_partners }}
+
+          {{ partial:components/accordion/wrapper class="flex flex-col gap-y-4" }}
+          
+            {{ partial:components/accordion/item :id="id" }}
+
+              {{ partial:components/accordion/button }}
+                <div class="flex justify-start items-center gap-x-16 md:gap-x-20 xl:gap-x-32">
+                    {{ if logo }}
+                      <div class="hidden sm:block w-120 md:w-160 xl:w-180 h-autoshrink-0">
+                        {{ partial src="components/logos/partners/{logo}" }}
+                      </div>
+                    {{ /if }}
+                    <div class="flex flex-col">
+                      {{ if title }}
+                        {{ partial:components/headings/h3 class="text-lg md:text-xl xl:text-3xl font-bold" }}
+                          {{ title }}
+                        {{ /partial:components/headings/h3 }}
+                      {{ /if }}
+                      {{ if subtitle }}
+                        <span>{{ subtitle }}</span>
+                      {{ /if }}
+                    </div>
+                </div>
+              {{ /partial:components/accordion/button }}
+
+              {{ partial:components/accordion/content }}
+                {{ if lines }}
+                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16 xl:gap-20">
+                    {{ lines }}
+                      <div class="bg-white p-12 md:p-16 xl:p-20">
+                        {{ if number }}
+                          <span class="block text-lg md:text-xl xl:text-3xl font-bold mb-4 md:mb-6 xl:mb-8">
+                            {{ number }}
+                          </span>
+                        {{ /if }}
+                        {{ if route }}
+                          <span>
+                            {{ route }}
+                          </span>
+                        {{ /if }}
+                      </div>
+                    {{ /lines }}
+                  </div>
+                {{ /if }}
+              {{ /partial:components/accordion/content }}
+
+            {{ /partial:components/accordion/item }}
+              
+          {{ /partial:components/accordion/wrapper }}
+
+        {{ /bus_routes_partners }}
+
+      </div>
+
+    {{ /if }}
+
+  {{ /partial:layout/container }}
+
+</section>

@@ -24,14 +24,14 @@ tabs:
                   sets:
                     hero:
                       display: Hero
-                      instructions: 'Hero-Bereich mit Bild und Text-Overlay'
+                      instructions: 'Hero mit Bild und Text'
                       icon: media-image-picture-orientation
                       fields:
                         -
                           import: hero
                     visual:
                       display: Visual
-                      instructions: 'Bild mit diagonalem Element'
+                      instructions: 'Headerbild'
                       icon: media-image-picture-orientation
                       fields:
                         -
@@ -50,6 +50,27 @@ tabs:
                       fields:
                         -
                           import: jobs
+                    benefits:
+                      display: Benefits
+                      instructions: 'Benefits mit Icons'
+                      icon: content-list-bullets
+                      fields:
+                        -
+                          import: benefits
+                    bus_routes:
+                      display: Buslinien
+                      instructions: 'Buslinien mit Akkordeon'
+                      icon: pin-location-road
+                      fields:
+                        -
+                          import: bus_routes
+                    lost_and_found:
+                      display: Fundbüro
+                      instructions: 'Fundbüro mit Formular und Standort'
+                      icon: pin-search
+                      fields:
+                        -
+                          import: lost_and_found
                 teaser:
                   display: Teaser
                   sets:

@@ -22,3 +22,15 @@
   {{ partial:components/misc/jobs }}
 {{ /if }}
 
+{{ if type == 'benefits' }}
+  {{ partial:components/misc/benefits }}
+{{ /if }}
+
+{{ if type == 'bus_routes' }}
+  {{ partial:components/misc/bus-routes }}
+{{ /if }}
+
+{{ if type == 'lost_and_found' }}
+  {{ partial:components/misc/lost-and-found }}
+{{ /if }}
+

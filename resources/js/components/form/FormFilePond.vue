@@ -206,6 +206,10 @@ const handleError = (error) => {
   font-size: 0.875rem;
 }
 
+.filepond-wrapper .filepond--root {
+  margin-bottom: 0 !important;
+}
+
 /* No rounded borders */
 .filepond-wrapper .filepond--root,
 .filepond-wrapper .filepond--panel,
@@ -215,9 +219,9 @@ const handleError = (error) => {
   border-radius: 0 !important;
 }
 
-/* Error state */
+/* Error state - keep neutral background */
 .filepond-error .filepond--panel-root {
-  background-color: rgba(235, 0, 0, 0.1) !important;
+  background-color: #f9f9f9 !important;
 }
 
 /* Drag-over state */
@@ -225,7 +229,11 @@ const handleError = (error) => {
   background-color: rgba(2, 82, 159, 0.15) !important;
 }
 
-/* Error state styling */
+/* Error state styling - neutral item background */
+.filepond-wrapper [data-filepond-item-state*="error"] .filepond--item-panel {
+  background-color: #686868 !important;
+}
+
 .filepond-wrapper [data-filepond-item-state*="error"] .filepond--file-info {
   display: none !important;
 }

@@ -1,0 +1,38 @@
+title: Buslinie
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Liniennummer
+              required: true
+          -
+            handle: destination
+            field:
+              type: text
+              display: Strecke
+              required: true
+          -
+            handle: partner
+            field:
+              type: select
+              display: Partner
+              options:
+                vbg: VBG
+                vbz: VBZ
+              required: true
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true

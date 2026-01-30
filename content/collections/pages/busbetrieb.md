@@ -19,78 +19,18 @@ elements:
         title: 'Verkehrsbetrieb Glattal'
         subtitle: 'Region Glattal und Umgebung'
         lines:
-          -
-            id: ml0vepku
-            number: 'VBG 640'
-            route: 'Weisslingen, Bergwiesenstrasse – Illnau, Bahnhof'
-            type: line
-            enabled: true
-          -
-            id: ml0vep01
-            number: 'VBG 650'
-            route: 'Winterberg ZH, Wältiwis – Effretikon, Bahnhof'
-            type: line
-            enabled: true
-          -
-            id: ml0vep02
-            number: 'VBG 652'
-            route: 'Illnau, Bahnhof – Effretikon, Bahnhof'
-            type: line
-            enabled: true
-          -
-            id: ml0vep03
-            number: 'VBG 655'
-            route: 'Kyburg, Dorf – Effretikon, Bahnhof'
-            type: line
-            enabled: true
-          -
-            id: ml0vep04
-            number: 'VBG 656'
-            route: 'Breite b. N., Sternen – Effretikon, Bahnhof'
-            type: line
-            enabled: true
-          -
-            id: ml0vep05
-            number: 'VBG 657'
-            route: 'Winterberg ZH, Dorf – Effretikon, Bahnhof'
-            type: line
-            enabled: true
-          -
-            id: ml0vep06
-            number: 'VBG 658'
-            route: 'Breite b. N., Sternen – Effretikon, Bahnhof'
-            type: line
-            enabled: true
-          -
-            id: ml0vep07
-            number: 'VBG 659'
-            route: 'Breite b. N., Wintherturerstr. – Effretikon, Bahnhof'
-            type: line
-            enabled: true
-          -
-            id: ml0vep08
-            number: 'VBG 662'
-            route: 'Brütten, Harossen – Effretikon, Bahnhof'
-            type: line
-            enabled: true
-          -
-            id: ml0vep09
-            number: 'VBG 765'
-            route: 'Zürich Flughafen, Bahnhof – Dietlikon, Bahnhof/Bad'
-            type: line
-            enabled: true
-          -
-            id: ml0vep10
-            number: 'VBG N62'
-            route: 'Effretikon, Bahnhof – Agasul'
-            type: line
-            enabled: true
-          -
-            id: ml0vep11
-            number: 'VBG N70'
-            route: 'Schwerzenbach ZH, Bahnhof – Pfäffikon ZH, Steinwiesstrasse'
-            type: line
-            enabled: true
+          - 845c3bde-1dd0-4ded-a5db-6b3d87253823
+          - 09a9708f-cf35-4a6c-b2d4-18bb9d89cd8b
+          - a16ef366-37ab-4002-8461-5408e199a6bf
+          - 30cfdf75-fa1e-472a-a524-f61641131501
+          - 01fa74d0-48ea-4128-9020-ae5c09b8306a
+          - d7641c97-656b-4389-97c1-454afae50257
+          - 53260d1a-2bc2-4872-acb3-93d32a127d23
+          - c1f8fc18-b4ad-444f-856d-46ca2b512b00
+          - fb3bda01-bfe4-4151-b6fc-bd61ce5d9cb4
+          - 39f779c1-98b4-4185-b71a-4538a0d68b09
+          - 40e92bc4-5700-4bf2-a055-3040a1b3105d
+          - e9cb1925-8dc9-4fe7-996b-e4ede46f04c7
         type: partner
         enabled: true
       -
@@ -99,78 +39,18 @@ elements:
         title: 'Verkehrsbetrieb Zürich'
         subtitle: 'Stadt Zürich und angrenzende Gebiete'
         lines:
-          -
-            id: ml0vfp01
-            number: 'VBZ 640'
-            route: 'Weisslingen, Bergwiesenstrasse – Illnau, Bahnhof'
-            type: line
-            enabled: true
-          -
-            id: ml0vfp02
-            number: 'VBZ 650'
-            route: 'Winterberg ZH, Wältiwis – Effretikon, Bahnhof'
-            type: line
-            enabled: true
-          -
-            id: ml0vfp03
-            number: 'VBZ 652'
-            route: 'Illnau, Bahnhof – Effretikon, Bahnhof'
-            type: line
-            enabled: true
-          -
-            id: ml0vfp04
-            number: 'VBZ 655'
-            route: 'Kyburg, Dorf – Effretikon, Bahnhof'
-            type: line
-            enabled: true
-          -
-            id: ml0vfp05
-            number: 'VBZ 656'
-            route: 'Breite b. N., Sternen – Effretikon, Bahnhof'
-            type: line
-            enabled: true
-          -
-            id: ml0vfp06
-            number: 'VBZ 657'
-            route: 'Winterberg ZH, Dorf – Effretikon, Bahnhof'
-            type: line
-            enabled: true
-          -
-            id: ml0vfp07
-            number: 'VBZ 658'
-            route: 'Breite b. N., Sternen – Effretikon, Bahnhof'
-            type: line
-            enabled: true
-          -
-            id: ml0vfp08
-            number: 'VBZ 659'
-            route: 'Breite b. N., Wintherturerstr. – Effretikon, Bahnhof'
-            type: line
-            enabled: true
-          -
-            id: ml0vfp09
-            number: 'VBZ 662'
-            route: 'Brütten, Harossen – Effretikon, Bahnhof'
-            type: line
-            enabled: true
-          -
-            id: ml0vfp10
-            number: 'VBZ 765'
-            route: 'Zürich Flughafen, Bahnhof – Dietlikon, Bahnhof/Bad'
-            type: line
-            enabled: true
-          -
-            id: ml0vfp11
-            number: 'VBZ N62'
-            route: 'Effretikon, Bahnhof – Agasul'
-            type: line
-            enabled: true
-          -
-            id: ml0vfp12
-            number: 'VBZ N70'
-            route: 'Schwerzenbach ZH, Bahnhof – Pfäffikon ZH, Steinwiesstrasse'
-            type: line
-            enabled: true
+          - bba97748-ae35-48b7-aa41-bb23a3596452
+          - b5bb9b78-d8ac-4586-8103-327d4ec25ab1
+          - 5646001d-2a1a-4242-8c06-92e25027633b
+          - ab137646-7acd-4d36-b406-8c78f457c212
+          - 164131f4-0aa4-45f1-a816-8e14d355b3cd
+          - 882ec396-1b0c-40c0-99c6-ee5a81b88664
+          - 4d34c3e1-73b8-49a8-8184-dc2b5ba30711
+          - b7c64c93-0793-4e21-a749-06b4b8f299c1
+          - c132f964-7d7d-4c84-a24e-a90945fefa04
+          - dfca21ff-ae9a-4da6-b60f-2f9c10cbb206
+          - 31adae19-02f2-4f15-8edc-3defecbc2b6a
+          - 4495e7c9-f702-4ecb-b944-622e366b4b90
         type: partner
         enabled: true
     type: bus_routes

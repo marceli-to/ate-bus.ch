@@ -1,0 +1,78 @@
+title: Verlustmeldung
+tabs:
+  main:
+    display: Meldung
+    sections:
+      -
+        fields:
+          -
+            handle: submitted_at
+            field:
+              type: text
+              display: Eingereicht am
+              read_only: true
+          -
+            handle: gender
+            field:
+              type: select
+              display: Anrede
+              options:
+                frau: Frau
+                herr: Herr
+          -
+            handle: firstname
+            field:
+              type: text
+              display: Vorname
+          -
+            handle: lastname
+            field:
+              type: text
+              display: Nachname
+          -
+            handle: email
+            field:
+              type: text
+              display: E-Mail
+              input_type: email
+          -
+            handle: phone
+            field:
+              type: text
+              display: Telefon
+          -
+            handle: date
+            field:
+              type: text
+              display: Datum
+          -
+            handle: time
+            field:
+              type: text
+              display: Uhrzeit
+          -
+            handle: bus_line
+            field:
+              type: text
+              display: Buslinie
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Beschreibung
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Title
+              read_only: true
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true

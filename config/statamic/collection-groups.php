@@ -16,7 +16,8 @@
  */
 return [
   'Formulare' => [
-    'Bewerbungen' => 'bewerbungen',
+    'Bewerbungen' => 'applications',
+    'Fundbüro' => 'lost_and_found',
   ],
 
 ];

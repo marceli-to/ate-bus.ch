@@ -30,7 +30,7 @@
     </table>
 
     <div style="padding-top: 30px">
-      <a href="{{ config('app.url') }}/cp/collections/bewerbungen/entries/{{ $applicationData['entry_id'] }}"
+      <a href="{{ config('app.url') }}/cp/collections/applications/entries/{{ $applicationData['entry_id'] }}"
           style="display: inline-block; padding: 12px 24px; background-color: #1a365d; color: white; text-decoration: none;">
           Bewerbungsdaten
       </a>

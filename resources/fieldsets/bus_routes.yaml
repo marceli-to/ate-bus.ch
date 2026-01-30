@@ -39,22 +39,9 @@ fields:
                 -
                   handle: lines
                   field:
-                    type: replicator
+                    type: entries
                     display: Linien
-                    collapse: true
-                    sets:
-                      line:
-                        display: Linie
-                        fields:
-                          -
-                            handle: number
-                            field:
-                              type: text
-                              display: Liniennummer
-                              width: 33
-                          -
-                            handle: route
-                            field:
-                              type: text
-                              display: Strecke
-                              width: 66
+                    collections:
+                      - bus_routes
+                    mode: select
+                    max_items: null

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col bg-white py-6 px-8 md:py-8 md:px-12">
+  <div class="flex flex-col py-6 px-8 md:py-8 md:px-12" :class="wrapperBgClass">
     <FormLabel
       :html-for="id"
       :required="required"
@@ -7,14 +7,15 @@
     >
       {{ error || label }}
     </FormLabel>
-    <div class="relative bg-blue-100">
+    <div class="relative">
       <select
         :id="id"
         :name="name"
         :value="modelValue"
         :disabled="disabled"
-        class="w-full py-4 xl:py-8 bg-white border-0 text-xs xl:text-sm appearance-none cursor-pointer focus:outline-none pr-16"
+        class="w-full py-4 xl:py-8 border-0 text-xs xl:text-sm appearance-none cursor-pointer focus:outline-none pr-16"
         :class="[
+          selectBgClass,
           !modelValue ? 'text-blue-gray/50' : 'text-blue-black'
         ]"
         @change="$emit('update:modelValue', $event.target.value)"
@@ -34,9 +35,11 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed, inject } from 'vue';
 import FormLabel from './FormLabel.vue';
 import IconChevronDown from '../icons/IconChevronDown.vue';
+
+const variant = inject('formVariant', 'white');
 
 const props = defineProps({
   modelValue: {
@@ -76,4 +79,14 @@ const props = defineProps({
 defineEmits(['update:modelValue', 'focus']);
 
 const id = computed(() => `form-${props.name}`);
+
+const wrapperBgClass = computed(() => ({
+  'bg-white': variant === 'white',
+  'bg-light-blue': variant === 'light-blue',
+}));
+
+const selectBgClass = computed(() => ({
+  'bg-white': variant === 'white',
+  'bg-light-blue': variant === 'light-blue',
+}));
 </script>

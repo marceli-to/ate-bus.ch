@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col bg-white p-8 md:py-8 md:px-12">
+  <div class="flex flex-col p-8 md:py-8 md:px-12" :class="wrapperBgClass">
     <FormLabel
       :required="required"
       :custom-class="error ? 'text-center text-error' : 'text-center'"
@@ -35,7 +35,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, inject, computed } from 'vue';
 import vueFilePond from 'vue-filepond';
 import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
 import FilePondPluginFileValidateSize from 'filepond-plugin-file-validate-size';
@@ -92,6 +92,13 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['update:modelValue', 'addfile']);
+
+const variant = inject('formVariant', 'white');
+
+const wrapperBgClass = computed(() => ({
+  'bg-white': variant === 'white',
+  'bg-light-blue': variant === 'light-blue',
+}));
 
 const pond = ref(null);
 const files = ref([]);

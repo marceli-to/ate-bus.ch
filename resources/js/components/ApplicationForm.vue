@@ -203,7 +203,8 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue';
+import { ref, reactive, provide } from 'vue';
+import axios from 'axios';
 import FormInput from './form/FormInput.vue';
 import FormSelect from './form/FormSelect.vue';
 import FormCheckbox from './form/FormCheckbox.vue';
@@ -216,7 +217,13 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  variant: {
+    type: String,
+    default: 'light-blue',
+  },
 });
+
+provide('formVariant', props.variant);
 
 const form = reactive({
   gender: 'herr',
@@ -353,33 +360,28 @@ const submitForm = async () => {
   isSubmitting.value = true;
 
   try {
-    const response = await fetch('/api/applications', {
-      method: 'POST',
+    const { data } = await axios.post('/api/applications', {
+      job_id: props.jobId,
+      gender: form.gender,
+      firstname: form.firstname,
+      lastname: form.lastname,
+      street: form.street,
+      zip: form.zip,
+      city: form.city,
+      phone: form.phone,
+      email: form.email,
+      german_skills: form.german_skills,
+      permit: form.permit,
+      application_files: form.application_files,
+      criminal_record: form.criminal_record[0],
+      ivz_register: form.ivz_register[0],
+    }, {
       headers: {
-        'Content-Type': 'application/json',
         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || '',
       },
-      body: JSON.stringify({
-        job_id: props.jobId,
-        gender: form.gender,
-        firstname: form.firstname,
-        lastname: form.lastname,
-        street: form.street,
-        zip: form.zip,
-        city: form.city,
-        phone: form.phone,
-        email: form.email,
-        german_skills: form.german_skills,
-        permit: form.permit,
-        application_files: form.application_files,
-        criminal_record: form.criminal_record[0],
-        ivz_register: form.ivz_register[0],
-      }),
     });
 
-    const data = await response.json();
-
-    if (response.ok && data.success) {
+    if (data.success) {
       submitted.value = true;
     } else {
       if (data.errors) {
@@ -392,7 +394,13 @@ const submitForm = async () => {
     }
   } catch (error) {
     console.error('Submit error:', error);
-    submitError.value = 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.';
+    if (error.response?.data?.errors) {
+      Object.keys(error.response.data.errors).forEach((key) => {
+        errors[key] = error.response.data.errors[key][0];
+      });
+    } else {
+      submitError.value = error.response?.data?.message || 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.';
+    }
   } finally {
     isSubmitting.value = false;
   }

@@ -92,7 +92,7 @@ class ApplicationController extends Controller
 
         // Create Statamic entry
         $entry = Entry::make()
-            ->collection('bewerbungen')
+            ->collection('applications')
             ->slug(Str::slug("{$validated['firstname']}-{$validated['lastname']}-" . now()->format('Y-m-d-His')))
             ->data([
                 'title' => "{$validated['firstname']} {$validated['lastname']}",
@@ -134,7 +134,7 @@ class ApplicationController extends Controller
         Mail::to($validated['email'])->send(new ApplicationConfirmation($applicationData));
 
         // Notification to HR
-        $hrEmail = config('app.application_hr_email');
+        $hrEmail = config('app.application_email');
         if ($hrEmail) {
             Mail::to($hrEmail)->send(new ApplicationNotification($applicationData));
         }

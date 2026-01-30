@@ -7,13 +7,22 @@ Alpine.start();
 
 import './modules/maps.js';
 
-// Vue 3 Application Form
+// Vue 3 Forms
 import { createApp } from 'vue';
 import ApplicationForm from './components/ApplicationForm.vue';
+import LostAndFoundForm from './components/LostAndFoundForm.vue';
 
 // Mount Vue application form on elements with data-application-form attribute
 document.querySelectorAll('[data-application-form]').forEach((el) => {
     const jobId = el.dataset.jobId;
-    const app = createApp(ApplicationForm, { jobId });
+    const variant = el.dataset.variant || 'light-blue';
+    const app = createApp(ApplicationForm, { jobId, variant });
+    app.mount(el);
+});
+
+// Mount Vue lost and found form on elements with data-lost-and-found-form attribute
+document.querySelectorAll('[data-lost-and-found-form]').forEach((el) => {
+    const variant = el.dataset.variant || 'white';
+    const app = createApp(LostAndFoundForm, { variant });
     app.mount(el);
 });

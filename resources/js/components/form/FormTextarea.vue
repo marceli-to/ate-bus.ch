@@ -7,15 +7,15 @@
     >
       {{ error || label }}
     </FormLabel>
-    <input
+    <textarea
       :id="id"
-      :type="type"
       :name="name"
       :value="modelValue"
       :placeholder="placeholder"
       :disabled="disabled"
-      class="w-full py-4 xl:py-8 border-0 text-blue-black text-xs xl:text-sm placeholder-blue-gray/50 focus:outline-none"
-      :class="inputBgClass"
+      :rows="rows"
+      class="w-full py-4 xl:py-8 border-0 text-blue-black text-xs xl:text-sm placeholder-blue-gray/50 focus:outline-none resize-none"
+      :class="textareaBgClass"
       @input="$emit('update:modelValue', $event.target.value)"
       @focus="$emit('focus')"
     />
@@ -41,13 +41,13 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  type: {
-    type: String,
-    default: 'text',
-  },
   placeholder: {
     type: String,
     default: '',
+  },
+  rows: {
+    type: Number,
+    default: 4,
   },
   required: {
     type: Boolean,
@@ -72,7 +72,7 @@ const wrapperBgClass = computed(() => ({
   'bg-light-blue': variant === 'light-blue',
 }));
 
-const inputBgClass = computed(() => ({
+const textareaBgClass = computed(() => ({
   'bg-white': variant === 'white',
   'bg-light-blue': variant === 'light-blue',
 }));

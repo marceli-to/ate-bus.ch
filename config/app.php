@@ -125,13 +125,14 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Application HR Email
+    | Application Emails
     |--------------------------------------------------------------------------
     |
-    | Email address where job application notifications will be sent.
+    | Email addresses for form notifications.
     |
     */
 
-    'application_hr_email' => env('APPLICATION_HR_EMAIL'),
+    'application_email' => env('APPLICATION_EMAIL'),
+    'lost_and_found_email' => env('LOST_AND_FOUND_EMAIL'),
 
 ];

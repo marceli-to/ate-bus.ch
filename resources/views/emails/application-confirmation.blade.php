@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bewerbungsbestätigung</title>
-</head>
-<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; padding: 20px;">
-  <h1 style="color: #1a365d;">Vielen Dank für Ihre Bewerbung</h1>
+@extends('emails.layouts.base')
+
+@section('title', 'Bewerbungsbestätigung')
+
+@section('content')
+  <h1 style="margin: 0 0 20px; color: #1a365d; font-size: 24px;">
+    Vielen Dank für Ihre Bewerbung
+  </h1>
 
   <p>Guten Tag {{ $applicationData['firstname'] }} {{ $applicationData['lastname'] }},</p>
 
@@ -16,8 +15,5 @@
 
   <p>Bei Fragen stehen wir Ihnen gerne zur Verfügung.</p>
 
-  <div style="padding-top: 30px;">
-    Freundliche Grüsse<br><strong>ATE Bus</strong>
-  </div>
-</body>
-</html>
+  @include('emails.components.signature')
+@endsection

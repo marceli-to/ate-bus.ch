@@ -14,6 +14,7 @@
       :placeholder="placeholder"
       :disabled="disabled"
       :rows="rows"
+      :maxlength="maxlength"
       class="w-full py-4 xl:py-8 border-0 text-blue-black text-xs xl:text-sm placeholder-blue-gray/50 focus:outline-none resize-none"
       :class="textareaBgClass"
       @input="$emit('update:modelValue', $event.target.value)"
@@ -56,6 +57,10 @@ const props = defineProps({
   disabled: {
     type: Boolean,
     default: false,
+  },
+  maxlength: {
+    type: Number,
+    default: null,
   },
   error: {
     type: String,

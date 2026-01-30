@@ -27,7 +27,9 @@
       :class="{ 'filepond-error': error }"
       @init="handleInit"
       @addfile="handleAddFile"
+      @processfilestart="handleProcessFileStart"
       @processfile="handleProcessFile"
+      @processfileabort="handleProcessFileAbort"
       @removefile="handleRemoveFile"
       @error="handleError"
     />
@@ -91,7 +93,7 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(['update:modelValue', 'addfile']);
+const emit = defineEmits(['update:modelValue', 'addfile', 'processfilestart', 'processfileend', 'processfileabort']);
 
 const variant = inject('formVariant', 'white');
 
@@ -162,11 +164,21 @@ const handleAddFile = () => {
   emit('addfile');
 };
 
+const handleProcessFileStart = (file) => {
+  emit('processfilestart', file);
+};
+
+const handleProcessFileAbort = (file) => {
+  emit('processfileabort', file);
+};
+
 const handleProcessFile = (error, file) => {
   if (!error) {
     const newValue = [...props.modelValue, file.serverId];
     emit('update:modelValue', newValue);
   }
+  // Emit processfileend regardless of error (processing is done either way)
+  emit('processfileend', error, file);
 };
 
 const handleRemoveFile = (error, file) => {

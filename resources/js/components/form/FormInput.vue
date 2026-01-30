@@ -14,6 +14,8 @@
       :value="modelValue"
       :placeholder="placeholder"
       :disabled="disabled"
+      :min="min"
+      :max="max"
       class="w-full py-4 xl:py-8 border-0 text-blue-black text-xs xl:text-sm placeholder-blue-gray/50 focus:outline-none"
       :class="inputBgClass"
       @input="$emit('update:modelValue', $event.target.value)"
@@ -56,6 +58,14 @@ const props = defineProps({
   disabled: {
     type: Boolean,
     default: false,
+  },
+  min: {
+    type: String,
+    default: null,
+  },
+  max: {
+    type: String,
+    default: null,
   },
   error: {
     type: String,

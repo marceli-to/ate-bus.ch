@@ -3,11 +3,9 @@
 @section('title', 'Neue Verlustmeldung')
 
 @section('content')
-  <h1 style="margin: 0 0 20px; color: #1a365d; font-size: 24px;">
-    Neue Verlustmeldung eingegangen
-  </h1>
+  <h1 class="email-title">Neue Verlustmeldung eingegangen</h1>
 
-  <p>Eine neue Verlustmeldung wurde eingereicht:</p>
+  <p class="email-text">Eine neue Verlustmeldung wurde eingereicht:</p>
 
   @include('emails.components.data-table', ['rows' => [
     ['label' => 'Name', 'value' => $reportData['firstname'] . ' ' . $reportData['lastname']],

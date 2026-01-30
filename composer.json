@@ -11,6 +11,7 @@
     ],
     "require": {
         "php": "^8.2",
+        "fedeisas/laravel-mail-css-inliner": "^5.4",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
         "rias/statamic-collection-groups": "^1.1",

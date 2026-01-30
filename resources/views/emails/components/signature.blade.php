@@ -1,4 +1,4 @@
-<p style="margin-top: 30px; margin-bottom: 0;">
+<div class="signature">
   Freundliche Grüsse<br>
-  <strong>ATE Bus</strong>
-</p>
+  <strong>ATE Bus AG</strong>
+</div>

@@ -3,11 +3,9 @@
 @section('title', 'Neue Bewerbung')
 
 @section('content')
-  <h1 style="margin: 0 0 20px; color: #1a365d; font-size: 24px;">
-    Neue Bewerbung eingegangen
-  </h1>
+  <h1 class="email-title">Neue Bewerbung eingegangen</h1>
 
-  <p>Eine neue Bewerbung wurde eingereicht:</p>
+  <p class="email-text">Eine neue Bewerbung wurde eingereicht:</p>
 
   @include('emails.components.data-table', ['rows' => [
     ['label' => 'Stelle', 'value' => $applicationData['job_title']],

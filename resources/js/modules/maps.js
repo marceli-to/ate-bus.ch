@@ -6,7 +6,7 @@
 const CONFIG = Object.freeze({
   accessToken: 'pk.eyJ1IjoibWFyY2VsaXRvb29vIiwiYSI6ImNtNm1hNG5vdDBmaGUya3NoZnRldnhqd3YifQ.CMI4nKvoE7I8H9Dal7IHyw',
   style: 'mapbox://styles/marcelitoooo/ck16ms7m51nlo1cmwnqrbjuyq?optimize=true',
-  center: [8.129962540303277, 47.40365550299775],
+  center: [8.684047486309618, 47.419778384182266],
   defaultZoom: 15,
   scriptUrl: 'https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.js',
   cssUrl: 'https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.css',
@@ -35,7 +35,7 @@ class MapboxMap {
   #loaded = false;
 
   constructor() {
-    this.#mapElement = document.getElementById('map');
+    this.#mapElement = document.querySelector('[data-map]');
     if (this.#mapElement) {
       this.#loadMapbox();
     }
@@ -91,7 +91,7 @@ class MapboxMap {
     mapboxgl.accessToken = CONFIG.accessToken;
 
     this.#map = new mapboxgl.Map({
-      container: 'map',
+      container: this.#mapElement,
       style: CONFIG.style,
       center: CONFIG.center,
       zoom,

@@ -7,34 +7,32 @@
       <div class="col-span-12 md:col-span-9 xl:col-span-10 flex flex-col md:flex-row gap-y-16 md:items-end md:gap-x-48 xl:gap-x-60">
         <div class="flex flex-col">
           {{ partial:components/headings/h3 class="font-bold" }}
-            ATE Bus AG
+            {{ company:name }}
           {{ /partial:components/headings/h3 }}
           <div>
-            Bietenholzstrasse 30<br>
-            8307 Effretikon
+            {{ company:address | nl2br }}
           </div>
         </div>
         <div class="flex flex-col">
           <a
-            href="tel:052 355 12 00"
+            href="tel:{{ company:phone }}"
             class="hover:underline decoration-1 underline-offset-4"
-            aria-label="Telefon 052 355 12 00">
-            052 355 12 00
+            aria-label="Telefon {{ company:phone }}">
+            {{ company:phone }}
           </a>
           <a
-            href="mailto:info@ate-bus.ch"
+            href="mailto:{{ company:email }}"
             class="hover:underline decoration-1 underline-offset-4"
-            aria-label="E-Mail info@ate-bus.ch">
-            info@ate-bus.ch
+            aria-label="E-Mail {{ company:email }}">
+            {{ company:email }}
           </a>
         </div>
         <div class="flex flex-col">
           {{ partial:components/headings/h3 class="font-bold" }}
-            Fundbüro
+            {{ lost_and_found:title }}
           {{ /partial:components/headings/h3 }}
           <div>
-            Breitistrasse 14<br>
-            8307 Effretikon
+            {{ lost_and_found:address | nl2br }}
           </div>
         </div>
       </div>

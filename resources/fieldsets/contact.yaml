@@ -1,0 +1,11 @@
+title: Kontakt
+fields:
+  -
+    import: title_text
+  -
+    handle: contact_image
+    field:
+      type: assets
+      display: Bild
+      container: assets
+      max_files: 1

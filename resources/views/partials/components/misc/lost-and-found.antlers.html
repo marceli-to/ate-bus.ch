@@ -59,7 +59,9 @@
 
         {{ if lost_and_found:address }}
           <div>
-            {{ lost_and_found:address | nl2br }}
+            <a href="https://www.google.com/maps/search/?api=1&query={{ lost_and_found:address | strip_tags | urlencode }}" target="_blank" class="underline-offset-4 hover:underline">
+              {{ lost_and_found:address | nl2br }}
+            </a>
           </div>
         {{ /if }}
 

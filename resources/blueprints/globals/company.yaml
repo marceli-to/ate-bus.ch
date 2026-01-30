@@ -1,0 +1,31 @@
+title: Unternehmen
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+              localizable: true
+          -
+            handle: address
+            field:
+              type: textarea
+              display: Adresse
+              localizable: true
+          -
+            handle: phone
+            field:
+              type: text
+              display: Telefon
+              localizable: true
+          -
+            handle: email
+            field:
+              type: text
+              display: E-Mail
+              localizable: true

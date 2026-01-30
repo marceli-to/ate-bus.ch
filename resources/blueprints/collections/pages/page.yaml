@@ -64,6 +64,13 @@ tabs:
                       fields:
                         -
                           import: media
+                    contact:
+                      display: Kontakt
+                      instructions: 'Kontakt mit Karte'
+                      icon: pin-location-1
+                      fields:
+                        -
+                          import: contact
                     benefits:
                       display: Benefits
                       instructions: 'Benefits mit Icons'

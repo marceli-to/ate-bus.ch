@@ -59,9 +59,9 @@
 
         {{ if lost_and_found:address }}
           <div>
-            <a href="https://www.google.com/maps/search/?api=1&query={{ lost_and_found:address | strip_tags | urlencode }}" target="_blank" class="underline-offset-4 hover:underline">
+            <span class="hover:underline decoration-1 underline-offset-4 block">
               {{ lost_and_found:address | nl2br }}
-            </a>
+            </span>
           </div>
         {{ /if }}
 
@@ -78,7 +78,7 @@
 
       </div>
 
-      <div class="col-span-12 md:col-span-7 md:py-20 xl:py-40 2xl:py-60">
+      <div class="col-span-12 md:col-span-7 pb-16 md:py-20 xl:py-40 2xl:py-60">
         {{ if lost_and_found_image }}
           {{ partial:components/media/image
             :image="lost_and_found_image"

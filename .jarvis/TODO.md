@@ -24,9 +24,9 @@
 ## 🔍 Needs Clarification / Visual Check
 
 - [ ] **Typografie H4** — "Remove spacing after H4" — H4 component has no default margin, couldn't find where issue occurs. Need visual example.
-- [ ] **Text ersetzen** — "Input should replace placeholder text" — Current implementation looks correct (placeholder disappears on input). Need clarification on what's wrong.
+- [x] **Text ersetzen** — "Input should replace placeholder text" — Current implementation looks correct (placeholder disappears on input). Need clarification on what's wrong.
 - [ ] **Form text color** — "Blue-Gray → Blue-Black on input" — Input text is already blue-black, placeholder is blue-gray/50. Is this about different contrast?
-- [ ] **Fundbüro Abstand zum Header** — Need to compare with content pages without images to match spacing
+- [x] **Fundbüro Abstand zum Header** — Need to compare with content pages without images to match spacing
 
 ---
 
@@ -36,15 +36,15 @@
 
 - [ ] **Spickel angle** — Adjust angle to match logo *(need exact angle or reference)*
 - [ ] **Bilder** — Replace images with newly edited versions from Figma
-- [ ] **Aktuelle Jobangebote CTA** — Change image; remove from Fundbüro (needs new image)
+- [x] **Aktuelle Jobangebote CTA** — Change image; remove from Fundbüro (needs new image)
 - [ ] **Logos** — Review/replace logos (VBZ pixelated) — needs hi-res assets
 - [ ] **Buttons** — Update negative button colors *(need color values)*
-- [ ] **Menu** — Adjust spacing + text size per Figma
-- [ ] **Links - Interaktion** — Link footer addresses *(you need to add link field to fieldset)*
+- [x] **Menu** — Adjust spacing + text size per Figma
+- [x] **Links - Interaktion** — Link footer addresses *(you need to add link field to fieldset)*
 - [ ] **Icon Grösse (Über uns)** — Make leaf icon bigger per Figma
 - [ ] **Partner und Verbände** — Replace "Aktuelle Jobangebote" section (needs content/layout from Figma)
-- [ ] **Footer Mobile** — New layout per Figma
-- [ ] **Micro-Animationen** — "leichtes heranziehen" — need specifics on which elements and timing
+- [x] **Footer Mobile** — New layout per Figma
+- [x] **Micro-Animationen** — "leichtes heranziehen" — need specifics on which elements and timing
 
 ---
 

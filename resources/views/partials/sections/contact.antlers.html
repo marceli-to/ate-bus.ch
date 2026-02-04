@@ -41,11 +41,15 @@
             {{ company:name }}
           {{ /partial:components/headings/h2 }}
           <div class="text-sm md:text-md">
-            <a href="https://www.google.com/maps/search/?api=1&query={{ company:address | strip_tags | urlencode }}" target="_blank" class="underline-offset-4 hover:underline">
+            <span class="hover:underline decoration-1 underline-offset-4 block">
               {{ company:address | nl2br }}
+            </span><br>
+            <a href="tel:{{ company:phone }}" class="underline-offset-4 decoration-1 hover:underline">
+              {{ company:phone }}
             </a><br>
-            {{ company:phone }}<br>
-            <a href="mailto:{{ company:email }}" class="underline-offset-4 hover:underline">{{ company:email }}</a>
+            <a href="mailto:{{ company:email }}" class="underline-offset-4 decoration-1 hover:underline">
+              {{ company:email }}
+            </a>
           </div>
         </div>
 
@@ -55,9 +59,9 @@
           {{ /partial:components/headings/h2 }}
           
           <div class="text-sm md:text-md mb-12 md:mb-16 xl:mb-20">
-            <a href="https://www.google.com/maps/search/?api=1&query={{ lost_and_found:address | strip_tags | urlencode }}" target="_blank" class="underline-offset-4 hover:underline">
+            <span class="hover:underline decoration-1 underline-offset-4 block">
               {{ lost_and_found:address | nl2br }}
-            </a>
+            </span>
           </div>
 
           <div class="mb-12 md:mb-16 xl:mb-20">

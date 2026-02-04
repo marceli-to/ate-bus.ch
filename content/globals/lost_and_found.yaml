@@ -1,9 +1,23 @@
 title: Fundbüro
 data:
   title: Fundbüro
-  address: |-
-    Breitistrasse 14
-    8307 Effretikon
+  address:
+    -
+      type: paragraph
+      content:
+        -
+          type: text
+          marks:
+            -
+              type: link
+              attrs:
+                href: 'https://maps.app.goo.gl/bztSsyHi5mVCcB9K8'
+                rel: null
+                target: _blank
+                title: null
+          text: |-
+            Breitistrasse 14
+            8307 Effretikon
   opening_hours: |-
     Montag bis Freitag
     06.00 – 11.30 Uhr

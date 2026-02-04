@@ -4,13 +4,13 @@
 <footer class="bg-blue-primary text-white text-xs xl:text-sm leading-[1.5] py-24 lg:py-32">
   {{ partial:layout/container }}
     <div class="grid grid-cols-12 gap-16 lg:gap-32">
-      <div class="col-span-12 md:col-span-9 xl:col-span-10 flex flex-col md:flex-row gap-y-16 md:items-end md:gap-x-48 xl:gap-x-60">
+      <div class="col-span-6 md:col-span-9 xl:col-span-10 flex flex-col md:flex-row gap-y-16 md:items-end md:gap-x-48 xl:gap-x-60">
         <div class="flex flex-col">
           {{ partial:components/headings/h3 size="sm" }}
             {{ company:name }}
           {{ /partial:components/headings/h3 }}
           <div>
-            {{ company:address | nl2br }}
+            <span class="hover:underline decoration-1 underline-offset-4 block">{{ company:address | nl2br }}</span>
           </div>
         </div>
         <div class="flex flex-col">
@@ -32,36 +32,36 @@
             {{ lost_and_found:title }}
           {{ /partial:components/headings/h3 }}
           <div>
-            {{ lost_and_found:address | nl2br }}
+             <span class="hover:underline decoration-1 underline-offset-4 block">{{ lost_and_found:address | nl2br }}</span>
           </div>
         </div>
       </div>
-      <nav class="col-span-12 md:col-span-3 xl:col-span-2">
+      <nav class="col-span-6 md:col-span-3 xl:col-span-2 self-end md:self-start">
         <ul>
-          <li>
+          <li class="flex items-end md:items-start">
             <a 
               href="https://infosoft.ate-bus.ch:4443/login"
               target="_blank"
-              class="hover:underline decoration-1 underline-offset-4"
+              class="block w-full md:w-auto hover:underline decoration-1 underline-offset-4 text-right md:text-left"
               aria-label="Login">
               Login
             </a>
           </li>
           {{ nav:footer }}
-            <li>
+            <li class="flex items-end md:items-start">
               <a 
                 href="{{ url }}"
-                class="hover:underline decoration-1 underline-offset-4"
+                class="block w-full md:w-auto hover:underline decoration-1 underline-offset-4 text-right md:text-left"
                 aria-label="{{ title }}">
                 {{ title }}
               </a>
             </li>
           {{ /nav:footer }}
-          <li>
+          <li class="flex items-end md:items-start">
             <a 
               href="https://stoz.ch"
               target="_blank"
-              class="hover:underline decoration-1 underline-offset-4"
+              class="block w-full md:w-auto hover:underline decoration-1 underline-offset-4 text-right md:text-left"
               aria-label="Design by stoz">
               Design by stoz
             </a>

@@ -98,6 +98,8 @@
               label="Postleitzahl"
               name="zip"
               placeholder="8307"
+              inputmode="numeric"
+              pattern="[0-9]*"
               :required="true"
               :error="errors.zip"
               :aria-describedby="errors.zip ? 'error-zip' : undefined"
@@ -316,16 +318,16 @@ const fieldRefs = {
 };
 
 const form = reactive({
-  gender: 'herr',
-  firstname: 'Max',
-  lastname: 'Muster',
-  street: 'Musterstrasse 123',
-  zip: '8000',
-  city: 'Zürich',
-  phone: '079 123 45 67',
-  email: 'max.muster@example.com',
-  german_skills: 'muttersprache',
-  permit: 'schweizer',
+  gender: '',
+  firstname: '',
+  lastname: '',
+  street: '',
+  zip: '',
+  city: '',
+  phone: '',
+  email: '',
+  german_skills: '',
+  permit: '',
   application_files: [],
   criminal_record: [],
   ivz_register: [],

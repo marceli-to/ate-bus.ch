@@ -1,4 +1,4 @@
-<section class="mt-20 md:mt-40 xl:mt-60 mb-60 md:mb-80 xl:mb-120">
+<section class="mt-20 md:mt-40 xl:mt-60 mb-60 md:mb-80 xl:mb-120" data-reveal>
 
   {{ partial:layout/container }}
 
@@ -37,7 +37,7 @@
               {{ partial:components/accordion/button }}
                 <div class="flex justify-start items-center gap-x-16 md:gap-x-20 xl:gap-x-32">
                     {{ if logo }}
-                      <div class="hidden sm:block w-120 md:w-160 xl:w-180 h-autoshrink-0">
+                      <div class="hidden sm:block w-100 md:w-120 xl:w-140 h-auto shrink-0">
                         {{ partial src="components/logos/partners/{logo}" }}
                       </div>
                     {{ /if }}

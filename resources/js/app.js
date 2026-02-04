@@ -6,6 +6,10 @@ window.Alpine = Alpine;
 Alpine.start();
 
 import './modules/maps.js';
+import { initReveal } from './modules/reveal.js';
+
+// Init reveal animations
+initReveal();
 
 // Vue 3 Forms
 import { createApp } from 'vue';

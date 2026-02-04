@@ -8,7 +8,7 @@ elements:
   -
     id: ml13i9v0
     title_text_heading_type: h1
-    title_text_title: 'Wir sind für sie da'
+    title_text_title: 'Wir sind für Sie da'
     title_text_editor_content:
       -
         type: paragraph

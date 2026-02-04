@@ -32,7 +32,7 @@
 }
 
 article a {
-  @apply font-semibold underline underline-offset-4 hover:no-underline
+  @apply font-semibold underline underline-offset-4 text-blue-black hover:text-blue-primary hover:no-underline
 }
 
 article p:not(:last-of-type) {

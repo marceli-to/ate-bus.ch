@@ -16,9 +16,11 @@
       :disabled="disabled"
       :min="min"
       :max="max"
+      :inputmode="inputmode"
+      :pattern="pattern"
       class="w-full py-4 xl:py-8 border-0 text-blue-black text-xs xl:text-sm placeholder-blue-gray/50 focus:outline-none"
       :class="inputBgClass"
-      @input="$emit('update:modelValue', $event.target.value)"
+      @input="handleInput"
       @focus="$emit('focus')"
     />
   </div>
@@ -71,9 +73,29 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  inputmode: {
+    type: String,
+    default: null,
+  },
+  pattern: {
+    type: String,
+    default: null,
+  },
 });
 
-defineEmits(['update:modelValue', 'focus']);
+const emit = defineEmits(['update:modelValue', 'focus']);
+
+const handleInput = (event) => {
+  let value = event.target.value;
+  
+  // Filter non-numeric characters when inputmode is numeric
+  if (props.inputmode === 'numeric') {
+    value = value.replace(/[^0-9]/g, '');
+    event.target.value = value;
+  }
+  
+  emit('update:modelValue', value);
+};
 
 const id = computed(() => `form-${props.name}`);
 

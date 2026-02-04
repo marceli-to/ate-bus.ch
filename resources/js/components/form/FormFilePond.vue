@@ -223,6 +223,11 @@ const handleError = (error) => {
   text-decoration: underline;
   cursor: pointer;
   font-size: 0.875rem;
+  transition: color 0.15s ease;
+}
+
+.filepond-wrapper .filepond--label-action:hover {
+  color: #14244E;
 }
 
 .filepond-wrapper .filepond--root {

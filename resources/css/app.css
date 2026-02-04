@@ -51,6 +51,37 @@ article li p {
   @apply inline;
 }
 
+/* Hero slanted box - consistent angle via skewX */
+.hero-slant {
+  --slant-angle: -25deg;
+  isolation: isolate;
+}
+
+.hero-slant::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-light-blue);
+  z-index: -1;
+  transform: skewX(var(--slant-angle));
+  transform-origin: left;
+}
+
+.hero-slant::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100px;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  background-color: var(--color-light-blue);
+}
+
 
 
 

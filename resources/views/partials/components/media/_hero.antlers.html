@@ -20,25 +20,42 @@
 
   <div
     class="
-      hero-slant
+      bg-light-blue
       relative
       sm:absolute
       sm:-bottom-60
       xl:-bottom-90
       left-0
       w-full
-      max-w-[calc(95vw-var(--spacing-30))]
-      sm:max-w-[calc(70vw-var(--spacing-30))]
-      md:max-w-[calc(50vw-var(--spacing-30))]
-      pl-16
-      md:pl-24
-      md:pr-48
+      max-w-[calc(80vw-var(--spacing-30))]
+      sm:max-w-[calc(50vw-var(--spacing-30))]
+      px-12
+      md:px-24
+      xl:pr-36
       py-24
       xl:py-40
       xl:pl-[calc(max((100vw-var(--max-width-inner-container))/2,0px)+var(--spacing-42))]
       md:animate-slide-in">
+    <div
+      class="
+        block
+        absolute
+        top-0
+        h-full
+        bottom-0
+        left-full
+        w-64
+        sm:w-64
+        md:w-80
+        xl:w-112
+        2xl:w-128
+        bg-light-blue
+        origin-left
+        scale-x-[1.01]
+        [clip-path:polygon(0%_0%,100%_0%,0%_100%)]">
+    </div>
 
-    <div class="relative z-10 text-blue-black hyphens-auto pr-48 md:pr-24">
+    <div class="relative z-10 text-blue-black">
 
       {{ if title }}
         {{ partial:components/headings/h1 }}

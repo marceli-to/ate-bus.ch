@@ -16,6 +16,16 @@ export function initReveal() {
     viewFactor: 0.1,
   });
 
+  // Default with delay
+  ScrollReveal().reveal('[data-reveal-delay]:not([data-reveal="fade"])', {
+    distance: '100px',
+    origin: 'bottom',
+    duration: 600,
+    delay: 400,
+    easing: 'ease-out',
+    viewFactor: 0.1,
+  });
+
   // Fade only
   ScrollReveal().reveal('[data-reveal="fade"]', {
     distance: '0',

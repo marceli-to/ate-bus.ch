@@ -6,14 +6,14 @@ fields:
       type: select
       display: Logo
       options:
-        astag.svg: ASTAG
-        gatra.svg: Gatra
-        gviel.png: GVIEL
-        kmu.svg: KMU
-        vbg.svg: VBG
-        vbz.svg: VBZ Züri Linie
-        voev-utp.png: VÖV UTP
-        zvv.svg: ZVV
+        astag.jpg: ASTAG
+        gatra.jpg: Gatra
+        gviel.jpg: GVIEL
+        kmu.jpg: KMU
+        vbg.jpg: VBG
+        vbz.jpg: VBZ Züri Linie
+        voev-utp.jpg: VÖV UTP
+        zvv.jpg: ZVV
       width: 50
   -
     handle: url

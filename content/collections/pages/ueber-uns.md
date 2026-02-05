@@ -95,43 +95,43 @@ elements:
     partners_items:
       -
         id: ml982ibe
-        logo: vbg.svg
+        logo: vbg.jpg
         type: partner
         enabled: true
       -
         id: ml982pqc
-        logo: vbz.svg
+        logo: vbz.jpg
         type: partner
         enabled: true
       -
         id: ml982vsy
-        logo: zvv.svg
+        logo: zvv.jpg
         type: partner
         enabled: true
       -
         id: ml982xlw
-        logo: gatra.svg
+        logo: gatra.jpg
         type: partner
         enabled: true
     associations_items:
       -
         id: ml985g4h
-        logo: astag.svg
+        logo: astag.jpg
         type: association
         enabled: true
       -
         id: ml985oo4
-        logo: voev-utp.png
+        logo: voev-utp.jpg
         type: association
         enabled: true
       -
         id: ml985pb1
-        logo: kmu.svg
+        logo: kmu.jpg
         type: association
         enabled: true
       -
         id: ml985px9
-        logo: gviel.png
+        logo: gviel.jpg
         type: association
         enabled: true
 open_graph_type: website

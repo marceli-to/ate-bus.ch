@@ -1,8 +1,0 @@
-light-grey: F4F5F9
-light-grey-background: F0F1F5
-light-blue: CAE0F4
-grey: C7C6C6
-blue-black: 14244E
-blue-gray: 4A5269
-blue-primary: 02529F
-error: EB0000

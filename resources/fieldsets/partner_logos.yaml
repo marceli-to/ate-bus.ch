@@ -1,0 +1,23 @@
+title: 'Partner Logos'
+fields:
+  -
+    handle: logo
+    field:
+      type: select
+      display: Logo
+      options:
+        astag.svg: ASTAG
+        gatra.svg: Gatra
+        gviel.png: GVIEL
+        kmu.svg: KMU
+        vbg.svg: VBG
+        vbz.svg: VBZ Züri Linie
+        voev-utp.png: VÖV UTP
+        zvv.svg: ZVV
+      width: 50
+  -
+    handle: url
+    field:
+      type: link
+      display: Link
+      width: 50

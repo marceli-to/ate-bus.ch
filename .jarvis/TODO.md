@@ -34,7 +34,7 @@
 
 *Needs Figma assets or design decisions*
 
-- [ ] **Spickel angle** — Adjust angle to match logo *(need exact angle or reference)*
+- [x] **Spickel angle** — Adjust angle to match logo *(need exact angle or reference)*
 - [ ] **Bilder** — Replace images with newly edited versions from Figma
 - [x] **Aktuelle Jobangebote CTA** — Change image; remove from Fundbüro (needs new image)
 - [ ] **Logos** — Review/replace logos (VBZ pixelated) — needs hi-res assets

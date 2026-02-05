@@ -1,31 +1,27 @@
 /**
- * Reveal on Scroll
- * Adds fade-in + slide-up animation when elements enter viewport
+ * Reveal on Scroll using ScrollReveal
  * Usage: Add data-reveal attribute to any element
+ * Use data-reveal="fade" for fade-only animation
  */
 
+import ScrollReveal from 'scrollreveal';
+
 export function initReveal() {
-  const elements = document.querySelectorAll('[data-reveal]');
-  
-  if (!elements.length) return;
+  // Default: fade + slide up
+  ScrollReveal().reveal('[data-reveal]:not([data-reveal="fade"])', {
+    distance: '100px',
+    origin: 'bottom',
+    duration: 600,
+    easing: 'ease-out',
+    viewFactor: 0.1,
+  });
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px',
-    }
-  );
-
-  elements.forEach((el) => {
-    el.classList.add('reveal-ready');
-    observer.observe(el);
+  // Fade only
+  ScrollReveal().reveal('[data-reveal="fade"]', {
+    distance: '0',
+    duration: 600,
+    delay: 300,
+    easing: 'ease-out',
+    viewFactor: 0.1,
   });
 }

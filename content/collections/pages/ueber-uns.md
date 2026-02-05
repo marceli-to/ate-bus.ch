@@ -84,9 +84,59 @@ elements:
         enabled: true
     type: media
     enabled: true
+  -
+    id: ml97yzme
+    partners_title: 'Danke für die tolle Zusammenarbeit!'
+    partners_text: 'Nachfolgend finden Sie die Links zu unseren Partnerunternehmen und Verbänden.'
+    partners_label: 'Unsere Partner'
+    associations_label: 'Unsere Verbände'
+    type: partners
+    enabled: true
+    partners_items:
+      -
+        id: ml982ibe
+        logo: vbg.svg
+        type: partner
+        enabled: true
+      -
+        id: ml982pqc
+        logo: vbz.svg
+        type: partner
+        enabled: true
+      -
+        id: ml982vsy
+        logo: zvv.svg
+        type: partner
+        enabled: true
+      -
+        id: ml982xlw
+        logo: gatra.svg
+        type: partner
+        enabled: true
+    associations_items:
+      -
+        id: ml985g4h
+        logo: astag.svg
+        type: association
+        enabled: true
+      -
+        id: ml985oo4
+        logo: voev-utp.png
+        type: association
+        enabled: true
+      -
+        id: ml985pb1
+        logo: kmu.svg
+        type: association
+        enabled: true
+      -
+        id: ml985px9
+        logo: gviel.png
+        type: association
+        enabled: true
 open_graph_type: website
 robots: index_follow
 updated_by: ad7fe3d0-f296-4490-a384-26cbf688e223
-updated_at: 1769789014
-show_job_teaser: true
+updated_at: 1770281952
+show_job_teaser: false
 ---

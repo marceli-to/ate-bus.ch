@@ -1,0 +1,54 @@
+title: Partners
+fields:
+  -
+    handle: partners_title
+    field:
+      type: text
+      display: Titel
+  -
+    handle: partners_text
+    field:
+      type: textarea
+      display: Text
+  -
+    handle: partners_label
+    field:
+      type: text
+      display: 'Partner Titel'
+      default: 'Unsere Partner'
+  -
+    handle: partners_items
+    field:
+      type: replicator
+      display: Partner
+      collapse: true
+      sets:
+        main:
+          display: Main
+          sets:
+            partner:
+              display: Partner
+              fields:
+                -
+                  import: partner_logos
+  -
+    handle: associations_label
+    field:
+      type: text
+      display: 'Verbände Titel'
+      default: 'Unsere Verbände'
+  -
+    handle: associations_items
+    field:
+      type: replicator
+      display: Verbände
+      collapse: true
+      sets:
+        main:
+          display: Main
+          sets:
+            association:
+              display: Verband
+              fields:
+                -
+                  import: partner_logos

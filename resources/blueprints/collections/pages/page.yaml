@@ -78,6 +78,13 @@ tabs:
                       fields:
                         -
                           import: benefits
+                    partners:
+                      display: Partners
+                      instructions: 'Partner und Verbände'
+                      icon: team-meeting
+                      fields:
+                        -
+                          import: partners
                     bus_routes:
                       display: Buslinien
                       instructions: 'Buslinien mit Akkordeon'

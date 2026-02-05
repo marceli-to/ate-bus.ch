@@ -18,7 +18,7 @@
       :max="max"
       :inputmode="inputmode"
       :pattern="pattern"
-      class="w-full py-4 xl:py-8 border-0 text-blue-black text-xs xl:text-sm placeholder-blue-gray/50 focus:outline-none"
+      class="w-full py-4 xl:py-8 border-0 text-blue-black text-xs xl:text-sm placeholder:text-blue-gray focus:outline-none"
       :class="inputBgClass"
       @input="handleInput"
       @focus="$emit('focus')"

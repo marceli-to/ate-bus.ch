@@ -2,14 +2,14 @@
 id: fundbuero
 blueprint: pages
 title: Fundbüro
-meta_description: "Etwas im Bus verloren? Unser Fundbüro in Effretikon hilft Ihnen, verlorene Gegenstände wiederzufinden. Öffnungszeiten und Kontakt."
+meta_description: 'Etwas im Bus verloren? Unser Fundbüro in Effretikon hilft Ihnen, verlorene Gegenstände wiederzufinden. Öffnungszeiten und Kontakt.'
 template: templates/default
 layout: templates/layout
 show_job_teaser: false
 open_graph_type: website
 robots: index_follow
 updated_by: ad7fe3d0-f296-4490-a384-26cbf688e223
-updated_at: 1770225617
+updated_at: 1770289913
 elements:
   -
     id: ml0zhomi
@@ -36,7 +36,7 @@ elements:
       Montag bis Freitag
       06.00–11.30 Uhr
       13.30–16.30 Uhr
-    lost_and_found_image: dummy/office-building.jpg
+    lost_and_found_image: ate-bus-fundbuero.jpg
     type: lost_and_found
     enabled: true
 ---

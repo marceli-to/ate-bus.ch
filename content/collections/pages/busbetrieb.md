@@ -2,6 +2,7 @@
 id: busbetrieb
 blueprint: pages
 title: Busbetrieb
+meta_description: "Entdecken Sie unsere Buslinien im Auftrag der VBG und VBZ. Täglich bringen wir Fahrgäste sicher, zuverlässig und pünktlich ans Ziel."
 template: templates/default
 layout: templates/layout
 open_graph_type: website

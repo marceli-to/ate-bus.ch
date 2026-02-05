@@ -2,6 +2,7 @@
 id: home
 blueprint: pages
 title: Home
+meta_description: "ATE Bus AG – Ihr fortschrittliches Transportunternehmen im öffentlichen Verkehr in der Region Zürich. Attraktiver Arbeitgeber mit modernem Fahrzeugpark."
 template: templates/default
 layout: templates/layout
 updated_by: ad7fe3d0-f296-4490-a384-26cbf688e223

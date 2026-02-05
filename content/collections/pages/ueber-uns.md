@@ -2,6 +2,7 @@
 id: ueber-uns
 blueprint: pages
 title: 'Über uns'
+meta_description: "Lernen Sie die ATE Bus AG kennen – Ein modernes Transportunternehmen im öffentlichen Verkehr, das die Region zuverlässig und nachhaltig verbindet."
 template: templates/default
 layout: templates/layout
 elements:

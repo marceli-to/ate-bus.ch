@@ -2,6 +2,7 @@
 id: kontakt
 blueprint: pages
 title: Kontakt
+meta_description: "Kontaktieren Sie die ATE Bus AG – Wir sind für Ihre Anliegen da. Allgemeine Anfragen und Informationen zu unserem Service."
 template: templates/default
 layout: templates/layout
 elements:

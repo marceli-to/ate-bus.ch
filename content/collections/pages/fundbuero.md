@@ -2,6 +2,7 @@
 id: fundbuero
 blueprint: pages
 title: Fundbüro
+meta_description: "Etwas im Bus verloren? Unser Fundbüro in Effretikon hilft Ihnen, verlorene Gegenstände wiederzufinden. Öffnungszeiten und Kontakt."
 template: templates/default
 layout: templates/layout
 show_job_teaser: false

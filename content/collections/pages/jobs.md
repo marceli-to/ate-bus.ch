@@ -2,6 +2,7 @@
 id: jobs
 blueprint: pages
 title: Jobs
+meta_description: "Karriere bei ATE Bus AG – Entdecken Sie offene Stellen als Buschauffeur/in und werden Sie Teil unseres engagierten Teams im öffentlichen Verkehr."
 template: templates/default
 layout: templates/layout
 elements:

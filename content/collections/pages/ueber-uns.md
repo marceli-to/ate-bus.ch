@@ -2,7 +2,7 @@
 id: ueber-uns
 blueprint: pages
 title: 'Über uns'
-meta_description: "Lernen Sie die ATE Bus AG kennen – Ein modernes Transportunternehmen im öffentlichen Verkehr, das die Region zuverlässig und nachhaltig verbindet."
+meta_description: 'Lernen Sie die ATE Bus AG kennen – Ein modernes Transportunternehmen im öffentlichen Verkehr, das die Region zuverlässig und nachhaltig verbindet.'
 template: templates/default
 layout: templates/layout
 elements:
@@ -16,7 +16,7 @@ elements:
         content:
           -
             type: text
-            text: 'Lorem ipsum dolor samet. Lorem ipsum dolor samet. Lorem ipsum dolor samet. Lorem ipsum dolor samet.'
+            text: 'Ihr verlässlicher Partner für den öffentlichen Verkehr in der Region – heute und in der Zukunft.'
     type: hero
     enabled: true
   -
@@ -138,6 +138,6 @@ elements:
 open_graph_type: website
 robots: index_follow
 updated_by: ad7fe3d0-f296-4490-a384-26cbf688e223
-updated_at: 1770281952
+updated_at: 1770371268
 show_job_teaser: false
 ---

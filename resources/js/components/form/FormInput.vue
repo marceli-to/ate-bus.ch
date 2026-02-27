@@ -96,12 +96,8 @@ const handleInput = (event) => {
 
   // Clamp date values to min/max
   if (props.type === 'date' && value) {
-    if (props.min && value < props.min) {
-      value = props.min;
-      event.target.value = value;
-    }
-    if (props.max && value > props.max) {
-      value = props.max;
+    if ((props.min && value < props.min) || (props.max && value > props.max)) {
+      value = props.max || props.min;
       event.target.value = value;
     }
   }

@@ -116,7 +116,7 @@
               name="date"
               type="date"
               :max="today"
-              :min="oneYearAgo"
+              :min="oneMonthAgo"
               :required="true"
               :error="errors.date"
               :aria-describedby="errors.date ? 'error-date' : undefined"
@@ -248,9 +248,9 @@ const today = computed(() => {
   return new Date().toISOString().split('T')[0];
 });
 
-const oneYearAgo = computed(() => {
+const oneMonthAgo = computed(() => {
   const date = new Date();
-  date.setFullYear(date.getFullYear() - 1);
+  date.setMonth(date.getMonth() - 1);
   return date.toISOString().split('T')[0];
 });
 
@@ -329,11 +329,11 @@ const isValidDate = (dateString) => {
   if (!dateString) return false;
   const date = new Date(dateString);
   const now = new Date();
-  const yearAgo = new Date();
-  yearAgo.setFullYear(yearAgo.getFullYear() - 1);
-  
-  // Must be in the past and within 1 year
-  return date <= now && date >= yearAgo;
+  const monthAgo = new Date();
+  monthAgo.setMonth(monthAgo.getMonth() - 1);
+
+  // Must be in the past and within 1 month
+  return date <= now && date >= monthAgo;
 };
 
 const scrollToFirstError = (firstErrorField) => {
@@ -378,7 +378,7 @@ const validateForm = () => {
   if (!form.date) {
     setError('date', 'Datum fehlt');
   } else if (!isValidDate(form.date)) {
-    setError('date', 'Datum muss innerhalb des letzten Jahres liegen');
+    setError('date', 'Datum muss innerhalb des letzten Monats liegen');
   }
 
   if (!form.time) {

@@ -87,13 +87,25 @@ const emit = defineEmits(['update:modelValue', 'focus']);
 
 const handleInput = (event) => {
   let value = event.target.value;
-  
+
   // Filter non-numeric characters when inputmode is numeric
   if (props.inputmode === 'numeric') {
     value = value.replace(/[^0-9]/g, '');
     event.target.value = value;
   }
-  
+
+  // Clamp date values to min/max
+  if (props.type === 'date' && value) {
+    if (props.min && value < props.min) {
+      value = props.min;
+      event.target.value = value;
+    }
+    if (props.max && value > props.max) {
+      value = props.max;
+      event.target.value = value;
+    }
+  }
+
   emit('update:modelValue', value);
 };
 

@@ -122,6 +122,7 @@ class ApplicationController extends Controller
 
         // Send emails
         $applicationData = [
+            'gender' => $validated['gender'],
             'firstname' => $validated['firstname'],
             'lastname' => $validated['lastname'],
             'email' => $validated['email'],

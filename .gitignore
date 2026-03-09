@@ -21,6 +21,8 @@
 /public/vendor/statamic
 /storage/*.key
 /storage/pail
+/users
+/resources/users
 /vendor
 Homestead.json
 Homestead.yaml

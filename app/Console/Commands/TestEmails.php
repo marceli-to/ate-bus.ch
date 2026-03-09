@@ -35,6 +35,7 @@ class TestEmails extends Command
         ];
 
         $lostFoundData = [
+            'gender' => 'frau',
             'firstname' => 'Anna',
             'lastname' => 'Beispiel',
             'email' => 'anna.beispiel@example.com',

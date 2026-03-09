@@ -41,6 +41,7 @@ class LostAndFoundController extends Controller
 
         // Prepare email data
         $reportData = [
+            'gender' => $validated['gender'],
             'firstname' => $validated['firstname'],
             'lastname' => $validated['lastname'],
             'email' => $validated['email'],

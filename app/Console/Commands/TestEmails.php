@@ -21,6 +21,7 @@ class TestEmails extends Command
         $type = $this->option('type');
 
         $applicationData = [
+            'gender' => 'herr',
             'firstname' => 'Max',
             'lastname' => 'Muster',
             'email' => 'max.muster@example.com',
@@ -35,6 +36,7 @@ class TestEmails extends Command
         ];
 
         $lostFoundData = [
+            'gender' => 'frau',
             'firstname' => 'Anna',
             'lastname' => 'Beispiel',
             'email' => 'anna.beispiel@example.com',

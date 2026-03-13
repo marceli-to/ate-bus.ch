@@ -20,7 +20,7 @@ class DownloadController extends Controller
         }
 
         $entry = Entry::query()
-            ->where('collection', 'bewerbungen')
+            ->where('collection', 'applications')
             ->where('id', $id)
             ->first();
 

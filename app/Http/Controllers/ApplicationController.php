@@ -92,6 +92,7 @@ class ApplicationController extends Controller
 
         // Create Statamic entry
         $entry = Entry::make()
+            ->id($applicationId)
             ->collection('applications')
             ->slug(Str::slug("{$validated['firstname']}-{$validated['lastname']}-" . now()->format('Y-m-d-His')))
             ->data([

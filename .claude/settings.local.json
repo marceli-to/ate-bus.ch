@@ -10,7 +10,8 @@
       "Bash(npm install:*)",
       "Bash(git add resources/js/components/LostAndFoundForm.vue resources/js/components/form/FormInput.vue resources/views/partials/components/buttons/primary.antlers.html resources/views/partials/sections/jobs.antlers.html public/build && git commit -m \"$\\(cat <<'EOF'\nFix date input clamping and button target attribute\n\n- Change lost-and-found form date constraint from one year to one month\n- Clamp manually entered dates to min/max range on input\n- Pass through target attribute in button primary partial\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
       "Bash(git add resources/js/components/form/FormInput.vue public/build && git commit -m \"$\\(cat <<'EOF'\nClamp out-of-range date input to today instead of min date\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\" && git push)",
-      "Bash(grep -r \"applications\" /Users/marceli.to/Jamon.digital/Webroot/ate-bus.ch/config/statamic/ --include=\"*.yaml\" --include=\"*.php\" 2>/dev/null | head -20)"
+      "Bash(grep -r \"applications\" /Users/marceli.to/Jamon.digital/Webroot/ate-bus.ch/config/statamic/ --include=\"*.yaml\" --include=\"*.php\" 2>/dev/null | head -20)",
+      "Bash(grep -r \"FilePond\" /Users/marceli.to/Jamon.digital/Webroot/ate-bus.ch/resources --include=\"*.vue\" --include=\"*.js\" --include=\"*.ts\" 2>/dev/null | head -20)"
     ]
   }
 }

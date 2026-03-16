@@ -139,7 +139,7 @@ class ApplicationController extends Controller
         ];
 
         // Confirmation to applicant
-        // Mail::to($validated['email'])->send(new ApplicationConfirmation($applicationData));
+        Mail::to($validated['email'])->send(new ApplicationConfirmation($applicationData));
 
         // Notification to HR
         $hrEmail = config('app.application_email');

@@ -15,7 +15,7 @@
   ]])
 
   @include('emails.components.button', [
-    'href' => config('app.url') . '/cp/collections/applications/entries/' . $applicationData['entry_id'],
-    'text' => 'Bewerbung ansehen'
+    'href' => $applicationData['download_url'],
+    'text' => 'Dossier herunterladen'
   ])
 @endsection

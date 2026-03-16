@@ -9,6 +9,7 @@ use App\Mail\ApplicationNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
 use Statamic\Facades\Entry;
 use ZipArchive;
@@ -61,6 +62,9 @@ class ApplicationController extends Controller
         $applicationId = Str::uuid()->toString();
         $basePath = "applications/{$applicationId}";
 
+        // Generate signed download URL (no login required)
+        $signedDownloadUrl = URL::signedRoute('download.dossier.signed', ['id' => $applicationId]);
+
         // Move files from temp to permanent storage
         $applicationFilePaths = $this->moveFilesFromTemp(
             $validated['application_files'],
@@ -112,12 +116,13 @@ class ApplicationController extends Controller
                 'criminal_record_file' => $criminalRecordPath,
                 'ivz_register_file' => $ivzRegisterPath,
                 'dossier_path' => $dossierPath,
+                'dossier_download_url' => $signedDownloadUrl,
                 'submitted_at' => now()->format('d.m.Y'),
             ]);
 
         $entry->save();
 
-        // Update entry with dossier URL (needs entry ID)
+        // Update entry with CP dossier URL (needs entry ID)
         $entry->set('dossier_url', route('download.dossier', $entry->id()));
         $entry->save();
 
@@ -130,6 +135,7 @@ class ApplicationController extends Controller
             'phone' => $validated['phone'],
             'job_title' => $jobTitle,
             'entry_id' => $entry->id(),
+            'download_url' => $signedDownloadUrl,
         ];
 
         // Confirmation to applicant

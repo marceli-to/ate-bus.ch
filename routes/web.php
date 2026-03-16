@@ -28,7 +28,12 @@ Route::get('/api/bus-routes', function () {
         ]);
 });
 
-// Authenticated route for dossier download
+// Authenticated route for dossier download (CP users)
 Route::get('/download/bewerbung/{id}', [DownloadController::class, 'dossier'])
     ->name('download.dossier')
     ->middleware('statamic.cp.authenticated');
+
+// Signed URL route for dossier download (no login required)
+Route::get('/download/bewerbung/dossier/{id}', [DownloadController::class, 'dossierSigned'])
+    ->name('download.dossier.signed')
+    ->middleware('signed');

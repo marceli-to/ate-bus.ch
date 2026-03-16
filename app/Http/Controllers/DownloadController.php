@@ -9,7 +9,7 @@ use Statamic\Facades\User;
 class DownloadController extends Controller
 {
     /**
-     * Download application dossier (ZIP)
+     * Download application dossier (ZIP) — requires CP authentication
      */
     public function dossier(Request $request, string $id)
     {
@@ -19,6 +19,20 @@ class DownloadController extends Controller
             abort(403, 'Unauthorized');
         }
 
+        return $this->streamDossier($id);
+    }
+
+    /**
+     * Download application dossier (ZIP) via signed URL — no login required
+     */
+    public function dossierSigned(Request $request, string $id)
+    {
+        // The 'signed' middleware already validated the URL signature
+        return $this->streamDossier($id);
+    }
+
+    private function streamDossier(string $id)
+    {
         $entry = Entry::query()
             ->where('collection', 'applications')
             ->where('id', $id)

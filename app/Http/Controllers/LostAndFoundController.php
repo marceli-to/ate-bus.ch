@@ -53,7 +53,7 @@ class LostAndFoundController extends Controller
         ];
 
         // Confirmation to reporter
-        // Mail::to($validated['email'])->send(new LostAndFoundConfirmation($reportData));
+        Mail::to($validated['email'])->send(new LostAndFoundConfirmation($reportData));
 
         // Notification to lost and found office
         $officeEmail = config('app.lost_and_found_email');

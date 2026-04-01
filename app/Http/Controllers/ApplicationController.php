@@ -9,10 +9,8 @@ use App\Mail\ApplicationNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
 use Statamic\Facades\Entry;
-use ZipArchive;
 
 class ApplicationController extends Controller
 {
@@ -58,37 +56,10 @@ class ApplicationController extends Controller
     {
         $validated = $request->validated();
 
-        // Generate unique application ID
         $applicationId = Str::uuid()->toString();
-        $basePath = "applications/{$applicationId}";
 
-        // Generate signed download URL (no login required)
-        $signedDownloadUrl = URL::signedRoute('download.dossier.signed', ['id' => $applicationId]);
-
-        // Move files from temp to permanent storage
-        $applicationFilePaths = $this->moveFilesFromTemp(
-            $validated['application_files'],
-            "{$basePath}/bewerbung"
-        );
-
-        $criminalRecordPath = $this->moveFileFromTemp(
-            $validated['criminal_record'],
-            "{$basePath}/strafregister"
-        );
-
-        $ivzRegisterPath = $this->moveFileFromTemp(
-            $validated['ivz_register'],
-            "{$basePath}/ivz"
-        );
-
-        // Create ZIP immediately
-        $dossierPath = "{$basePath}/dossier.zip";
-        $this->createDossierZip(
-            $applicationFilePaths,
-            $criminalRecordPath,
-            $ivzRegisterPath,
-            storage_path("app/private/{$dossierPath}")
-        );
+        // Collect file paths from temp storage
+        $files = $this->collectTempFiles($validated);
 
         // Get job entry for title
         $job = Entry::find($validated['job_id']);
@@ -112,18 +83,9 @@ class ApplicationController extends Controller
                 'email' => $validated['email'],
                 'german_skills' => $validated['german_skills'],
                 'permit' => $validated['permit'],
-                'application_files' => json_encode($applicationFilePaths),
-                'criminal_record_file' => $criminalRecordPath,
-                'ivz_register_file' => $ivzRegisterPath,
-                'dossier_path' => $dossierPath,
-                'dossier_download_url' => $signedDownloadUrl,
                 'submitted_at' => now()->format('d.m.Y'),
             ]);
 
-        $entry->save();
-
-        // Update entry with CP dossier URL (needs entry ID)
-        $entry->set('dossier_url', route('download.dossier', $entry->id()));
         $entry->save();
 
         // Send emails
@@ -134,18 +96,17 @@ class ApplicationController extends Controller
             'email' => $validated['email'],
             'phone' => $validated['phone'],
             'job_title' => $jobTitle,
-            'entry_id' => $entry->id(),
-            'download_url' => $signedDownloadUrl,
         ];
 
-        // Confirmation to applicant
         Mail::to($validated['email'])->send(new ApplicationConfirmation($applicationData));
 
-        // Notification to HR
         $hrEmail = config('app.application_email');
         if ($hrEmail) {
-            Mail::to($hrEmail)->send(new ApplicationNotification($applicationData));
+            Mail::to($hrEmail)->send(new ApplicationNotification($applicationData, $files));
         }
+
+        // Clean up temp files
+        $this->cleanupTempFiles($validated);
 
         return response()->json([
             'success' => true,
@@ -153,94 +114,51 @@ class ApplicationController extends Controller
         ]);
     }
 
-    /**
-     * Move multiple files from temp storage
-     */
-    private function moveFilesFromTemp(array $tempIds, string $destinationPath): array
+    private function collectTempFiles(array $validated): array
     {
-        $paths = [];
+        $files = [];
 
-        foreach ($tempIds as $tempId) {
-            $path = $this->moveFileFromTemp($tempId, $destinationPath);
-            if ($path) {
-                $paths[] = $path;
+        foreach ($validated['application_files'] as $tempId) {
+            $file = $this->getTempFile($tempId);
+            if ($file) {
+                $files[] = $file;
             }
         }
 
-        return $paths;
+        $file = $this->getTempFile($validated['criminal_record']);
+        if ($file) {
+            $files[] = $file;
+        }
+
+        $file = $this->getTempFile($validated['ivz_register']);
+        if ($file) {
+            $files[] = $file;
+        }
+
+        return $files;
     }
 
-    /**
-     * Move a single file from temp storage
-     */
-    private function moveFileFromTemp(string $tempId, string $destinationPath): ?string
+    private function getTempFile(string $tempId): ?array
     {
-        $tempPath = "temp/{$tempId}";
+        $tempFiles = Storage::disk('local')->files("temp/{$tempId}");
 
-        // Use Storage facade - it knows the correct root (storage/app/private)
-        $files = Storage::disk('local')->files($tempPath);
-
-        if (empty($files)) {
-            \Log::warning("No files found in temp path", ['tempPath' => $tempPath]);
+        if (empty($tempFiles)) {
             return null;
         }
 
-        $tempFile = $files[0];
-        $filename = basename($tempFile);
-        $newPath = "{$destinationPath}/{$filename}";
-
-        // Use Storage facade to move file
-        if (Storage::disk('local')->exists($tempFile)) {
-            Storage::disk('local')->copy($tempFile, $newPath);
-            Storage::disk('local')->deleteDirectory($tempPath);
-            \Log::info("File moved successfully", ['from' => $tempFile, 'to' => $newPath]);
-        } else {
-            \Log::error("Source file does not exist", ['tempFile' => $tempFile]);
-        }
-
-        return $newPath;
+        return [
+            'path' => storage_path("app/private/{$tempFiles[0]}"),
+            'name' => basename($tempFiles[0]),
+        ];
     }
 
-    /**
-     * Create ZIP file containing all application documents
-     */
-    private function createDossierZip(array $applicationFiles, ?string $criminalRecordPath, ?string $ivzRegisterPath, string $zipPath): void
+    private function cleanupTempFiles(array $validated): void
     {
-        $dir = dirname($zipPath);
-        if (!is_dir($dir)) {
-            mkdir($dir, 0755, true);
+        foreach ($validated['application_files'] as $tempId) {
+            Storage::disk('local')->deleteDirectory("temp/{$tempId}");
         }
 
-        $zip = new ZipArchive();
-        $zip->open($zipPath, ZipArchive::CREATE | ZipArchive::OVERWRITE);
-
-        // The local disk root is storage/app/private
-        $storageRoot = storage_path('app/private');
-
-        // Add application files
-        foreach ($applicationFiles as $filePath) {
-            $fullPath = "{$storageRoot}/{$filePath}";
-            if (file_exists($fullPath)) {
-                $zip->addFile($fullPath, 'bewerbung/' . basename($fullPath));
-            }
-        }
-
-        // Add criminal record
-        if ($criminalRecordPath) {
-            $fullPath = "{$storageRoot}/{$criminalRecordPath}";
-            if (file_exists($fullPath)) {
-                $zip->addFile($fullPath, 'strafregister/' . basename($fullPath));
-            }
-        }
-
-        // Add IVZ register
-        if ($ivzRegisterPath) {
-            $fullPath = "{$storageRoot}/{$ivzRegisterPath}";
-            if (file_exists($fullPath)) {
-                $zip->addFile($fullPath, 'ivz/' . basename($fullPath));
-            }
-        }
-
-        $zip->close();
+        Storage::disk('local')->deleteDirectory("temp/{$validated['criminal_record']}");
+        Storage::disk('local')->deleteDirectory("temp/{$validated['ivz_register']}");
     }
 }

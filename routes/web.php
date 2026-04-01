@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\ApplicationController;
-use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\LostAndFoundController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,12 +27,3 @@ Route::get('/api/bus-routes', function () {
         ]);
 });
 
-// Authenticated route for dossier download (CP users)
-Route::get('/download/bewerbung/{id}', [DownloadController::class, 'dossier'])
-    ->name('download.dossier')
-    ->middleware('statamic.cp.authenticated');
-
-// Signed URL route for dossier download (no login required)
-Route::get('/download/bewerbung/dossier/{id}', [DownloadController::class, 'dossierSigned'])
-    ->name('download.dossier.signed')
-    ->middleware('signed');

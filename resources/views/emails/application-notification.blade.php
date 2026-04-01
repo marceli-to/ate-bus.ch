@@ -14,8 +14,5 @@
     ['label' => 'Telefon', 'value' => $applicationData['phone']],
   ]])
 
-  @include('emails.components.button', [
-    'href' => $applicationData['download_url'],
-    'text' => 'Dossier herunterladen'
-  ])
+  <p class="email-text">Die Bewerbungsunterlagen sind als Anhang beigefügt.</p>
 @endsection

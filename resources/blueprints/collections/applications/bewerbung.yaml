@@ -20,6 +20,12 @@ tabs:
               display: Eingereicht am
               read_only: true
           -
+            handle: dossier_url
+            field:
+              type: text
+              display: Download Dossier
+              read_only: true
+          -
             handle: gender
             field:
               type: select

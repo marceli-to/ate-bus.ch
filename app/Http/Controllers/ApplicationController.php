@@ -7,6 +7,7 @@ use App\Http\Requests\UploadFileRequest;
 use App\Mail\ApplicationConfirmation;
 use App\Mail\ApplicationNotification;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -98,15 +99,38 @@ class ApplicationController extends Controller
             'job_title' => $jobTitle,
         ];
 
-        Mail::to($validated['email'])->send(new ApplicationConfirmation($applicationData));
+        try {
+            Mail::to($validated['email'])->send(new ApplicationConfirmation($applicationData));
+        } catch (\Throwable $e) {
+            Log::error('Bewerbung: Bestätigungsmail konnte nicht versendet werden', [
+                'entry' => $applicationId,
+                'recipient' => $validated['email'],
+                'error' => $e->getMessage(),
+            ]);
+        }
+
+        // Temp-Dateien nur löschen, wenn das Dossier per Mail beim HR angekommen
+        // ist – sonst sind die Uploads unwiederbringlich weg.
+        $notificationSent = true;
 
         $hrEmail = config('app.application_email');
         if ($hrEmail) {
-            Mail::to($hrEmail)->send(new ApplicationNotification($applicationData, $files));
+            try {
+                Mail::to($hrEmail)->send(new ApplicationNotification($applicationData, $files));
+            } catch (\Throwable $e) {
+                $notificationSent = false;
+                Log::error('Bewerbung: Benachrichtigung ans HR konnte nicht versendet werden', [
+                    'entry' => $applicationId,
+                    'recipient' => $hrEmail,
+                    'error' => $e->getMessage(),
+                ]);
+            }
         }
 
         // Clean up temp files
-        $this->cleanupTempFiles($validated);
+        if ($notificationSent) {
+            $this->cleanupTempFiles($validated);
+        }
 
         return response()->json([
             'success' => true,

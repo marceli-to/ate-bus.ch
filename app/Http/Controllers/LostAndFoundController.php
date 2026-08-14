@@ -6,6 +6,7 @@ use App\Http\Requests\StoreLostAndFoundRequest;
 use App\Mail\LostAndFoundConfirmation;
 use App\Mail\LostAndFoundNotification;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Statamic\Facades\Entry;
@@ -53,12 +54,28 @@ class LostAndFoundController extends Controller
         ];
 
         // Confirmation to reporter
-        Mail::to($validated['email'])->send(new LostAndFoundConfirmation($reportData));
+        try {
+            Mail::to($validated['email'])->send(new LostAndFoundConfirmation($reportData));
+        } catch (\Throwable $e) {
+            Log::error('Verlustmeldung: Bestätigungsmail konnte nicht versendet werden', [
+                'entry' => $entry->id(),
+                'recipient' => $validated['email'],
+                'error' => $e->getMessage(),
+            ]);
+        }
 
         // Notification to lost and found office
         $officeEmail = config('app.lost_and_found_email');
         if ($officeEmail) {
-            Mail::to($officeEmail)->send(new LostAndFoundNotification($reportData));
+            try {
+                Mail::to($officeEmail)->send(new LostAndFoundNotification($reportData));
+            } catch (\Throwable $e) {
+                Log::error('Verlustmeldung: Benachrichtigung ans Fundbüro konnte nicht versendet werden', [
+                    'entry' => $entry->id(),
+                    'recipient' => $officeEmail,
+                    'error' => $e->getMessage(),
+                ]);
+            }
         }
 
         return response()->json([

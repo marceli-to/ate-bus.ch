@@ -47,6 +47,10 @@ return [
             'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN', parse_url((string) env('APP_URL', 'http://localhost'), PHP_URL_HOST)),
+            // Der Zertifikatspfad von *.mail.protection.outlook.com endet in der
+            // "DigiCert Global Root CA", die aus den aktuellen CA-Bundles entfernt
+            // wurde. Auf Servern ohne diesen Root scheitert sonst STARTTLS.
+            'verify_peer' => env('MAIL_VERIFY_PEER', true),
         ],
 
         'ses' => [

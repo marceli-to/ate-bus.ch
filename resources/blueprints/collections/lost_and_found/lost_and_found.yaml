@@ -9,10 +9,10 @@ tabs:
             handle: submitted_at
             field:
               type: date
-              display: Eingereicht am
+              display: 'Eingereicht am'
               time_enabled: true
               format: 'd.m.Y H:i'
-              read_only: true
+              visibility: read_only
           -
             handle: gender
             field:
@@ -71,10 +71,14 @@ tabs:
             handle: title
             field:
               type: text
+              required: true
               display: Title
-              read_only: true
+              validate:
+                - required
+              visibility: read_only
           -
             handle: slug
             field:
               type: slug
               localizable: true
+              validate: 'max:200'

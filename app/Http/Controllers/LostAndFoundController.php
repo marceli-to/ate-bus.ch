@@ -35,7 +35,8 @@ class LostAndFoundController extends Controller
                 'time' => $validated['time'],
                 'bus_line' => $validated['bus_line'],
                 'description' => $validated['description'],
-                'submitted_at' => now()->format('d.m.Y H:i'),
+                // ISO-Format, damit das Datumsfeld im CP korrekt sortiert
+                'submitted_at' => now()->format('Y-m-d H:i:s'),
             ]);
 
         $entry->save();

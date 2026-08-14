@@ -16,8 +16,10 @@ tabs:
           -
             handle: submitted_at
             field:
-              type: text
+              type: date
               display: Eingereicht am
+              time_enabled: true
+              format: 'd.m.Y H:i'
               read_only: true
           -
             handle: dossier_url

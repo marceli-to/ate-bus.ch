@@ -84,7 +84,8 @@ class ApplicationController extends Controller
                 'email' => $validated['email'],
                 'german_skills' => $validated['german_skills'],
                 'permit' => $validated['permit'],
-                'submitted_at' => now()->format('d.m.Y'),
+                // ISO-Format, damit das Datumsfeld im CP korrekt sortiert
+                'submitted_at' => now()->format('Y-m-d H:i:s'),
             ]);
 
         $entry->save();

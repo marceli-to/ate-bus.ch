@@ -19,6 +19,7 @@ tabs:
               type: date
               display: Eingereicht am
               time_enabled: true
+              time_seconds_enabled: true
               format: 'd.m.Y H:i'
               read_only: true
           -

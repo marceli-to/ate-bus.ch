@@ -1,0 +1,29 @@
+{{#
+  @name Layout Thin
+  @desc Schlanke Seite ohne Menü und Footer-Navigation (z.B. Fundmeldung fürs Personal)
+#}}
+{{ partial:layout/html }}
+
+{{ partial:layout/head }}
+
+{{ partial:layout/body }}
+
+<header class="bg-white">
+  {{ partial:layout/container size="outer" }}
+    <div class="py-12 md:py-24">
+      {{ partial:components/logos/logo-duotone class="w-124 md:w-144 xl:w-180 h-auto" }}
+    </div>
+  {{ /partial:layout/container }}
+</header>
+
+{{ partial:layout/main }}
+
+<footer class="bg-blue-primary text-white text-xs xl:text-sm leading-[1.5] py-20 lg:py-24">
+  {{ partial:layout/container size="outer" }}
+    {{ company:name }} · {{ company:address | strip_tags | replace:"\n":" · " }}
+  {{ /partial:layout/container }}
+</footer>
+
+{{ /partial:layout/body }}
+
+{{ /partial:layout/html }}

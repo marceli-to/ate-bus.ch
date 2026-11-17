@@ -1,0 +1,124 @@
+title: Fundmeldung
+tabs:
+  main:
+    display: Meldung
+    sections:
+      -
+        fields:
+          -
+            handle: submitted_at
+            field:
+              type: date
+              display: 'Eingereicht am'
+              time_enabled: true
+              time_seconds_enabled: true
+              format: 'd.m.Y H:i'
+              visibility: read_only
+              listable: true
+          -
+            handle: item
+            field:
+              type: text
+              display: Gegenstand
+              visibility: read_only
+              listable: true
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Beschreibung
+              visibility: read_only
+          -
+            handle: photos
+            field:
+              type: assets
+              display: Fotos
+              container: fundmeldungen
+              max_files: 2
+              mode: grid
+              visibility: read_only
+          -
+            handle: date
+            field:
+              type: text
+              display: Datum
+              visibility: read_only
+              width: 50
+          -
+            handle: time
+            field:
+              type: text
+              display: Uhrzeit
+              visibility: read_only
+              width: 50
+          -
+            handle: bus_line
+            field:
+              type: text
+              display: Buslinie
+              visibility: read_only
+              width: 50
+              listable: true
+          -
+            handle: bus_number
+            field:
+              type: text
+              display: Bus-Nr
+              visibility: read_only
+              width: 50
+          -
+            handle: location
+            field:
+              type: text
+              display: 'Fundort im Bus'
+              visibility: read_only
+          -
+            handle: role
+            field:
+              type: text
+              display: 'Gefunden von'
+              visibility: read_only
+              width: 50
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+              visibility: read_only
+              width: 50
+              listable: true
+          -
+            handle: dropped_off_at
+            field:
+              type: text
+              display: 'Abgegeben bei'
+              visibility: read_only
+              listable: true
+          -
+            handle: mail_sent
+            field:
+              type: toggle
+              display: 'Mail versendet'
+              instructions: 'Aus = Mail an das Fundpostfach ist fehlgeschlagen, Meldung nur hier gespeichert.'
+              visibility: read_only
+              listable: true
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              display: Title
+              validate:
+                - required
+              visibility: read_only
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

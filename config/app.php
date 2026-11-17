@@ -135,4 +135,9 @@ return [
     'application_email' => env('APPLICATION_EMAIL'),
     'lost_and_found_email' => env('LOST_AND_FOUND_EMAIL'),
 
+    // Fundmeldung (Personal): Empfänger und Zugangscode aus dem Link (?k=...).
+    // Ohne Code ist die Seite immer 404.
+    'found_items_email' => env('FOUND_ITEMS_EMAIL', 'fundgegenstaende@ate-bus.ch'),
+    'found_items_code' => env('FOUND_ITEMS_CODE'),
+
 ];

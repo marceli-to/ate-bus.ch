@@ -15,6 +15,7 @@ initReveal();
 import { createApp } from 'vue';
 import ApplicationForm from './components/ApplicationForm.vue';
 import LostAndFoundForm from './components/LostAndFoundForm.vue';
+import FoundItemForm from './components/FoundItemForm.vue';
 
 // Mount Vue application form on elements with data-application-form attribute
 document.querySelectorAll('[data-application-form]').forEach((el) => {
@@ -28,5 +29,13 @@ document.querySelectorAll('[data-application-form]').forEach((el) => {
 document.querySelectorAll('[data-lost-and-found-form]').forEach((el) => {
     const variant = el.dataset.variant || 'white';
     const app = createApp(LostAndFoundForm, { variant });
+    app.mount(el);
+});
+
+// Mount Vue found item form (Fundmeldung fürs Personal); Konfiguration als JSON im Template
+document.querySelectorAll('[data-found-item-form]').forEach((el) => {
+    const config = JSON.parse(document.getElementById('found-item-form-config')?.textContent || '{}');
+    const variant = el.dataset.variant || 'light-blue';
+    const app = createApp(FoundItemForm, { config, variant });
     app.mount(el);
 });

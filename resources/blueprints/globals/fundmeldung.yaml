@@ -1,0 +1,13 @@
+title: Fundmeldung
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: items
+            field:
+              type: list
+              display: Gegenstände
+              instructions: 'Auswahl «Gegenstand» im Formular Fundmeldung. Die Linien kommen aus der Collection «Buslinien».'

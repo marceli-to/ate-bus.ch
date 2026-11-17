@@ -2,35 +2,37 @@
 
 ## Open: Fundmeldung + Reply-To (client request 2026-11-17)
 
-Status: **waiting for client reply** (mail sent 2026-11-17). Code is on branch `feature/fundmeldung` (pushed, not merged).
+Status: **built on branch `feature/fundmeldung`, tested locally, not merged.** Waiting for the client's OK on the rebuild (mail sent 2026-11-17).
 
 ### Request
-1. Hidden staff page «Fundmeldung» (found items, not lost): drivers and cleaning staff report found items by phone, with up to 2 photos. Link only in the Infosoft app: `https://www.ate-bus.ch/fundmeldung.php?k=8307`.
-   - Without a valid code the page shows «404 Not Found». Not linked anywhere, no sitemap, noindex.
+1. Hidden staff page «Fundmeldung» (found items, not lost): drivers and cleaning staff report found items by phone, with up to 2 photos. Link only in the Infosoft app.
+   - Without a valid code the page shows 404. Not linked anywhere, no sitemap, noindex.
    - Mail to `fundgegenstaende@ate-bus.ch`, from `noreply@ate-bus.ch`, photos as attachments.
    - **Do not change** field names, table layout or subject («Neue Fundmeldung: …»). The client parses these mails automatically (with Claude).
 2. Reply-To on «Verlust melden» and Bewerbungen: Reply-To = the e-mail entered in the form. Sender stays noreply@, subject and body unchanged.
 
-### Done (local, uncommitted)
-- `app/Mail/LostAndFoundNotification.php`, `app/Mail/ApplicationNotification.php`: `replyTo` set to the form's name and e-mail. Tested in tinker. **Can ship independently.**
-- `public/fundmeldung.php`: client's file, unchanged except that sending uses the Laravel mailer instead of PHP `mail()`. The file boots Laravel itself for this. If sending fails, the page shows the client's error message and the error is logged. Tested with `php -S` + `MAIL_MAILER=log`: 404 without the code, 200 with it, mail correct with the attachment.
-- `LocalValetDriver.php`: Herd sends every `.php` request through `index.php`, so this driver makes Herd execute `public/fundmeldung.php` directly (local only, the server doesn't use it).
+### Built (branch `feature/fundmeldung`)
+- **Reply-To:** `app/Mail/LostAndFoundNotification.php`, `app/Mail/ApplicationNotification.php`.
+- **Fundmeldung as part of the site** (instead of the client's standalone file):
+  - Route `GET|POST /fundmeldung?k=CODE` → `FoundItemController`. Throttled: GET 60/min, POST 30 per 10 min per IP. No CSRF check for this route (the link code protects it, and a page left open in the app would otherwise get 419).
+  - Page in the site's own style: Antlers template `templates/fundmeldung` in the thin layout `templates/layout-thin` (logo only, one-line footer, no menu). Form = Vue `FoundItemForm.vue`, built from the site's `Form*` components plus two new ones: `FormChoice.vue` (big option buttons) and `FormPhoto.vue` (camera, preview, shrinks to 1600px JPEG in the browser). Name and role are remembered in localStorage. `store` returns JSON with errors per field (422).
+  - Mail `app/Mail/FoundItemNotification.php`: HTML built 1:1 from their file (verified byte-identical against their algorithm). Subject is the same. Sender `ATE Bus Fundmeldung <mail.from.address>`.
+  - Each report is saved first as an entry in the collection **Fundmeldungen** (`found_items`), then mailed. Toggle «Mail versendet» = off means the mail failed and the report exists only in the CP.
+  - Photos go to the **private** asset container `fundmeldungen` (disk `found_items` → `storage/app/private/fundmeldungen`, no public URL).
+  - Lines come from the collection **Buslinien** (`bus_routes`, partner vbg/vbz). Item categories come from the global set **Fundmeldung** (list field, defaults = the client's list).
+  - `app/Support/FoundItems.php` creates the collection, container and global set on the first report, because `content/` is not in git.
+  - `public/fundmeldung.php` = 302 redirect to `/fundmeldung` keeping `?k=…` (old link from the client's mail).
+- Shared form components (`FormInput`, `FormSelect`, `FormTextarea`, used by all forms): 16px text on mobile (stops iPhone zoom on focus), same field height for inputs and selects.
+- Server-side checks (per field, shown at the field) on top of the client's own: Gegenstand must be in the list, Abgabe must be one of 4 options, date/time format, field lengths, real image type (jpeg/png/webp/heic/heif), max 8 MB per photo.
 
-### Proposed to the client: rebuild in the website
-Client offered «Falls es für euch sauberer ist, dürft ihr sie gerne als Statamic-Formular nachbauen». We proposed:
-- Laravel controller + Statamic collection, like `LostAndFoundController`. Each report is saved in the control panel (incl. photos), then mailed. **The mail stays identical.**
-- New URL `/fundmeldung?k=…`. The old `public/fundmeldung.php` becomes a 302 redirect that keeps the query string (`?k=…`).
-- Longer access code in `.env` (`8307` is their postcode and appears in the page footer), rate limit, validate «Gegenstand» against the list.
-- Lines (VBZ/VBG) and item categories editable in the CP.
-- Estimate: 3–5 h.
+### Deploy checklist
+- `.env` on the server: `FOUND_ITEMS_CODE=<long random code>` (without it the page is always 404). Optional: `FOUND_ITEMS_EMAIL` (default `fundgegenstaende@ate-bus.ch`).
+- Check that `MAIL_FROM_ADDRESS` on the server is `noreply@ate-bus.ch`. The Fundmeldung uses it as sender.
+- Client adds the missing lines in CP → Buslinien: **VBG 653, VBG 654, VBZ 702**. New toggle «Nur intern» on a line: it shows in the Fundmeldung but not in the «Verlust melden» dropdown (`/api/bus-routes`). The public lines page only shows lines picked by hand in the page builder, so new lines never appear there on their own. Ask the client whether these 3 lines should be internal.
+- Test on production: the old link `/fundmeldung.php?k=…` redirects; one test report with a photo; check the entry and photo in the CP.
+- Send the client the new link `https://www.ate-bus.ch/fundmeldung?k=<code>`.
 
-### Security notes (from review)
-- `8307` is guessable and can be brute-forced (4 digits, no rate limit).
-- Mails are processed automatically by Claude, so free-text fields are untrusted input (prompt injection). The client should know this; it applies to «Verlust melden» too.
-- The standalone file runs outside Laravel's error handling, so `display_errors` must be off in production.
-- Production nginx/Apache config hasn't been seen. Check that `/fundmeldung.php` executes there.
-
-### Next
-- **Client agrees to the rebuild:** build it as above, turn `public/fundmeldung.php` into the redirect, test on production with a test report incl. a photo.
-- **Client declines:** ship `public/fundmeldung.php` as it is (recommend a longer code), test on production.
-- Either way: ship the Reply-To change. Decide whether `LocalValetDriver.php` goes into git or `.gitignore`.
+### Open points
+- Not yet checked in the CP UI: entry list columns, photo thumbnails from the private container.
+- Mail content is untrusted input for the client's Claude automation (prompt injection). Tell the client; it applies to «Verlust melden» too.
+- Local test entries exist in `found_items` (2 entries, 2 photos). Delete them before checking the CP if they're in the way.

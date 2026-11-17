@@ -26,6 +26,13 @@ tabs:
                 vbg: VBG
                 vbz: VBZ
               required: true
+          -
+            handle: internal
+            field:
+              type: toggle
+              display: 'Nur intern'
+              instructions: 'Linie erscheint nur in der Fundmeldung fürs Personal, nicht im Formular «Verlust melden».'
+              default: false
   sidebar:
     display: Sidebar
     sections:

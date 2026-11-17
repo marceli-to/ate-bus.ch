@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\DownloadController;
+use App\Http\Controllers\FoundItemController;
 use App\Http\Controllers\LostAndFoundController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,12 +16,19 @@ Route::prefix('api/applications')->group(function () {
 // Lost and found form API routes
 Route::post('/api/lost-and-found', [LostAndFoundController::class, 'store']);
 
+// Fundmeldung (Personal, nur mit Code im Link aus der Infosoft-App)
+Route::get('/fundmeldung', [FoundItemController::class, 'show'])->middleware('throttle:60,1');
+Route::post('/fundmeldung', [FoundItemController::class, 'store'])->middleware('throttle:30,10');
+
 // Bus routes API
 Route::get('/api/bus-routes', function () {
     return \Statamic\Facades\Entry::query()
         ->where('collection', 'bus_routes')
         ->orderBy('title')
         ->get()
+        // «Nur intern»: nur für die Fundmeldung, nicht für Fahrgäste
+        ->reject(fn ($entry) => (bool) $entry->get('internal'))
+        ->values()
         ->map(fn ($entry) => [
             'title' => $entry->get('title'),
             'route' => $entry->get('route'),

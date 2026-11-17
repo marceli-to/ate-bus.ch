@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col py-6 px-8 md:py-8 md:px-12" :class="wrapperBgClass">
+  <div class="flex flex-col p-8 md:py-8 md:px-12" :class="wrapperBgClass">
     <FormLabel
       :html-for="id"
       :required="required"
@@ -13,7 +13,7 @@
         :name="name"
         :value="modelValue"
         :disabled="disabled"
-        class="w-full py-4 xl:py-8 border-0 text-xs xl:text-sm appearance-none cursor-pointer focus:outline-none pr-16"
+        class="w-full py-4 xl:py-8 h-32 xl:h-40 border-0 text-sm md:text-xs xl:text-sm appearance-none cursor-pointer focus:outline-none pr-16"
         :class="[
           selectBgClass,
           !modelValue ? 'text-blue-gray/50' : 'text-blue-black'

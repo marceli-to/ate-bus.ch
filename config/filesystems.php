@@ -61,6 +61,15 @@ return [
             // 'visibility' => 'public', // https://statamic.dev/assets#container-visibility
         ],
 
+        // Fotos der Fundmeldungen: privat, ohne URL (nur im Control Panel sichtbar)
+        'found_items' => [
+            'driver' => 'local',
+            'root' => storage_path('app/private/fundmeldungen'),
+            'visibility' => 'private',
+            'throw' => false,
+            'report' => false,
+        ],
+
         'assets' => [
             'driver' => 'local',
             'root' => public_path('assets'),

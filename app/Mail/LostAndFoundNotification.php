@@ -4,6 +4,7 @@ namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
@@ -20,6 +21,8 @@ class LostAndFoundNotification extends Mailable
     {
         return new Envelope(
             subject: "Neue Verlustmeldung: {$this->reportData['firstname']} {$this->reportData['lastname']}",
+            // «Antworten» in Outlook geht direkt an die Person, Absender bleibt noreply
+            replyTo: [new Address($this->reportData['email'], trim("{$this->reportData['firstname']} {$this->reportData['lastname']}"))],
         );
     }
 

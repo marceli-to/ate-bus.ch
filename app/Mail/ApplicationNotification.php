@@ -5,6 +5,7 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Attachment;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
@@ -22,6 +23,8 @@ class ApplicationNotification extends Mailable
     {
         return new Envelope(
             subject: "Neue Bewerbung: {$this->applicationData['firstname']} {$this->applicationData['lastname']} - {$this->applicationData['job_title']}",
+            // «Antworten» in Outlook geht direkt an die Person, Absender bleibt noreply
+            replyTo: [new Address($this->applicationData['email'], trim("{$this->applicationData['firstname']} {$this->applicationData['lastname']}"))],
         );
     }
 

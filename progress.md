@@ -2,7 +2,7 @@
 
 ## Open: Fundmeldung + Reply-To (client request 2026-11-17)
 
-Status: **waiting for client reply** (mail sent 2026-11-17). Nothing committed yet.
+Status: **waiting for client reply** (mail sent 2026-11-17). Code is on branch `feature/fundmeldung` (pushed, not merged).
 
 ### Request
 1. Hidden staff page «Fundmeldung» (found items, not lost): drivers and cleaning staff report found items by phone, with up to 2 photos. Link only in the Infosoft app: `https://www.ate-bus.ch/fundmeldung.php?k=8307`.

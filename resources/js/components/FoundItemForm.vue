@@ -13,7 +13,7 @@
     <!-- Form -->
     <form
       v-else
-      class="space-y-16 md:space-y-20"
+      class="space-y-32 md:space-y-40"
       novalidate
       @submit.prevent="submitForm"
     >
@@ -99,7 +99,7 @@
             v-model="form.gruppe"
             label="Gruppe"
             name="gruppe"
-            :options="toOptions(config.groups)"
+            :options="groupOptions"
             :required="true"
             :error="errors.gruppe"
             @update:modelValue="changeGroup"
@@ -176,7 +176,6 @@
             label="Abgegeben bei"
             name="abgabe"
             :options="toOptions(config.dropOffs)"
-            :columns="4"
             :required="true"
             :error="errors.abgabe"
             @update:modelValue="clearError('abgabe')"
@@ -236,6 +235,10 @@ const nowTime = () => {
 };
 
 const toOptions = (list) => list.map((value) => ({ value, label: value }));
+
+// VBZ blau, VBG grün: wie in der ursprünglichen fundmeldung.php
+const GROUP_TONES = { VBZ: 'blue', VBG: 'green' };
+const groupOptions = props.config.groups.map((value) => ({ value, label: value, tone: GROUP_TONES[value] }));
 
 // Name und Rolle merken (wie in der ursprünglichen fundmeldung.php)
 const remembered = (key) => {

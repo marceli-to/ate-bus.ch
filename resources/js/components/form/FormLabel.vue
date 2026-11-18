@@ -1,5 +1,5 @@
 <template>
-  <label :for="htmlFor" :class="['text-blue-black font-medium text-sm mb-2 block', customClass]">
+  <label :for="htmlFor" :class="['text-blue-black font-medium text-sm mb-4 block', customClass]">
     <slot />
     <span v-if="required">*</span>
   </label>

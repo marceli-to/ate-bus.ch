@@ -114,7 +114,7 @@ class FoundItemController extends Controller
         $busLine = $role === 'Fahrer' ? "$group $line" : $group;
         $dateDisplay = preg_replace('/^(\d{4})-(\d{2})-(\d{2})$/', '$3.$2.$1', $date);
         $where = $role === 'Fahrer' ? $busLine : "$group Bus $bus (Reinigung)";
-        $subject = "Neue Fundmeldung: $item – $where – $dateDisplay";
+        $subject = "Gefunden – Neue Fundmeldung: $item – $where – $dateDisplay";
 
         FoundItems::ensureSetup();
 

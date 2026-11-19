@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreLostAndFoundRequest;
-use App\Mail\LostAndFoundConfirmation;
 use App\Mail\LostAndFoundNotification;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Log;
@@ -54,16 +53,8 @@ class LostAndFoundController extends Controller
             'description' => $validated['description'],
         ];
 
-        // Confirmation to reporter
-        try {
-            Mail::to($validated['email'])->send(new LostAndFoundConfirmation($reportData));
-        } catch (\Throwable $e) {
-            Log::error('Verlustmeldung: Bestätigungsmail konnte nicht versendet werden', [
-                'entry' => $entry->id(),
-                'recipient' => $validated['email'],
-                'error' => $e->getMessage(),
-            ]);
-        }
+        // Keine automatische Bestätigung an die meldende Person: das Fundbüro antwortet selbst
+        // (Reply-To der Benachrichtigung = E-Mail aus dem Formular).
 
         // Notification to lost and found office
         $officeEmail = config('app.lost_and_found_email');

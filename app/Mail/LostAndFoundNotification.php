@@ -20,7 +20,7 @@ class LostAndFoundNotification extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: "Neue Verlustmeldung: {$this->reportData['firstname']} {$this->reportData['lastname']}",
+            subject: "Gesucht – Neue Verlustmeldung: {$this->reportData['firstname']} {$this->reportData['lastname']}",
             // «Antworten» in Outlook geht direkt an die Person, Absender bleibt noreply
             replyTo: [new Address($this->reportData['email'], trim("{$this->reportData['firstname']} {$this->reportData['lastname']}"))],
         );

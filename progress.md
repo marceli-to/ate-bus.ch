@@ -23,6 +23,7 @@ Status: **built on branch `feature/fundmeldung`, tested locally, not merged.** W
   - `app/Support/FoundItems.php` creates the collection, container and global set on the first report, because `content/` is not in git.
   - `public/fundmeldung.php` = 302 redirect to `/fundmeldung` keeping `?k=…` (old link from the client's mail).
 - Shared form components (`FormInput`, `FormSelect`, `FormTextarea`, used by all forms): 16px text on mobile (stops iPhone zoom on focus), same field height for inputs and selects.
+- **Follow-up request (2026-11-19):** no automatic confirmation mail to the reporter on «Verlust melden» any more (they answer via Claude, using Reply-To); `LostAndFoundConfirmation` stays in the code but is no longer sent. Subjects now start with «Gesucht – Neue Verlustmeldung: …» and «Gefunden – Neue Fundmeldung: …» (format proposed by us; confirm with the client, their automation parses it).
 - Server-side checks (per field, shown at the field) on top of the client's own: Gegenstand must be in the list, Abgabe must be one of 4 options, date/time format, field lengths, real image type (jpeg/png/webp/heic/heif), max 8 MB per photo.
 
 ### Deploy checklist

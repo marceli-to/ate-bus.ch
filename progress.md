@@ -2,7 +2,7 @@
 
 ## Open: Fundmeldung + Reply-To (client request 2026-11-17)
 
-Status: **built on branch `feature/fundmeldung`, tested locally, not merged.** Waiting for the client's OK on the rebuild (mail sent 2026-11-17).
+Status: **client approved the Statamic rebuild; merged into `master` 2026-11-20, not deployed yet.** Next: deploy and work through the deploy checklist below.
 
 ### Request
 1. Hidden staff page «Fundmeldung» (found items, not lost): drivers and cleaning staff report found items by phone, with up to 2 photos. Link only in the Infosoft app.
@@ -36,6 +36,8 @@ Status: **built on branch `feature/fundmeldung`, tested locally, not merged.** W
 - Send the client the new link `https://www.ate-bus.ch/fundmeldung?k=<code>`.
 
 ### Open points
+- Bus number pre-selects the group (10–40 VBZ, 54–78 VBG, 53 neither), taken from the client's file and hard-coded in `FoundItemForm.vue`. Staff can override it. Needs a code change if the fleet numbering changes.
+- Local mail goes to MailHog (http://127.0.0.1:8025) via `.env` SMTP 127.0.0.1:1025.
 - Not yet checked in the CP UI: entry list columns, photo thumbnails from the private container.
 - Mail content is untrusted input for the client's Claude automation (prompt injection). Tell the client; it applies to «Verlust melden» too.
 - Local test entries exist in `found_items` (2 entries, 2 photos). Delete them before checking the CP if they're in the way.

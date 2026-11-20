@@ -26,7 +26,7 @@ class StoreLostAndFoundRequest extends FormRequest
             'email' => 'required|email|max:255',
             'phone' => 'required|string|max:50',
             'date' => 'required|string|max:50',
-            'time' => 'required|string|max:50',
+            'time' => ['required', 'regex:/^\d{2}:\d{2}$/'], // HH:MM (Mail wird automatisch ausgewertet)
             'bus_line' => 'required|string|max:255',
             'description' => 'required|string|max:5000',
         ];
@@ -46,6 +46,7 @@ class StoreLostAndFoundRequest extends FormRequest
             'phone.required' => 'Telefon fehlt',
             'date.required' => 'Datum fehlt',
             'time.required' => 'Uhrzeit fehlt',
+            'time.regex' => 'Uhrzeit ungültig',
             'bus_line.required' => 'Buslinie fehlt',
             'description.required' => 'Beschreibung fehlt',
         ];

@@ -23,11 +23,13 @@ Status: **built on branch `feature/fundmeldung`, tested locally, not merged.** W
   - `app/Support/FoundItems.php` creates the collection, container and global set on the first report, because `content/` is not in git.
   - `public/fundmeldung.php` = 302 redirect to `/fundmeldung` keeping `?k=…` (old link from the client's mail).
 - Shared form components (`FormInput`, `FormSelect`, `FormTextarea`, used by all forms): 16px text on mobile (stops iPhone zoom on focus), same field height for inputs and selects.
-- **Follow-up request (2026-11-19):** no automatic confirmation mail to the reporter on «Verlust melden» any more (they answer via Claude, using Reply-To); `LostAndFoundConfirmation` stays in the code but is no longer sent. Subjects now start with «Gesucht – Neue Verlustmeldung: …» and «Gefunden – Neue Fundmeldung: …» (format proposed by us; confirm with the client, their automation parses it).
+- **Follow-ups (2026-11-19/20):** no automatic confirmation mail to the reporter on «Verlust melden» any more (they answer via Claude, using Reply-To); `LostAndFoundConfirmation` stays in the code but is no longer sent. The «Gesucht/Gefunden» subject prefix was asked for, then withdrawn on 2026-11-20: subjects are again «Neue Verlustmeldung: <Name>» and «Neue Fundmeldung: …».
+- **Mail format the client's Claude automation expects (2026-11-20 spec), all met:** both forms to `fundgegenstaende@ate-bus.ch` (now also the default for `LOST_AND_FOUND_EMAIL`); Fundmeldung subject/fields/photo attachments as built; Verlustmeldung subject «Neue Verlustmeldung: <Name>», fields Name, E-Mail, Telefon, Datum, Uhrzeit, Buslinie, Beschreibung; date TT.MM.JJJJ, time HH:MM (Verlustmeldung time now validated as HH:MM).
 - Server-side checks (per field, shown at the field) on top of the client's own: Gegenstand must be in the list, Abgabe must be one of 4 options, date/time format, field lengths, real image type (jpeg/png/webp/heic/heif), max 8 MB per photo.
 
 ### Deploy checklist
 - `.env` on the server: `FOUND_ITEMS_CODE=<long random code>` (without it the page is always 404). Optional: `FOUND_ITEMS_EMAIL` (default `fundgegenstaende@ate-bus.ch`).
+- Server `.env`: `LOST_AND_FOUND_EMAIL=fundgegenstaende@ate-bus.ch` (or remove the line, the default is that address). Check what it is set to now.
 - Check that `MAIL_FROM_ADDRESS` on the server is `noreply@ate-bus.ch`. The Fundmeldung uses it as sender.
 - Client adds the missing lines in CP → Buslinien: **VBG 653, VBG 654, VBZ 702**. New toggle «Nur intern» on a line: it shows in the Fundmeldung but not in the «Verlust melden» dropdown (`/api/bus-routes`). The public lines page only shows lines picked by hand in the page builder, so new lines never appear there on their own. Ask the client whether these 3 lines should be internal.
 - Test on production: the old link `/fundmeldung.php?k=…` redirects; one test report with a photo; check the entry and photo in the CP.

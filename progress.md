@@ -32,6 +32,7 @@ Status: **client approved the Statamic rebuild; merged into `master` 2026-11-20,
 - Server `.env`: `LOST_AND_FOUND_EMAIL=fundgegenstaende@ate-bus.ch` (or remove the line, the default is that address). Check what it is set to now.
 - Check that `MAIL_FROM_ADDRESS` on the server is `noreply@ate-bus.ch`. The Fundmeldung uses it as sender.
 - Client adds the missing lines in CP → Buslinien: **VBG 653, VBG 654, VBZ 702**. New toggle «Nur intern» on a line: it shows in the Fundmeldung but not in the «Verlust melden» dropdown (`/api/bus-routes`). The public lines page only shows lines picked by hand in the page builder, so new lines never appear there on their own. Ask the client whether these 3 lines should be internal.
+- After deploy, open the CP once: that creates the empty collection, photo container and global set «Fundmeldungen» (`AppServiceProvider`). Then in CP → Berechtigungen give the editor role (whoever has Bewerbungen/Fundbüro) «view» on collection Fundmeldungen **and** asset container Fundmeldungen (otherwise no photos). Roles/users are not in git, so check on the server.
 - Test on production: the old link `/fundmeldung.php?k=…` redirects; one test report with a photo; check the entry and photo in the CP.
 - Send the client the new link `https://www.ate-bus.ch/fundmeldung?k=<code>`.
 

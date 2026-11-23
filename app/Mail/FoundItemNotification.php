@@ -15,13 +15,14 @@ use Illuminate\Queue\SerializesModels;
  *
  * ACHTUNG: Betreff, Tabellenzeilen und Feldnamen werden beim Kunden automatisch
  * ausgewertet. Aufbau 1:1 aus der gelieferten fundmeldung.php – nicht ändern.
+ * Einzige Abweichung (Kundenwunsch 2026-11-23): «Fundort im Bus» entfernt, «Bemerkungen» am Schluss.
  */
 class FoundItemNotification extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /** Reihenfolge und Namen der Tabellenzeilen (aus fundmeldung.php) */
-    public const ROWS = ['Gefunden von', 'Name', 'Datum', 'Uhrzeit', 'Buslinie', 'Bus-Nr', 'Fundort im Bus', 'Gegenstand', 'Beschreibung', 'Abgegeben bei'];
+    /** Reihenfolge und Namen der Tabellenzeilen (aus fundmeldung.php, angepasst 2026-11-23) */
+    public const ROWS = ['Gefunden von', 'Name', 'Datum', 'Uhrzeit', 'Buslinie', 'Bus-Nr', 'Gegenstand', 'Beschreibung', 'Abgegeben bei', 'Bemerkungen'];
 
     /**
      * @param  array<string, string>  $report  Werte nach Zeilenname (ROWS), Datum bereits als d.m.Y

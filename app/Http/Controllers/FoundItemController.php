@@ -72,10 +72,10 @@ class FoundItemController extends Controller
         $time = $this->text($request, 'zeit', 5);
         $line = $this->text($request, 'linie', 20);
         $bus = $this->text($request, 'bus', 3);
-        $location = $this->text($request, 'ort', 255);
         $item = $this->text($request, 'gegenstand', 100);
         $description = $this->text($request, 'beschreibung', 5000);
         $dropOff = $this->text($request, 'abgabe', 50);
+        $remarks = $this->text($request, 'bemerkungen', 5000);
 
         $lines = FoundItems::lines()[$group] ?? [];
 
@@ -134,10 +134,10 @@ class FoundItemController extends Controller
                 'time' => $time,
                 'bus_line' => $busLine,
                 'bus_number' => $bus,
-                'location' => $location,
                 'item' => $item,
                 'description' => $description,
                 'dropped_off_at' => $dropOff,
+                'remarks' => $remarks,
                 'photos' => array_column($photos, 'path'),
                 'mail_sent' => false,
             ]);
@@ -150,10 +150,10 @@ class FoundItemController extends Controller
             'Uhrzeit' => $time,
             'Buslinie' => $busLine,
             'Bus-Nr' => $bus,
-            'Fundort im Bus' => $location,
             'Gegenstand' => $item,
             'Beschreibung' => $description,
             'Abgegeben bei' => $dropOff,
+            'Bemerkungen' => $remarks,
         ];
 
         // Die Meldung ist gespeichert. Scheitert der Versand, steht sie im CP mit «Mail versendet: aus».

@@ -67,12 +67,6 @@ tabs:
               visibility: read_only
               width: 50
           -
-            handle: location
-            field:
-              type: text
-              display: 'Fundort im Bus'
-              visibility: read_only
-          -
             handle: role
             field:
               type: text
@@ -94,6 +88,12 @@ tabs:
               display: 'Abgegeben bei'
               visibility: read_only
               listable: true
+          -
+            handle: remarks
+            field:
+              type: textarea
+              display: Bemerkungen
+              visibility: read_only
           -
             handle: mail_sent
             field:

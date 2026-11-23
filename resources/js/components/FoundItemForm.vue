@@ -133,14 +133,6 @@
             />
           </div>
         </FormGrid>
-
-        <FormInput
-          v-model="form.ort"
-          label="Fundort im Bus"
-          name="ort"
-          placeholder="z.B. hinten links, Kinderwagenplatz"
-          :error="errors.ort"
-        />
       </section>
 
       <!-- Abgabe -->
@@ -181,6 +173,15 @@
             @update:modelValue="clearError('abgabe')"
           />
         </div>
+        <FormTextarea
+          v-model="form.bemerkungen"
+          label="Bemerkungen"
+          name="bemerkungen"
+          placeholder="z.B. Besitzer hat bereits auf Handy angerufen"
+          :rows="3"
+          :maxlength="5000"
+          :error="errors.bemerkungen"
+        />
       </section>
 
       <!-- Error Message -->
@@ -267,10 +268,10 @@ const emptyForm = () => ({
   gruppe: '',
   linie: '',
   bus: '',
-  ort: '',
   nachname: remembered('nachname'),
   vorname: remembered('vorname'),
   abgabe: '',
+  bemerkungen: '',
   website: '',
 });
 

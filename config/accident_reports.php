@@ -32,7 +32,8 @@ return [
     // How long the QR code for the other party stays valid
     'other_party_ttl_hours' => 12,
 
-    // Upload limits per report
+    // Upload limits per report. The real limit is also capped by PHP's max_file_uploads
+    // (often fixed at 20 on hosting): files above it are dropped silently by PHP.
     'max_files' => 40,
     'max_file_kb' => 12 * 1024,
 ];

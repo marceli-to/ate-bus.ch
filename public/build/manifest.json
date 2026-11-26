@@ -9,7 +9,7 @@
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-C3xQxURL.js",
+    "file": "assets/app-BJDlcbyr.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -21,7 +21,7 @@
     ]
   },
   "resources/js/components/accident-report/AccidentReportApp.vue": {
-    "file": "assets/AccidentReportApp-CFGRjfsP.js",
+    "file": "assets/AccidentReportApp-BsCB31GW.js",
     "name": "AccidentReportApp",
     "src": "resources/js/components/accident-report/AccidentReportApp.vue",
     "isDynamicEntry": true,

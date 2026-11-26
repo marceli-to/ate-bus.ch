@@ -21,7 +21,7 @@ Digital accident report approved by the management, delivered as a Statamic pack
 
 ### Deploy checklist (test server first)
 - `.env`: `ACCIDENT_REPORTS_CODE=<long random code>`; optional `ACCIDENT_REPORTS_EMAIL` (info@), `ACCIDENT_REPORTS_STAFF_EMAIL` (personal@), `ACCIDENT_REPORTS_RETENTION_DAYS`. On a test server point the two addresses at a test inbox.
-- PHP: `upload_max_filesize = 12M`, `post_max_size = 64M`, `max_file_uploads = 50`; nginx `client_max_body_size 64M`.
+- PHP: `upload_max_filesize = 12M`, `post_max_size = 64M`; nginx `client_max_body_size 64M`. `max_file_uploads` cannot be changed on the host (20): the form reads it and allows at most 20 files per report (vehicle: 14 photos + 5 ID photos + sketch).
 - Scheduler (cron `schedule:run`) must run; cache driver must persist (file/redis, not array).
 - Open the CP once (creates collection + container), then give the right role «view» on collection and container Unfallmeldungen. Staff reports contain health data: only HR should see them.
 - Send the client the staff link `…/unfallmeldung?k=<code>` for the Infosoft app.

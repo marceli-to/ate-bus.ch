@@ -19,7 +19,8 @@
         </button>
       </div>
     </div>
-    <PhotoButtons multiple @photos="add" />
+    <PhotoButtons v-if="modelValue.length < max" multiple @photos="add" />
+    <p v-else class="text-xs md:text-sm text-blue-gray">Maximal {{ max }} Fotos pro Meldung.</p>
   </div>
 </template>
 
@@ -41,10 +42,15 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  // The server accepts only so many files per report (PHP max_file_uploads)
+  max: {
+    type: Number,
+    default: 20,
+  },
 });
 
 const emit = defineEmits(['update:modelValue']);
 
-const add = (photos) => emit('update:modelValue', [...props.modelValue, ...photos]);
+const add = (photos) => emit('update:modelValue', [...props.modelValue, ...photos].slice(0, props.max));
 const remove = (index) => emit('update:modelValue', props.modelValue.filter((_, i) => i !== index));
 </script>

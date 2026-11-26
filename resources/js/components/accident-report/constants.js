@@ -77,4 +77,7 @@ export const PLACE_TYPES = [
   { value: 'car_park', label: 'Parkplatz' },
 ];
 
+// Files of a vehicle report besides the photo list: 5 ID photos + the sketch
+export const VEHICLE_FIXED_FILES = 6;
+
 export const toOptions = (list) => list.map((value) => ({ value, label: value }));

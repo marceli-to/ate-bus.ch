@@ -32,7 +32,7 @@
         :rows="4"
         :maxlength="5000"
       />
-      <PhotoList v-model="state.staffPhotos" label="Fotos oder Skizze" optional="optional" />
+      <PhotoList v-model="state.staffPhotos" label="Fotos oder Skizze" optional="optional" :max="config.maxFiles" />
       <FormInput v-model="state.prevention" name="prevention" label="Wie hätte man es verhindern können? (optional)" placeholder="Deine Idee hilft, dass es nicht wieder passiert" />
     </ReportCard>
 
@@ -53,5 +53,5 @@ import { LAST_DUTY, STAFF_EVENT_KINDS } from '../constants.js';
 import { today } from '../state.js';
 
 // Staff accident, step «Ereignis»
-const { state } = useAccidentReport();
+const { config, state } = useAccidentReport();
 </script>

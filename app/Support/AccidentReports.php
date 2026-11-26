@@ -67,6 +67,14 @@ class AccidentReports
         return self::data('lines.json');
     }
 
+    /** Files per request: config, but never more than PHP accepts (max_file_uploads) */
+    public static function maxFiles(): int
+    {
+        $php = (int) ini_get('max_file_uploads') ?: 20;
+
+        return min((int) config('accident_reports.max_files'), $php);
+    }
+
     public static function recipient(string $type): string
     {
         return (string) config("accident_reports.recipients.$type", config('accident_reports.recipients.vehicle'));

@@ -89,6 +89,7 @@ class AccidentReportController extends Controller
     {
         return $this->hiddenPage('accident-report', 'Unfallmeldung', $canonical, [
             'mode' => $mode,
+            'maxFiles' => AccidentReports::maxFiles(),
             'vehicles' => AccidentReports::vehicles(),
             'lines' => AccidentReports::lines(),
             'recipients' => [
@@ -116,7 +117,7 @@ class AccidentReportController extends Controller
             'copy_to' => 'nullable|email|max:200',
             'report' => 'required|string|max:4000000',
             'other_party_code' => 'nullable|alpha_num|size:6',
-            'files' => 'nullable|array|max:' . (int) config('accident_reports.max_files'),
+            'files' => 'nullable|array|max:' . AccidentReports::maxFiles(),
             'files.*' => "file|mimes:jpg,jpeg,png|max:$maxKb",
         ], [
             ...AccidentReports::VALIDATION_MESSAGES,

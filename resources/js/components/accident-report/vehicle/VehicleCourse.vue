@@ -52,7 +52,7 @@
         />
         <FormInput v-model="state.damageNoteB" name="damage_note_b" label="Ergänzung" />
       </div>
-      <PhotoList v-model="state.photos" label="Fotos Unfallstelle und Schäden" optional="empfohlen">
+      <PhotoList v-model="state.photos" label="Fotos Unfallstelle und Schäden" optional="empfohlen" :max="config.maxFiles - VEHICLE_FIXED_FILES">
         <NoticeBox tone="info">
           <p>Bitte <b>mehrere Fotos</b> machen: alle <b>Schäden</b> (nah und mit etwas Abstand) und die <b>Unfallsituation</b> – Übersicht, Stellung der Fahrzeuge, Strasse und Umgebung.</p>
         </NoticeBox>
@@ -73,7 +73,7 @@ import PhotoList from '../ui/PhotoList.vue';
 import ImpactPicker from '../ui/ImpactPicker.vue';
 import SketchEditor from '../ui/SketchEditor.vue';
 import { useAccidentReport } from '../context.js';
-import { DAMAGES, MANEUVERS, VEHICLE_TYPES } from '../constants.js';
+import { DAMAGES, MANEUVERS, VEHICLE_FIXED_FILES, VEHICLE_TYPES } from '../constants.js';
 import { hasSecondVehicle, isAlone, usesQr } from '../state.js';
 import { impactTypesA, impactTypesB, vehicleA, vehicleB } from '../report.js';
 

@@ -44,7 +44,7 @@
       <FormInput v-if="state.unableToWork === 'yes'" v-model="state.unableToWorkDuration" name="unable_to_work_duration" label="Dauer" placeholder="z. B. 1 Woche" />
       <FormInput v-model="state.insurance" name="insurance" label="Eigene Versicherung (Krankenkasse / Unfallversicherung)" />
       <FormInput v-model="state.propertyDamage" name="property_damage" label="Sachschaden" placeholder="z. B. Brille, Handy, Kleider" />
-      <PhotoList v-model="state.photos" label="Fotos" optional="optional" />
+      <PhotoList v-model="state.photos" label="Fotos" optional="optional" :max="config.maxFiles" />
       <FormInput v-model="state.remarks" name="remarks" label="Bemerkungen" />
     </ReportCard>
   </div>
@@ -65,7 +65,7 @@ import { useAccidentReport } from '../context.js';
 import { PASSENGER_ACCIDENT_KINDS, UNABLE_TO_WORK } from '../constants.js';
 
 // Passenger accident, step «Hergang und Folgen»
-const { state } = useAccidentReport();
+const { config, state } = useAccidentReport();
 
 const self = computed(() => state.type === 'passenger_self');
 const YES_NO = [{ value: true, label: 'Ja' }, { value: false, label: 'Nein' }];

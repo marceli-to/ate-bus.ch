@@ -1,0 +1,26 @@
+{{#
+  @name Unfallmeldung Code
+  @desc /b: the other party of a vehicle accident types in the code from the driver's phone
+#}}
+<section class="mt-20 md:mt-40 mb-40 md:mb-60">
+  {{ partial:layout/container size="outer" }}
+    <div class="max-w-[40rem]">
+      {{ partial:components/headings/h1 }}
+        Unfallmeldung
+      {{ /partial:components/headings/h1 }}
+      <p class="mb-24 md:mb-32">Die Fahrerin oder der Fahrer der ATE Bus AG nennt Ihnen den 6-stelligen Code.</p>
+      <form method="get" action="/b" class="space-y-16 md:space-y-20">
+        <div class="flex flex-col p-8 md:py-8 md:px-12 bg-light-blue">
+          <label for="code" class="text-blue-black font-medium text-sm mb-4 block {{ code_missing ? 'text-error' : '' }}">
+            {{ if code_missing }}Bitte den 6-stelligen Code eingeben.{{ else }}Code{{ /if }}
+          </label>
+          <input id="code" name="code" autocomplete="off" autocapitalize="characters" maxlength="6" placeholder="z. B. K7M2QX" autofocus
+            class="w-full py-4 xl:py-8 h-40 bg-light-blue border-0 text-blue-black text-xl tracking-[0.3em] uppercase placeholder:text-blue-gray placeholder:tracking-normal placeholder:normal-case focus:outline-none">
+        </div>
+        <button type="submit" class="inline-flex items-center justify-center pl-8 pr-28 py-8 md:pl-12 md:pr-36 md:py-10 font-medium transition-all duration-300 [clip-path:polygon(0%_0%,100%_0%,calc(100%-1.2rem)_100%,0%_100%)] md:[clip-path:polygon(0%_0%,100%_0%,calc(100%-1.6rem)_100%,0%_100%)] bg-blue-primary text-white hover:bg-blue-black cursor-pointer">
+          Weiter
+        </button>
+      </form>
+    </div>
+  {{ /partial:layout/container }}
+</section>

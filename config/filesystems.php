@@ -70,6 +70,15 @@ return [
             'report' => false,
         ],
 
+        // Accident reports (photos, ID cards, report): private, no URL (control panel only)
+        'accident_reports' => [
+            'driver' => 'local',
+            'root' => storage_path('app/private/unfallmeldungen'),
+            'visibility' => 'private',
+            'throw' => false,
+            'report' => false,
+        ],
+
         'assets' => [
             'driver' => 'local',
             'root' => public_path('assets'),

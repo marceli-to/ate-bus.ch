@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-CKNZjpkb.css",
+    "file": "assets/app-CW52bMH_.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -9,12 +9,31 @@
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-BTBLvZzg.js",
+    "file": "assets/app-C3xQxURL.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
+    "dynamicImports": [
+      "resources/js/components/accident-report/AccidentReportApp.vue"
+    ],
     "css": [
       "assets/app-Bu6b9CGd.css"
     ]
+  },
+  "resources/js/components/accident-report/AccidentReportApp.vue": {
+    "file": "assets/AccidentReportApp-CFGRjfsP.js",
+    "name": "AccidentReportApp",
+    "src": "resources/js/components/accident-report/AccidentReportApp.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "assets": [
+      "assets/ate-logo-C71ZWiAh.jpg"
+    ]
+  },
+  "resources/js/components/accident-report/report/ate-logo.jpg": {
+    "file": "assets/ate-logo-C71ZWiAh.jpg",
+    "src": "resources/js/components/accident-report/report/ate-logo.jpg"
   }
 }

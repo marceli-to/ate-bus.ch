@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Concerns\RendersHiddenPages;
 use App\Mail\FoundItemNotification;
 use App\Support\FoundItems;
 use Illuminate\Http\JsonResponse;
@@ -13,7 +14,6 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Statamic\Facades\AssetContainer;
 use Statamic\Facades\Entry;
-use Statamic\View\View;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
@@ -22,6 +22,8 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class FoundItemController extends Controller
 {
+    use RendersHiddenPages;
+
     private const MAX_PHOTO_KB = 8 * 1024;
 
     private const PHOTO_TYPES = [
@@ -41,18 +43,7 @@ class FoundItemController extends Controller
             'dropOffs' => FoundItems::DROP_OFFS,
         ];
 
-        $html = View::make('fundmeldung')
-            ->layout('templates/layout-thin')
-            ->with([
-                'title' => 'Fundmeldung',
-                'robots' => 'noindex_nofollow',
-                'canonical_url' => url('/fundmeldung'),
-                // Als JSON in <script type="application/json">: </script> & Co. maskieren
-                'form_config' => json_encode($config, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_UNESCAPED_UNICODE),
-            ])
-            ->render();
-
-        return $this->hidden(response($html));
+        return $this->hiddenPage('fundmeldung', 'Fundmeldung', url('/fundmeldung'), $config);
     }
 
     public function store(Request $request): JsonResponse
@@ -230,15 +221,5 @@ class FoundItemController extends Controller
         }
 
         return $photos;
-    }
-
-    private function hidden(Response $response): Response
-    {
-        // Versteckte Seite: nie in Suchmaschinen, Code nicht über Referrer weitergeben
-        return $response->withHeaders([
-            'X-Robots-Tag' => 'noindex, nofollow, noarchive',
-            'Referrer-Policy' => 'no-referrer',
-            'Cache-Control' => 'no-store',
-        ]);
     }
 }

@@ -13,7 +13,9 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         // Fundmeldung: geschützt über den Code im Link. Kein CSRF-Token, damit eine
         // lange offene Seite in der Infosoft-App nicht mit 419 abgelehnt wird.
-        $middleware->validateCsrfTokens(except: ['fundmeldung']);
+        // Accident report: same reason (a form open for a long time at the scene). Staff routes are
+        // protected by the code in the link, the other party by the 6-character code.
+        $middleware->validateCsrfTokens(except: ['fundmeldung', 'unfallmeldung', 'unfallmeldung/*', 'unfall-fahrgast']);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

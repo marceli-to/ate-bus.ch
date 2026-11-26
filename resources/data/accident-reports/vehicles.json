@@ -1,0 +1,544 @@
+[
+  {
+    "id": "B10",
+    "label": "Bus 10",
+    "kind": "bus",
+    "plate": "ZH 668012",
+    "model": "MAN Lion's City 12C",
+    "category": "Standardbus",
+    "year": 2023,
+    "chassis_number": "427.355.561"
+  },
+  {
+    "id": "B11",
+    "label": "Bus 11",
+    "kind": "bus",
+    "plate": "ZH 989611",
+    "model": "MAN Lion's City 12C",
+    "category": "Standardbus",
+    "year": 2025,
+    "chassis_number": "688.456.903"
+  },
+  {
+    "id": "B12",
+    "label": "Bus 12",
+    "kind": "bus",
+    "plate": "ZH 971112",
+    "model": "MAN Lion's City 12C",
+    "category": "Standardbus",
+    "year": 2025,
+    "chassis_number": "688.465.412"
+  },
+  {
+    "id": "B21",
+    "label": "Bus 21",
+    "kind": "bus",
+    "plate": "ZH 508321",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2013,
+    "chassis_number": "411.685.901"
+  },
+  {
+    "id": "B22",
+    "label": "Bus 22",
+    "kind": "bus",
+    "plate": "ZH 397210",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2015,
+    "chassis_number": "184.247.975"
+  },
+  {
+    "id": "B23",
+    "label": "Bus 23",
+    "kind": "bus",
+    "plate": "ZH 416611",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2015,
+    "chassis_number": "184.247.987"
+  },
+  {
+    "id": "B24",
+    "label": "Bus 24",
+    "kind": "bus",
+    "plate": "ZH 888424",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2015,
+    "chassis_number": "184.398.436"
+  },
+  {
+    "id": "B25",
+    "label": "Bus 25",
+    "kind": "bus",
+    "plate": "ZH 675025",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2017,
+    "chassis_number": "681.233.003"
+  },
+  {
+    "id": "B26",
+    "label": "Bus 26",
+    "kind": "bus",
+    "plate": "ZH 751226",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2017,
+    "chassis_number": "681.243.409"
+  },
+  {
+    "id": "B27",
+    "label": "Bus 27",
+    "kind": "bus",
+    "plate": "ZH 608327",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2017,
+    "chassis_number": "681.236.429"
+  },
+  {
+    "id": "B28",
+    "label": "Bus 28",
+    "kind": "bus",
+    "plate": "ZH 203628",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2020,
+    "chassis_number": "683.572.032"
+  },
+  {
+    "id": "B29",
+    "label": "Bus 29",
+    "kind": "bus",
+    "plate": "ZH 540104",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2020,
+    "chassis_number": "684.010.980"
+  },
+  {
+    "id": "B30",
+    "label": "Bus 30",
+    "kind": "bus",
+    "plate": "ZH 773630",
+    "model": "Mercedes-Benz Citaro O 530 G",
+    "category": "Gelenkbus",
+    "year": 2012,
+    "chassis_number": "410.860.338"
+  },
+  {
+    "id": "B31",
+    "label": "Bus 31",
+    "kind": "bus",
+    "plate": "ZH 773631",
+    "model": "Mercedes-Benz Citaro O 530 G",
+    "category": "Gelenkbus",
+    "year": 2012,
+    "chassis_number": "410.860.235"
+  },
+  {
+    "id": "B32",
+    "label": "Bus 32",
+    "kind": "bus",
+    "plate": "ZH 480132",
+    "model": "MAN NG 363",
+    "category": "Gelenkbus",
+    "year": 2013,
+    "chassis_number": "411.731.182"
+  },
+  {
+    "id": "B33",
+    "label": "Bus 33",
+    "kind": "bus",
+    "plate": "ZH 474933",
+    "model": "MAN NG 363",
+    "category": "Gelenkbus",
+    "year": 2013,
+    "chassis_number": "411.731.170"
+  },
+  {
+    "id": "B34",
+    "label": "Bus 34",
+    "kind": "bus",
+    "plate": "ZH 888434",
+    "model": "MAN NG 363",
+    "category": "Gelenkbus",
+    "year": 2015,
+    "chassis_number": "184.385.132"
+  },
+  {
+    "id": "B35",
+    "label": "Bus 35",
+    "kind": "bus",
+    "plate": "ZH 716513",
+    "model": "MAN NG 363",
+    "category": "Gelenkbus",
+    "year": 2017,
+    "chassis_number": "681.242.788"
+  },
+  {
+    "id": "B36",
+    "label": "Bus 36",
+    "kind": "bus",
+    "plate": "ZH 327908",
+    "model": "MAN NG 363",
+    "category": "Gelenkbus",
+    "year": 2017,
+    "chassis_number": "681.254.110"
+  },
+  {
+    "id": "B40",
+    "label": "Bus 40",
+    "kind": "bus",
+    "plate": "ZH 540114",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2020,
+    "chassis_number": "684.009.096"
+  },
+  {
+    "id": "B53",
+    "label": "Bus 53",
+    "kind": "bus",
+    "plate": "ZH 532053",
+    "model": "Mercedes-Benz Citaro O 530",
+    "category": "Standardbus",
+    "year": 2011,
+    "chassis_number": "410.850.679"
+  },
+  {
+    "id": "B54",
+    "label": "Bus 54",
+    "kind": "bus",
+    "plate": "ZH 460354",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2013,
+    "chassis_number": "411.724.542"
+  },
+  {
+    "id": "B55",
+    "label": "Bus 55",
+    "kind": "bus",
+    "plate": "ZH 486755",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2013,
+    "chassis_number": "411.724.300"
+  },
+  {
+    "id": "B56",
+    "label": "Bus 56",
+    "kind": "bus",
+    "plate": "ZH 519656",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2013,
+    "chassis_number": "411.724.293"
+  },
+  {
+    "id": "B57",
+    "label": "Bus 57",
+    "kind": "bus",
+    "plate": "ZH 479957",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2013,
+    "chassis_number": "411.724.311"
+  },
+  {
+    "id": "B58",
+    "label": "Bus 58",
+    "kind": "bus",
+    "plate": "ZH 486958",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2013,
+    "chassis_number": "411.724.116"
+  },
+  {
+    "id": "B59",
+    "label": "Bus 59",
+    "kind": "bus",
+    "plate": "ZH 596959",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2013,
+    "chassis_number": "411.722.466"
+  },
+  {
+    "id": "B60",
+    "label": "Bus 60",
+    "kind": "bus",
+    "plate": "ZH 526160",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2013,
+    "chassis_number": "411.723.008"
+  },
+  {
+    "id": "B61",
+    "label": "Bus 61",
+    "kind": "bus",
+    "plate": "ZH 313805",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2015,
+    "chassis_number": "184.246.909"
+  },
+  {
+    "id": "B62",
+    "label": "Bus 62",
+    "kind": "bus",
+    "plate": "ZH 724524",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2015,
+    "chassis_number": "184.257.671"
+  },
+  {
+    "id": "B63",
+    "label": "Bus 63",
+    "kind": "bus",
+    "plate": "ZH 608474",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2015,
+    "chassis_number": "184.257.660"
+  },
+  {
+    "id": "B64",
+    "label": "Bus 64",
+    "kind": "bus",
+    "plate": "ZH 413480",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2015,
+    "chassis_number": "184.258.882"
+  },
+  {
+    "id": "B65",
+    "label": "Bus 65",
+    "kind": "bus",
+    "plate": "ZH 699828",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2015,
+    "chassis_number": "184.258.183"
+  },
+  {
+    "id": "B66",
+    "label": "Bus 66",
+    "kind": "bus",
+    "plate": "ZH 724525",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2015,
+    "chassis_number": "184.258.894"
+  },
+  {
+    "id": "B67",
+    "label": "Bus 67",
+    "kind": "bus",
+    "plate": "ZH 888367",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2015,
+    "chassis_number": "184.270.638"
+  },
+  {
+    "id": "B68",
+    "label": "Bus 68",
+    "kind": "bus",
+    "plate": "ZH 888368",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2015,
+    "chassis_number": "184.400.492"
+  },
+  {
+    "id": "B71",
+    "label": "Bus 71",
+    "kind": "bus",
+    "plate": "ZH 729271",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2017,
+    "chassis_number": "681.439.365"
+  },
+  {
+    "id": "B72",
+    "label": "Bus 72",
+    "kind": "bus",
+    "plate": "ZH 722172",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2017,
+    "chassis_number": "681.439.389"
+  },
+  {
+    "id": "B73",
+    "label": "Bus 73",
+    "kind": "bus",
+    "plate": "ZH 728173",
+    "model": "MAN NL 323",
+    "category": "Standardbus",
+    "year": 2017,
+    "chassis_number": "681.439.377"
+  },
+  {
+    "id": "B75",
+    "label": "Bus 75",
+    "kind": "bus",
+    "plate": "ZH 665075",
+    "model": "MAN Lion's City 12C",
+    "category": "Standardbus",
+    "year": 2026,
+    "chassis_number": "688.653.228"
+  },
+  {
+    "id": "B76",
+    "label": "Bus 76",
+    "kind": "bus",
+    "plate": "ZH 665076",
+    "model": "MAN Lion's City 12C",
+    "category": "Standardbus",
+    "year": 2026,
+    "chassis_number": "688.657.477"
+  },
+  {
+    "id": "B77",
+    "label": "Bus 77",
+    "kind": "bus",
+    "plate": "ZH 685177",
+    "model": "MAN Lion's City 12C",
+    "category": "Standardbus",
+    "year": 2026,
+    "chassis_number": "688.658.081"
+  },
+  {
+    "id": "B78",
+    "label": "Bus 78",
+    "kind": "bus",
+    "plate": "ZH 687378",
+    "model": "MAN Lion's City 12C",
+    "category": "Standardbus",
+    "year": 2026,
+    "chassis_number": "688.657.234"
+  },
+  {
+    "id": "PW 1",
+    "label": "PW 1",
+    "kind": "car",
+    "plate": "ZH 738381",
+    "model": "Hyundai i10",
+    "category": "Dienstfahrzeug",
+    "year": 2025,
+    "chassis_number": "236.289.904"
+  },
+  {
+    "id": "PW 2",
+    "label": "PW 2",
+    "kind": "car",
+    "plate": "ZH 738382",
+    "model": "Hyundai i10",
+    "category": "Dienstfahrzeug",
+    "year": 2025,
+    "chassis_number": "236.289.230"
+  },
+  {
+    "id": "PW 3",
+    "label": "PW 3",
+    "kind": "car",
+    "plate": "ZH 738383",
+    "model": "Hyundai i10",
+    "category": "Dienstfahrzeug",
+    "year": 2025,
+    "chassis_number": "236.289.291"
+  },
+  {
+    "id": "PW 4",
+    "label": "PW 4",
+    "kind": "car",
+    "plate": "ZH 720394",
+    "model": "Hyundai i10",
+    "category": "Dienstfahrzeug",
+    "year": 2025,
+    "chassis_number": "236.390.573"
+  },
+  {
+    "id": "PW 5",
+    "label": "PW 5",
+    "kind": "car",
+    "plate": "ZH 750705",
+    "model": "Hyundai i10",
+    "category": "Dienstfahrzeug",
+    "year": 2025,
+    "chassis_number": "236.289.333"
+  },
+  {
+    "id": "PW 6",
+    "label": "PW 6",
+    "kind": "car",
+    "plate": "ZH 749906",
+    "model": "Hyundai i10",
+    "category": "Dienstfahrzeug",
+    "year": 2025,
+    "chassis_number": "236.390.457"
+  },
+  {
+    "id": "PW 7",
+    "label": "PW 7",
+    "kind": "car",
+    "plate": "ZH 891207",
+    "model": "Hyundai i10",
+    "category": "Dienstfahrzeug",
+    "year": 2025,
+    "chassis_number": "236.287.622"
+  },
+  {
+    "id": "PW 8",
+    "label": "PW 8",
+    "kind": "car",
+    "plate": "ZH 936898",
+    "model": "Hyundai i10",
+    "category": "Dienstfahrzeug",
+    "year": 2025,
+    "chassis_number": "236.180.268"
+  },
+  {
+    "id": "PW 9",
+    "label": "PW 9",
+    "kind": "car",
+    "plate": "ZH 322229",
+    "model": "Hyundai i10",
+    "category": "Dienstfahrzeug",
+    "year": 2025,
+    "chassis_number": "236.166.405"
+  },
+  {
+    "id": "PW 10",
+    "label": "PW 10",
+    "kind": "car",
+    "plate": "ZH 965710",
+    "model": "Hyundai i10",
+    "category": "Dienstfahrzeug",
+    "year": 2025,
+    "chassis_number": "236.550.643"
+  },
+  {
+    "id": "PW 99",
+    "label": "PW 99",
+    "kind": "car",
+    "plate": "ZH 655630",
+    "model": "VW Caddy Maxi 1.6 D",
+    "category": "Lieferwagen",
+    "year": 2012,
+    "chassis_number": "214.747.900",
+    "owner": "werkstatt8307 AG",
+    "owner_address": "Bietenholzstrasse 30, 8307 Effretikon"
+  }
+]

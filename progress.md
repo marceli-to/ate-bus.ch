@@ -1,5 +1,36 @@
 # Progress
 
+## Open: Unfallmeldung (client request 2026-11-26)
+
+Status: **built on branch `feature/unfallmeldung`, tested locally, not committed/deployed.** Next: install on a test server, client tests the flows on the phone.
+
+### Request
+Digital accident report approved by the management, delivered as a Statamic package (static `app.js` generated from their prototype). Pages hidden like the Fundmeldung:
+- `/unfallmeldung` staff (vehicle, passenger, staff accident), `/unfall-fahrgast` passengers (QR code on the business card), `/b` other party types in the code.
+- Mails: vehicle/passenger → `info@`, staff → `personal@`, copy to the person involved (subject «Kopie: …», Reply-To info@).
+
+### Built
+- Rewritten in Vue in the site's design (user's decision), same steps, questions, texts and report as the prototype: `resources/js/components/accident-report/` (lazy-loaded chunk, only on these pages). All code English, all user-facing text German.
+- The report is one Vue component (`report/AccidentReportDocument.vue`, inline styles only): preview before signing, success page and mail body. Drawings go to the mail as PNG (Outlook), photos as attachments.
+- Server: `AccidentReportController` (pages, submit), `OtherPartyController` (QR flow «jeder auf seinem Handy»: code in the cache 12 h, photos wait in `other-party/{CODE}` and move into the report on submit), `ReportHtml` (whitelist sanitizer, cid images, `Unfallbericht.html`), `AccidentReportNotification`.
+- `/unfallmeldung` needs `?k=ACCIDENT_REPORTS_CODE` (else 404). `/unfall-fahrgast` cannot have a code (URL printed on the card) → only noindex/unlinked. Other party is protected by the 6-character code.
+- Reports saved as entries in collection **Unfallmeldungen** (`accident_reports`, CP under Formulare) + private asset container `unfallmeldungen` (disk `accident_reports`). Mail failure → entry with «Mail versendet: aus», page tells staff to call the Pikett.
+- Fleet and lines/stops: `resources/data/accident-reports/vehicles.json`, `lines.json` (from the client's `daten.js`, English keys).
+- `accident-reports:prune` (daily 03:15) deletes entries + files after `ACCIDENT_REPORTS_RETENTION_DAYS` (365) and abandoned QR uploads after 2 days.
+- Throttles have their own prefixes: with plain `throttle:x,y` all routes share one counter per IP, and the 3-second status polling would have blocked the submit.
+
+### Deploy checklist (test server first)
+- `.env`: `ACCIDENT_REPORTS_CODE=<long random code>`; optional `ACCIDENT_REPORTS_EMAIL` (info@), `ACCIDENT_REPORTS_STAFF_EMAIL` (personal@), `ACCIDENT_REPORTS_RETENTION_DAYS`. On a test server point the two addresses at a test inbox.
+- PHP: `upload_max_filesize = 12M`, `post_max_size = 64M`, `max_file_uploads = 50`; nginx `client_max_body_size 64M`.
+- Scheduler (cron `schedule:run`) must run; cache driver must persist (file/redis, not array).
+- Open the CP once (creates collection + container), then give the right role «view» on collection and container Unfallmeldungen. Staff reports contain health data: only HR should see them.
+- Send the client the staff link `…/unfallmeldung?k=<code>` for the Infosoft app.
+
+### Open points
+- `/unfall-fahrgast` is public: anyone can trigger a «copy» mail to any address (throttled 12 per 10 min per IP). Same as the prototype; tell the client.
+- Fleet/line changes need a code change (JSON files). Could move to the CP later if they change often.
+- Local test: code `8307` in local `.env`; e2e scripts were run with Playwright (not in the repo).
+
 ## Open: Fundmeldung + Reply-To (client request 2026-11-17)
 
 Status: **client approved the Statamic rebuild; merged into `master` 2026-11-20, not deployed yet.** Next: deploy and work through the deploy checklist below.

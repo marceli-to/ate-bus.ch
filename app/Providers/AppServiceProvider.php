@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Support\AccidentReports;
 use App\Support\FoundItems;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Cache;
@@ -31,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
         Statamic::booted(function () {
             if (! $this->app->runningInConsole() && request()->is(trim(config('statamic.cp.route'), '/') . '*')) {
                 FoundItems::ensureSetup();
+                AccidentReports::ensureSetup();
             }
         });
     }

@@ -23,6 +23,7 @@
         "filepond": "^4.31.1",
         "filepond-plugin-file-validate-size": "^2.2.8",
         "filepond-plugin-file-validate-type": "^1.2.9",
+        "qrcode-generator": "^1.4.4",
         "rellax": "^1.12.1",
         "scrollreveal": "^4.0.9",
         "vue": "^3.5.13",

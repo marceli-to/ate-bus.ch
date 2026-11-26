@@ -19,6 +19,7 @@ return [
     'Bewerbungen' => 'applications',
     'Fundbüro' => 'lost_and_found',
     'Fundmeldungen' => 'found_items',
+    'Unfallmeldungen' => 'accident_reports',
   ],
 
 ];

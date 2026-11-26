@@ -39,3 +39,14 @@ document.querySelectorAll('[data-found-item-form]').forEach((el) => {
     const app = createApp(FoundItemForm, { config, variant });
     app.mount(el);
 });
+
+// Accident report (Unfallmeldung); config as JSON in the template. Loaded only on its pages (large).
+const accidentReport = document.querySelector('[data-accident-report]');
+if (accidentReport) {
+    import('./components/accident-report/AccidentReportApp.vue').then(({ default: AccidentReportApp }) => {
+        const config = JSON.parse(document.getElementById('accident-report-config')?.textContent || '{}');
+        const app = createApp(AccidentReportApp, { config });
+        app.provide('formVariant', 'light-blue');
+        app.mount(accidentReport);
+    });
+}

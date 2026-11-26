@@ -1,0 +1,590 @@
+{
+  "640": {
+    "network": "VBG",
+    "directions": {
+      "Neschwil, Post": [
+        "Illnau, Bahnhof",
+        "Illnau, Dorfplatz",
+        "Illnau, Weisslingerstrasse",
+        "Illnau, Horben",
+        "Agasul",
+        "Weisslingen, Brauiweiher",
+        "Weisslingen, Dorf",
+        "Weisslingen, Bergwiesenstrasse",
+        "Weisslingen, Dettenried",
+        "Neschwil, Post"
+      ],
+      "Illnau, Bahnhof": [
+        "Neschwil, Post",
+        "Weisslingen, Lendikon",
+        "Weisslingen, Lendikerstrasse",
+        "Weisslingen, Dorf",
+        "Weisslingen, Brauiweiher",
+        "Agasul",
+        "Illnau, Horben",
+        "Illnau, Weisslingerstrasse",
+        "Illnau, Dorfplatz",
+        "Illnau, Bahnhof"
+      ],
+      "Weisslingen, Lendikerstrasse": [
+        "Illnau, Bahnhof",
+        "Illnau, Dorfplatz",
+        "Illnau, Weisslingerstrasse",
+        "Illnau, Horben",
+        "Agasul",
+        "Weisslingen, Brauiweiher",
+        "Weisslingen, Dorf",
+        "Weisslingen, Bergwiesenstrasse",
+        "Weisslingen, Dettenried",
+        "Neschwil, Post",
+        "Weisslingen, Lendikon",
+        "Weisslingen, Lendikerstrasse"
+      ]
+    }
+  },
+  "650": {
+    "network": "VBG",
+    "directions": {
+      "Effretikon, Bahnhof": [
+        "Kemptthal, Bahnhof",
+        "Grafstal, Unterdorf",
+        "Grafstal, Oberdorf",
+        "Winterberg ZH, Wältiwis",
+        "Winterberg ZH, Dorf",
+        "Lindau, Eschikon",
+        "Lindau, Rigacher",
+        "Lindau, Dorf",
+        "Tagelswangen, Herdlen",
+        "Tagelswangen, Buckstrasse",
+        "Tagelswangen, Gerenhalde",
+        "Tagelswangen, Dorf",
+        "Tagelswangen, Oberwis",
+        "Effretikon, Zentrum",
+        "Effretikon, Bahnhof"
+      ],
+      "Kemptthal, Bahnhof": [
+        "Effretikon, Bahnhof",
+        "Effretikon, Zentrum",
+        "Tagelswangen, Oberwis",
+        "Tagelswangen, Dorf",
+        "Tagelswangen, Gerenhalde",
+        "Tagelswangen, Buckstrasse",
+        "Lindau, Dorf",
+        "Lindau, Rigacher",
+        "Lindau, Eschikon",
+        "Winterberg ZH, Dorf",
+        "Winterberg ZH, Wältiwis",
+        "Grafstal, Oberdorf",
+        "Grafstal, Unterdorf",
+        "Kemptthal, Bahnhof"
+      ]
+    }
+  },
+  "652": {
+    "network": "VBG",
+    "directions": {
+      "Effretikon, Lindenwiese": [
+        "Effretikon, Bahnhof",
+        "Effretikon, Zentrum",
+        "Effretikon, Wattspitz",
+        "Effretikon, Lindenwiese"
+      ],
+      "Effretikon, Bahnhof": [
+        "Illnau, Bahnhof",
+        "Illnau, Chrummenacher",
+        "Illnau, Wingert",
+        "Illnau, Steinacher",
+        "Illnau, Kirche",
+        "Illnau, Löwen",
+        "Effretikon, Eselriet",
+        "Effretikon, Lindenwiese",
+        "Effretikon, Müselacher",
+        "Effretikon, Wattspitz",
+        "Effretikon, Zentrum",
+        "Effretikon, Bahnhof"
+      ],
+      "Illnau, Bahnhof": [
+        "Effretikon, Bahnhof",
+        "Effretikon, Zentrum",
+        "Effretikon, Wattspitz",
+        "Effretikon, Müselacher",
+        "Effretikon, Lindenwiese",
+        "Effretikon, Eselriet",
+        "Illnau, Kirche",
+        "Illnau, Steinacher",
+        "Illnau, Wingert",
+        "Illnau, Chrummenacher",
+        "Illnau, Bahnhof"
+      ],
+      "Illnau, Wingert": [
+        "Effretikon, Bahnhof",
+        "Effretikon, Zentrum",
+        "Effretikon, Wattspitz",
+        "Effretikon, Müselacher",
+        "Effretikon, Lindenwiese",
+        "Effretikon, Eselriet",
+        "Illnau, Kirche",
+        "Illnau, Wingert"
+      ]
+    }
+  },
+  "653": {
+    "network": "VBG",
+    "directions": {
+      "Winterberg ZH, Dorf": [
+        "Effretikon, Bahnhof",
+        "Effretikon, Zentrum",
+        "Winterberg ZH, Wältiwis",
+        "Winterberg ZH, Dorf"
+      ],
+      "Effretikon, Bahnhof": [
+        "Winterberg ZH, Dorf",
+        "Winterberg ZH, Wältiwis",
+        "Effretikon, Zentrum",
+        "Effretikon, Bahnhof"
+      ]
+    }
+  },
+  "654": {
+    "network": "VBG",
+    "directions": {
+      "Effretikon, Vogelbuckstrasse": [
+        "Effretikon, Bahnhof",
+        "Effretikon, Zentrum",
+        "Effretikon, Kapelle Rikon",
+        "Effretikon, Vogelbuckstrasse"
+      ],
+      "Effretikon, Bahnhof": [
+        "Effretikon, Vogelbuckstrasse",
+        "Effretikon, Brüttenerstrasse",
+        "Effretikon, Zentrum",
+        "Effretikon, Bahnhof"
+      ]
+    }
+  },
+  "655": {
+    "network": "VBG",
+    "directions": {
+      "Kyburg, Dorf": [
+        "Effretikon, Bahnhof",
+        "Effretikon, Zentrum",
+        "Effretikon, Girhalde",
+        "Grafstal, Engelacher",
+        "Grafstal, Unterdorf",
+        "Grafstal, Thalegg",
+        "Ottikon b. Kemptthal",
+        "Kyburg, Billikon",
+        "Kyburg, Ettenhusen",
+        "Kyburg, Ausserdorf",
+        "Kyburg, Dorf"
+      ],
+      "Effretikon, Bahnhof": [
+        "Kyburg, Dorf",
+        "Kyburg, Ettenhusen",
+        "Kyburg, Billikon",
+        "Ottikon b. Kemptthal",
+        "Grafstal, Thalegg",
+        "Grafstal, Unterdorf",
+        "Grafstal, Engelacher",
+        "Effretikon, Girhalde",
+        "Effretikon, Zentrum",
+        "Effretikon, Bahnhof"
+      ]
+    }
+  },
+  "657": {
+    "network": "VBG",
+    "directions": {
+      "Kemptthal, Bahnhof": [
+        "Effretikon, Bahnhof",
+        "Effretikon, Zentrum",
+        "Effretikon, Girhalde",
+        "Grafstal, Engelacher",
+        "Grafstal, Unterdorf",
+        "Kemptthal, Bahnhof"
+      ],
+      "Effretikon, Bahnhof": [
+        "Kemptthal, Bahnhof",
+        "Grafstal, Unterdorf",
+        "Grafstal, Engelacher",
+        "Effretikon, Girhalde",
+        "Effretikon, Zentrum",
+        "Effretikon, Bahnhof"
+      ]
+    }
+  },
+  "658": {
+    "network": "VBG",
+    "directions": {
+      "Nürensdorf, Zentrum Süd": [
+        "Effretikon, Bahnhof",
+        "Effretikon, Zentrum",
+        "Tagelswangen, Oberwis",
+        "Tagelswangen, Dorf",
+        "Tagelswangen, Gerenhalde",
+        "Tagelswangen, Buckstrasse",
+        "Lindau, Nürensdorferstrasse",
+        "Nürensdorf, Lindauerstrasse",
+        "Nürensdorf, Zentrum Süd"
+      ],
+      "Effretikon, Bahnhof": [
+        "Breite b. N., Winterthurerstr.",
+        "Nürensdorf, Berg",
+        "Nürensdorf, Zentrum Süd",
+        "Nürensdorf, Lindauerstrasse",
+        "Lindau, Nürensdorferstrasse",
+        "Tagelswangen, Buckstrasse",
+        "Tagelswangen, Gerenhalde",
+        "Tagelswangen, Dorf",
+        "Tagelswangen, Oberwis",
+        "Effretikon, Zentrum",
+        "Effretikon, Bahnhof"
+      ],
+      "Breite b. N., Winterthurerstr.": [
+        "Effretikon, Bahnhof",
+        "Effretikon, Zentrum",
+        "Tagelswangen, Oberwis",
+        "Tagelswangen, Dorf",
+        "Tagelswangen, Gerenhalde",
+        "Tagelswangen, Buckstrasse",
+        "Lindau, Nürensdorferstrasse",
+        "Nürensdorf, Lindauerstrasse",
+        "Nürensdorf, Zentrum Süd",
+        "Nürensdorf, Zentrum",
+        "Nürensdorf, Chrüzstrass",
+        "Birchwil bei Nürensdorf",
+        "Oberwil bei Nürensdorf",
+        "Breite b. N., Grünenwaldstr.",
+        "Breite b. N., Winterthurerstr."
+      ]
+    }
+  },
+  "662": {
+    "network": "VBG",
+    "directions": {
+      "Brütten, Harossen": [
+        "Effretikon, Bahnhof",
+        "Effretikon, Zentrum",
+        "Effretikon, Weiherstrasse",
+        "Effretikon, Langhag",
+        "Lindau, Eschikon",
+        "Winterberg ZH, Kleinikon",
+        "Brütten, Harossen"
+      ],
+      "Effretikon, Bahnhof": [
+        "Brütten, Harossen",
+        "Brütten, Zentrum",
+        "Brütten, Zelgli",
+        "Winterberg ZH, Kleinikon",
+        "Lindau, Eschikon",
+        "Effretikon, Langhag",
+        "Effretikon, Weiherstrasse",
+        "Effretikon, Zentrum",
+        "Effretikon, Bahnhof"
+      ]
+    }
+  },
+  "765": {
+    "network": "VBG",
+    "directions": {
+      "Zürich Flughafen, Bahnhof": [
+        "Dietlikon, Schwimmbad",
+        "Dietlikon, Bahnhof Ost",
+        "Brüttisellen, Zentrum",
+        "Brüttisellen, Obere Wangenstrasse",
+        "Baltenswil",
+        "Bassersdorf, Bächli",
+        "Bassersdorf, Dietlikonerstrasse",
+        "Bassersdorf, Bahnhof",
+        "Bassersdorf, Schmitte",
+        "Bassersdorf, Löwen",
+        "Bassersdorf, Chlupfgasse",
+        "Bassersdorf, Talgüetli",
+        "Bassersdorf, Sportanlage",
+        "Bassersdorf, Grindel",
+        "Kloten, Grubenstrasse",
+        "Kloten, Oberfeld",
+        "Kloten, Rankstrasse",
+        "Kloten, Kirchgasse",
+        "Kloten, Zum Wilden Mann",
+        "Zürich Flughafen, Fracht",
+        "Zürich Flughafen, OPC",
+        "Zürich Flughafen, Bahnhof"
+      ],
+      "Dietlikon, Schwimmbad": [
+        "Zürich Flughafen, Bahnhof",
+        "Zürich Flughafen, OPC",
+        "Zürich Flughafen, Fracht",
+        "Kloten, Zum Wilden Mann",
+        "Kloten, Kirchgasse",
+        "Kloten, Rankstrasse",
+        "Kloten, Oberfeld",
+        "Kloten, Grubenstrasse",
+        "Bassersdorf, Grindel",
+        "Bassersdorf, Sportanlage",
+        "Bassersdorf, Talgüetli",
+        "Bassersdorf, Chlupfgasse",
+        "Bassersdorf, Löwen",
+        "Bassersdorf, Schmitte",
+        "Bassersdorf, Bahnhof",
+        "Bassersdorf, Dietlikonerstrasse",
+        "Bassersdorf, Bächli",
+        "Baltenswil",
+        "Brüttisellen, Obere Wangenstrasse",
+        "Brüttisellen, Zentrum",
+        "Dietlikon, Bahnhof Ost",
+        "Dietlikon, Schwimmbad"
+      ]
+    }
+  },
+  "N62": {
+    "network": "VBG",
+    "directions": {
+      "Agasul": [
+        "Effretikon, Bahnhof",
+        "Effretikon, Zentrum",
+        "Effretikon, Wattspitz",
+        "Effretikon, Müselacher",
+        "Effretikon, Lindenwiese",
+        "Effretikon, Eselriet",
+        "Illnau, Gemeindehaus",
+        "Illnau, Bahnhof",
+        "Illnau, Dorfplatz",
+        "Illnau, Weisslingerstrasse",
+        "Illnau, Horben",
+        "Theilingen, Post",
+        "Weisslingen, Oberhof",
+        "Weisslingen, Dorf",
+        "Weisslingen, Brauiweiher",
+        "Agasul"
+      ]
+    }
+  },
+  "N70": {
+    "network": "VBG",
+    "directions": {
+      "Grafstal, Engelacher": [
+        "Effretikon, Bahnhof",
+        "Tagelswangen, Oberwis",
+        "Lindau, Nürensdorferstrasse",
+        "Nürensdorf, Lindauerstrasse",
+        "Nürensdorf, Zentrum Süd",
+        "Nürensdorf, Zentrum",
+        "Nürensdorf, Chrüzstrass",
+        "Birchwil bei Nürensdorf",
+        "Oberwil bei Nürensdorf",
+        "Breite b. N., Grünenwaldstr.",
+        "Winterberg ZH, Dorf",
+        "Winterberg ZH, Wältiwis",
+        "Grafstal, Oberdorf",
+        "Grafstal, Engelacher"
+      ]
+    }
+  },
+  "701": {
+    "network": "VBZ",
+    "directions": {
+      "Maur, See": [
+        "Zürich, Klusplatz",
+        "Zürich, Zentrum Witikon",
+        "Zürich, Loorenstrasse",
+        "Zürich, Glockenacker",
+        "Zürich, Friedhof Witikon",
+        "Pfaffhausen, Müseren",
+        "Binz bei Maur, Fridlimatt",
+        "Binz bei Maur, Gassacher",
+        "Ebmatingen, Leeacherstrasse",
+        "Ebmatingen, Dorf",
+        "Maur, Platten",
+        "Maur, Dorf",
+        "Maur, Kirche",
+        "Maur, See"
+      ],
+      "Zürich, Klusplatz": [
+        "Maur, See",
+        "Maur, Kirche",
+        "Maur, Dorf",
+        "Maur, Platten",
+        "Ebmatingen, Dorf",
+        "Ebmatingen, Leeacherstrasse",
+        "Binz bei Maur, Gassacher",
+        "Binz bei Maur, Fridlimatt",
+        "Pfaffhausen, Müseren",
+        "Zürich, Friedhof Witikon",
+        "Zürich, Glockenacker",
+        "Zürich, Loorenstrasse",
+        "Zürich, Zentrum Witikon",
+        "Zürich, Klusplatz"
+      ]
+    }
+  },
+  "702": {
+    "network": "VBZ",
+    "directions": {
+      "Benglen, Bodenacher": [
+        "Zürich, Klusplatz",
+        "Zürich, Zentrum Witikon",
+        "Zürich, Loorenstrasse",
+        "Zürich, Glockenacker",
+        "Zürich, Friedhof Witikon",
+        "Pfaffhausen, Müseren",
+        "Binz bei Maur, Fridlimatt",
+        "Binz bei Maur, Gassacher",
+        "Binz bei Maur, Bautacher",
+        "Benglen, Gerlisbrunnen",
+        "Benglen, Bodenacher"
+      ],
+      "Zürich, Klusplatz": [
+        "Benglen, Bodenacher",
+        "Benglen, Gerlisbrunnen",
+        "Binz bei Maur, Bautacher",
+        "Binz bei Maur, Gassacher",
+        "Binz bei Maur, Fridlimatt",
+        "Pfaffhausen, Müseren",
+        "Zürich, Friedhof Witikon",
+        "Zürich, Glockenacker",
+        "Zürich, Loorenstrasse",
+        "Zürich, Zentrum Witikon",
+        "Zürich, Klusplatz"
+      ]
+    }
+  },
+  "703": {
+    "network": "VBZ",
+    "directions": {
+      "Benglen, Bodenacher": [
+        "Zürich, Klusplatz",
+        "Zürich, Zentrum Witikon",
+        "Zürich, Loorenstrasse",
+        "Zürich, Glockenacker",
+        "Zürich, Friedhof Witikon",
+        "Pfaffhausen, Müseren",
+        "Binz bei Maur, Twäracher",
+        "Benglen, Gerlisbrunnen",
+        "Benglen, Bodenacher"
+      ],
+      "Zürich, Klusplatz": [
+        "Benglen, Bodenacher",
+        "Benglen, Gerlisbrunnen",
+        "Binz bei Maur, Twäracher",
+        "Pfaffhausen, Müseren",
+        "Zürich, Friedhof Witikon",
+        "Zürich, Glockenacker",
+        "Zürich, Loorenstrasse",
+        "Zürich, Zentrum Witikon",
+        "Zürich, Klusplatz"
+      ]
+    }
+  },
+  "704": {
+    "network": "VBZ",
+    "directions": {
+      "Volketswil, Hofwisen": [
+        "Zürich, Klusplatz",
+        "Zürich, Zentrum Witikon",
+        "Zürich, Loorenstrasse",
+        "Zürich, Friedhof Witikon",
+        "Pfaffhausen, Feldhof",
+        "Pfaffhausen, Pfaffenstein",
+        "Benglen, Langwis",
+        "Benglen, Gerlisbrunnen",
+        "Benglen, Bodenacher",
+        "Fällanden, Schützenhaus",
+        "Fällanden, Gemeindehaus",
+        "Fällanden, Industrie",
+        "Schwerzenbach ZH, Dorf",
+        "Schwerzenbach ZH, Gemeindehaus",
+        "Schwerzenbach ZH, Bahnhof",
+        "Volketswil, Hofwisen"
+      ],
+      "Zürich, Klusplatz": [
+        "Volketswil, Hofwisen",
+        "Schwerzenbach ZH, Bahnhof",
+        "Schwerzenbach ZH, Gemeindehaus",
+        "Schwerzenbach ZH, Dorf",
+        "Fällanden, Industrie",
+        "Fällanden, Gemeindehaus",
+        "Fällanden, Schützenhaus",
+        "Benglen, Bodenacher",
+        "Benglen, Gerlisbrunnen",
+        "Benglen, Langwis",
+        "Pfaffhausen, Pfaffenstein",
+        "Pfaffhausen, Feldhof",
+        "Zürich, Friedhof Witikon",
+        "Zürich, Loorenstrasse",
+        "Zürich, Zentrum Witikon",
+        "Zürich, Klusplatz"
+      ]
+    }
+  },
+  "705": {
+    "network": "VBZ",
+    "directions": {
+      "Schwerzenbach ZH, Bahnhof": [
+        "Benglen, Bodenacher",
+        "Benglen, Gerlisbrunnen",
+        "Benglen, Langwis",
+        "Fällanden, Schützenhaus",
+        "Fällanden, Eggler",
+        "Fällanden, Gemeindehaus",
+        "Fällanden, Industrie",
+        "Schwerzenbach ZH, Dorf",
+        "Schwerzenbach ZH, Gemeindehaus",
+        "Schwerzenbach ZH, Bahnhof"
+      ],
+      "Benglen, Bodenacher": [
+        "Schwerzenbach ZH, Bahnhof",
+        "Schwerzenbach ZH, Gemeindehaus",
+        "Schwerzenbach ZH, Dorf",
+        "Fällanden, Industrie",
+        "Fällanden, Gemeindehaus",
+        "Fällanden, Eggler",
+        "Fällanden, Schützenhaus",
+        "Benglen, Langwis",
+        "Benglen, Gerlisbrunnen",
+        "Benglen, Bodenacher"
+      ]
+    }
+  },
+  "706": {
+    "network": "VBZ",
+    "directions": {
+      "Schwerzenbach ZH, Bahnhof": [
+        "Forch, Bahnhof",
+        "Aesch bei Maur, Hellstrasse",
+        "Aesch bei Maur, Zollingerheim",
+        "Aesch bei Maur, Im Brünneli",
+        "Ebmatingen, Looren",
+        "Ebmatingen, Dorf",
+        "Ebmatingen, Leeacherstrasse",
+        "Binz bei Maur, Bautacher",
+        "Benglen, Langwis",
+        "Fällanden, Schützenhaus",
+        "Fällanden, Eggler",
+        "Fällanden, Gemeindehaus",
+        "Fällanden, Industrie",
+        "Schwerzenbach ZH, Dorf",
+        "Schwerzenbach ZH, Gemeindehaus",
+        "Schwerzenbach ZH, Bahnhof"
+      ],
+      "Forch, Bahnhof": [
+        "Schwerzenbach ZH, Bahnhof",
+        "Schwerzenbach ZH, Gemeindehaus",
+        "Schwerzenbach ZH, Dorf",
+        "Fällanden, Industrie",
+        "Fällanden, Gemeindehaus",
+        "Fällanden, Eggler",
+        "Fällanden, Schützenhaus",
+        "Benglen, Langwis",
+        "Binz bei Maur, Bautacher",
+        "Ebmatingen, Leeacherstrasse",
+        "Ebmatingen, Dorf",
+        "Ebmatingen, Looren",
+        "Aesch bei Maur, Im Brünneli",
+        "Aesch bei Maur, Zollingerheim",
+        "Aesch bei Maur, Hellstrasse",
+        "Forch, Bahnhof"
+      ]
+    }
+  }
+}

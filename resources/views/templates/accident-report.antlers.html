@@ -1,0 +1,12 @@
+{{#
+  @name Unfallmeldung
+  @desc Hidden page (AccidentReportController, OtherPartyController): staff, passengers, other party
+#}}
+<section class="mt-20 md:mt-40 mb-120 md:mb-160">
+  {{ partial:layout/container size="outer" }}
+    <div class="max-w-[40rem]">
+      <script type="application/json" id="accident-report-config">{{ form_config }}</script>
+      <div data-accident-report></div>
+    </div>
+  {{ /partial:layout/container }}
+</section>

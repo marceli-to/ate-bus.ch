@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col">
     <FormLabel v-if="label" :required="required">
-      {{ label }}<span v-if="optional" class="font-normal text-blue-gray"> {{ optional }}</span>
+      {{ label }}<span v-if="optional" class="ml-4 font-normal text-blue-gray">{{ optional }}</span>
     </FormLabel>
     <div class="flex flex-wrap gap-6 md:gap-8">
       <button

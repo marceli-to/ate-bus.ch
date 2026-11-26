@@ -2,7 +2,7 @@
   <fieldset class="flex flex-col">
     <legend v-if="label" class="sr-only">{{ label }}</legend>
     <FormLabel v-if="label" aria-hidden="true" :required="required">
-      {{ label }}<span v-if="optional" class="font-normal text-blue-gray"> {{ optional }}</span>
+      {{ label }}<span v-if="optional" class="ml-4 font-normal text-blue-gray">{{ optional }}</span>
     </FormLabel>
     <div class="grid gap-8 md:gap-12" :class="columnClass">
       <label

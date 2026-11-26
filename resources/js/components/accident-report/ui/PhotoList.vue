@@ -1,9 +1,10 @@
 <template>
   <div class="flex flex-col gap-y-8">
     <FormLabel v-if="label">
-      {{ label }}<span v-if="optional" class="font-normal text-blue-gray"> {{ optional }}</span>
+      {{ label }}<span v-if="optional" class="ml-4 font-normal text-blue-gray">{{ optional }}</span>
     </FormLabel>
     <slot />
+    <p class="text-xs md:text-sm text-blue-gray">{{ modelValue.length }} von {{ max }} Fotos</p>
     <div v-if="modelValue.length" class="grid grid-cols-3 sm:grid-cols-4 gap-6">
       <div v-for="(photo, i) in modelValue" :key="i" class="relative aspect-square bg-light-blue">
         <img :src="photo" :alt="`Foto ${i + 1}`" class="absolute inset-0 w-full h-full object-cover" />
@@ -19,16 +20,20 @@
         </button>
       </div>
     </div>
+    <p v-if="dropped" class="text-error text-xs md:text-sm" role="alert">
+      {{ dropped === 1 ? '1 Foto wurde' : `${dropped} Fotos wurden` }} nicht übernommen – maximal {{ max }} pro Meldung.
+    </p>
     <PhotoButtons v-if="modelValue.length < max" multiple @photos="add" />
     <p v-else class="text-xs md:text-sm text-blue-gray">Maximal {{ max }} Fotos pro Meldung.</p>
   </div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import FormLabel from '../../form/FormLabel.vue';
 import PhotoButtons from './PhotoButtons.vue';
 
-// Any number of photos (damage, scene), model = array of JPEG data URLs
+// Photos (damage, scene) up to the server's limit, model = array of JPEG data URLs
 const props = defineProps({
   modelValue: {
     type: Array,
@@ -51,6 +56,17 @@ const props = defineProps({
 
 const emit = defineEmits(['update:modelValue']);
 
-const add = (photos) => emit('update:modelValue', [...props.modelValue, ...photos].slice(0, props.max));
-const remove = (index) => emit('update:modelValue', props.modelValue.filter((_, i) => i !== index));
+// Photos picked beyond the limit: say how many were left out
+const dropped = ref(0);
+
+const add = (photos) => {
+  const list = [...props.modelValue, ...photos];
+  dropped.value = Math.max(0, list.length - props.max);
+  emit('update:modelValue', list.slice(0, props.max));
+};
+
+const remove = (index) => {
+  dropped.value = 0;
+  emit('update:modelValue', props.modelValue.filter((_, i) => i !== index));
+};
 </script>

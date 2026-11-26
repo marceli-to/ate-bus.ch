@@ -2,7 +2,7 @@
 
 ## Open: Unfallmeldung (client request 2026-11-26)
 
-Status: **built on branch `feature/unfallmeldung`, tested locally, not committed/deployed.** Next: install on a test server, client tests the flows on the phone.
+Status: **merged into `master` 2026-11-26, not deployed.** Next: staging, then the client tests the flows on the phone.
 
 ### Request
 Digital accident report approved by the management, delivered as a Statamic package (static `app.js` generated from their prototype). Pages hidden like the Fundmeldung:
@@ -31,9 +31,9 @@ Digital accident report approved by the management, delivered as a Statamic pack
 - Fleet/line changes need a code change (JSON files). Could move to the CP later if they change often.
 - Local test: code `8307` in local `.env`; e2e scripts were run with Playwright (not in the repo).
 
-## Open: Fundmeldung + Reply-To (client request 2026-11-17)
+## Done: Fundmeldung + Reply-To (client request 2026-11-17)
 
-Status: **client approved the Statamic rebuild; merged into `master` 2026-11-20, not deployed yet.** Next: deploy and work through the deploy checklist below.
+Status: **live on prod** (confirmed 2026-11-26).
 
 ### Request
 1. Hidden staff page «Fundmeldung» (found items, not lost): drivers and cleaning staff report found items by phone, with up to 2 photos. Link only in the Infosoft app.
